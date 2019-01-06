@@ -4,9 +4,7 @@ using Resturant.Models;
 namespace Resturant.Class
 {
     public struct Constants
-    {
-        //public static string ApiUrl = "http://eguestbackend-v2-testing.azurewebsites.net/";
-       // public static string ApiUrl = "http://eguestbackend-v2.azurewebsites.net/";
+    { 
         public static string ApiUrl = "http://ordernowservice.azurewebsites.net/";
         public static UserDetailCredentials userDetailCredentials;
         public static string CurrentLang = "ar-eg";

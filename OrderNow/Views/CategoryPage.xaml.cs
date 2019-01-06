@@ -12,8 +12,7 @@ namespace OrderNow.Views
     public partial class CategoryPage : ContentPage
     {
         CategoryViewModel viewModel;
-        bool isLoading;
-
+    
         public CategoryPage()
         {
             InitializeComponent();
@@ -70,37 +69,16 @@ namespace OrderNow.Views
 
         void Handle_ItemAppearing(object sender, Xamarin.Forms.ItemVisibilityEventArgs e)
         {
-            if (isLoading || viewModel.Category.Count == 0)
+            if ( viewModel.Category.Count == 0)
                 return;
 
             //hit bottom!
             if (e.Item == viewModel.Category[viewModel.Category.Count - 1])
             {
-                Constants.Page++;
-                // LoadCategory();
+                Constants.Page++; 
             }
 
-        }
-        //private async Task LoadCategory()
-        //{
-        //    isLoading = true;
-        //    // page.Title = "Loading";
-
-        //    //simulator delayed load
-        //    Device.StartTimer(TimeSpan.FromSeconds(2), () =>
-        //    {
-        //        viewModel.LoadMoreCategoryCommand.Execute(null);
-        //        //for (int i = 0; i < 20; i++)
-        //        //{
-        //        //    Category.Add(string.Format("Item {0}", Category.Count));
-        //        //    Category.Add(string.Format("Item {0}", Category.Count));
-        //        //}
-        //        // page.Title = "Done";
-        //        isLoading = false;
-        //        //stop timer
-        //        return false;
-        //    });
-        //}
+        } 
 
     }
 }

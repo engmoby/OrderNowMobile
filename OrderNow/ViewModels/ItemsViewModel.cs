@@ -47,9 +47,8 @@ namespace OrderNow.ViewModels
                     Description = item.ItemDescriptionDictionary[Constants.CurrentLang],
                     DescriptionFull = (item.ItemDescriptionDictionary[Constants.CurrentLang].Length >= 50) ? item.ItemDescriptionDictionary[Constants.CurrentLang].Substring(0, 50) : item.ItemDescriptionDictionary[Constants.CurrentLang],
                     ItemDescriptionDictionary = item.ItemDescriptionDictionary,
-                    imageURL = item.imageURL + "?type='thumbnail'",
+                    imageURL = item.imageURL + "?type='thumbnail'&date="+DateTime.Now,
                     Sizes = sizesLang,
-                    // Price = "35",
                     PriceText = Constants.CurrentLang == "en-us" ? "SAR" : "ريال"
                 });
 

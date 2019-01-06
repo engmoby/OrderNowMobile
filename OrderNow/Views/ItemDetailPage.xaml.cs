@@ -25,14 +25,13 @@ namespace OrderNow.Views
         {
             InitializeComponent();
             if (Constants.OrderClass != null)
-              if (Constants.OrderClass.Count > 0)
+                if (Constants.OrderClass.Count > 0)
                 {
                     cartNo.Text = Constants.OrderClass.Count.ToString();
                 }
             this.FlowDirection = (Constants.CurrentLang == "en-us" ? FlowDirection.LeftToRight : FlowDirection.RightToLeft);
-            ItemsListView1.FlowDirection = (Constants.CurrentLang == "en-us" ? FlowDirection.LeftToRight : FlowDirection.RightToLeft);
-
-            // var ddd= viewModel.Item.Sizes.
+            ItemsListViewPrice.FlowDirection = (Constants.CurrentLang == "en-us" ? FlowDirection.LeftToRight : FlowDirection.RightToLeft);
+ 
             BindingContext = this.viewModel = viewModel;
 
             value = Convert.ToInt32(this.viewModel.Item.Price);
@@ -46,7 +45,7 @@ namespace OrderNow.Views
             if (Constants.OrderClass != null)
                 if (Constants.OrderClass.Count == 0)
                 {
-                    cartNo.Text = "";// Constants.OrderClass.Count.ToString();
+                    cartNo.Text = ""; 
 
                 }
 
@@ -63,11 +62,8 @@ namespace OrderNow.Views
             lblTotal.Text = item.Price.ToString();
             currentCount = 1;
             StepLabel.Text = currentCount.ToString();
-            value = Convert.ToInt32(this.viewModel.Item.Price);
-            //  await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
-
-            // Manually deselect item.
-            //   ItemsListView.SelectedItem = null;
+            value = Convert.ToInt32(this.viewModel.Item.Price); 
+            ItemsListViewPrice.SelectedItem = null;
         }
         void MinusButton_OnClicked(object sender, EventArgs e)
         {
@@ -98,11 +94,7 @@ namespace OrderNow.Views
         {
 
             await Navigation.PushAsync(new BasketPage(new OrderViewModel(Constants.OrderClass)));
-
-            // Manually deselect item.
-            // ItemsListView.SelectedItem = null;
-
-            //await Navigation.PushAsync(new NavigationPage(new BasketPage()));
+ 
         }
         void AddItemToCart_Clicked(object sender, EventArgs e)
         {
@@ -112,17 +104,14 @@ namespace OrderNow.Views
             {
                 var addItemInfo = new Item();
 
-                addItemInfo = this.viewModel.Item;
-                //addItemInfo.Sizes = new List<Sizes>();
-                //addItemInfo.Sizes.Add(selectedItemSize);
+                addItemInfo = this.viewModel.Item; 
 
                 Constants.OrderClass.Add(new Resturant.Models.OrderClass
                 {
                     Item = addItemInfo,
                     Size = selectedItemSize,
                     Quantity = currentCount,
-                    TotalPrice = value,
-                    //  TotalOrder =+ (decimal)value
+                    TotalPrice = value, 
                 });
                 cartNo.Text = Constants.OrderClass.Count.ToString();
             }
@@ -140,15 +129,7 @@ namespace OrderNow.Views
         public ItemDetailPage()
         {
             InitializeComponent();
-
-            var item = new Item
-            {
-                Text = "Item 1",
-                Description = "This is an item description."
-            };
-
-            viewModel = new ItemDetailViewModel(item);
-            BindingContext = viewModel;
+   
         }
     }
 }

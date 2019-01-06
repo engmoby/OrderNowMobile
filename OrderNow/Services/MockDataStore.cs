@@ -11,35 +11,18 @@ namespace OrderNow.Services
 {
     public class MockDataStore : IDataStore<Item>
     {
-        List<Item> items;
-        RestClientFeature<Feature> _restClient = new RestClientFeature<Feature>();
-        RestClientFeature<FeatureControls> _restFeatureControl = new RestClientFeature<FeatureControls>();
+        List<Item> items; 
+        RestClientMenu _restControl = new RestClientMenu();
 
         public List<Category> GetItemsByTableId(int tableId)
         {
-            return _restFeatureControl.GetAllICategoriesByTable(tableId);
+            return _restControl.GetAllICategoriesByTable(tableId);
         }
 
         public MockDataStore()
         {
             var categoryList = GetItemsByTableId(Constants.TableId);
-            items = new List<Item>();
-
-            //foreach (Item item in itemList)
-            //{
-            //    items.Add(new Item
-            //    {
-            //        Id = item.ItemID,
-            //        Text = item.ItemNameDictionary[Constants.CurrentLang],
-            //        ItemNameDictionary = item.ItemNameDictionary,
-            //        Description = item.ItemDescriptionDictionary[Constants.CurrentLang],
-            //        ItemDescriptionDictionary = item.ItemDescriptionDictionary,
-            //        imageURL = item.imageURL,
-            //        Sizes = item.Sizes,
-            //        Price = "35",
-            //        PriceText = Constants.CurrentLang == "en-us" ? "SAR" : "ريال"
-            //    });
-            //}
+            items = new List<Item>(); 
         }
 
         public async Task<bool> AddItemAsync(Item item)

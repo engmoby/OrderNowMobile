@@ -22,18 +22,7 @@
                                         <StackLayout>
                                             <Label Text="{Binding Text}" FontSize="Medium" TextColor="{StaticResource asphaltDark}" VerticalOptions="CenterAndExpand" />
                                         </StackLayout>
-                                     <!--   <controls:HeaderDivider />
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*" />
-                                                <ColumnDefinition Width="Auto" />
-                                            </Grid.ColumnDefinitions>
-                                            <StackLayout Orientation="Horizontal">
-                                                <Label Text="{Binding PriceText}" FontSize="Small" TextColor="{StaticResource asphaltPrimary}" VerticalOptions="CenterAndExpand" />
-                                                <Label Text="{Binding Price, StringFormat='{0:C}'}" FontSize="Small" TextColor="{StaticResource  asphaltPrimary}" VerticalOptions="CenterAndExpand" />
-                                                <Label Text="{Binding Category.Sizes[0].Price, StringFormat='{0:C}'}" FontSize="Small" TextColor="{StaticResource  asphaltPrimary}" VerticalOptions="CenterAndExpand" />
-                                            </StackLayout>
-                                        </Grid>-->
+                                   
                                     </StackLayout>
                                 </StackLayout>
                             </controls:CardView>

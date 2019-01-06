@@ -62,11 +62,7 @@ namespace OrderNow.Views
                         break;
                     case (int)MenuItemType.SignOut:
                         MenuPages.Add(id, new NavigationPage(new SignUpPage()));
-                        break;
-                        //case (int)MenuItemType.SignOut:
-                        // MenuPages.Add(id, new NavigationPage(new Login()));
-                        //// Application.Current.MainPage = new Login();
-                        //break;
+                        break; 
                 }
             }
 

@@ -22,25 +22,8 @@
             </StackLayout>
             <StackLayout Orientation="Vertical" IsVisible="{Binding IsLoading}" Padding="10" x:Name="loginStack">
                 <controls:AnimateButton Clicked="OnLoginButtonClicked" Text="Log in" BackgroundColor="{StaticResource primaryColor}" WidthRequest="300" HorizontalOptions="Center" />
-                <!--                <Button Clicked="OnLoginButtonClicked" BackgroundColor="{StaticResource primaryColor}" Text="OnLoginButtonClicked" HeightRequest="45" />-->
             </StackLayout>
-            <!--  <Grid Padding="10" IsVisible="{Binding IsLoading}">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions> 
-                <Label Text="Or" FontSize="14" TextColor="Black" Grid.Column="1" /> 
-            </Grid>
-
-            <StackLayout Padding="10" IsVisible="{Binding IsLoading }">
-                <Button Margin="5" Text="Sign in with Google" HeightRequest="45"
-                                        TextColor="{StaticResource grayDark}" BackgroundColor="White"
-                                        Image="google.png" />
-                <Button Margin="5" BorderColor="{StaticResource grayPrimary}"
-                                        Text="Connect with Facebook" HeightRequest="45" TextColor="White"
-                                        Image="facebook.png" BackgroundColor="#3B5998" />
-            </StackLayout>-->
+          
             <StackLayout x:Name="stackLoading">
                 <ActivityIndicator x:Name="indecator" Color="{StaticResource primaryColor}" HorizontalOptions="Center" VerticalOptions="EndAndExpand" />
             </StackLayout>

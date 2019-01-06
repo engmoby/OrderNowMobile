@@ -12,15 +12,14 @@ namespace OrderNow.Services
 {
     public class MockDataHistory : IDataHistory<RequestModel>
     {
-        List<RequestModel> historyLostObj;
-        RestClientFeature<Feature> _restClient = new RestClientFeature<Feature>();
-        RestClientFeature<FeatureControls> _restFeatureControl = new RestClientFeature<FeatureControls>();
+        List<RequestModel> historyLostObj; 
+        RestClientMenu _restControl = new RestClientMenu();
 
 
         public MockDataHistory()
         {
 
-            var HistoryList = _restFeatureControl.GetAllIHistoryByUserId();
+            var HistoryList = _restControl.GetAllIHistoryByUserId();
             historyLostObj = new List<RequestModel>(); 
             foreach (RequestModel item in HistoryList.ToList())
             {

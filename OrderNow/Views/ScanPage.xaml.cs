@@ -13,35 +13,12 @@ namespace OrderNow.Views
 {
     public partial class ScanPage : ContentPage
     {
-        List<Category> categories;
-        RestClientFeature<Feature> _restClient = new RestClientFeature<Feature>();
-        RestClientFeature<FeatureControls> _restFeatureControl = new RestClientFeature<FeatureControls>();
+        List<Category> categories; 
+        RestClientMenu _restControl = new RestClientMenu();
 
         public ScanPage()
         {
-            InitializeComponent();
-            //try
-            //{
-            //    ZXingScannerPage scan = new ZXingScannerPage();
-            //     Navigation.PushAsync(scan);
-            //    scan.OnScanResult += (result) =>
-            //    {
-            //        Device.BeginInvokeOnMainThread(async () =>
-            //        {
-            //           // await Navigation.PopAsync();
-            //            Constants.TableId = Convert.ToInt32(result.Text);
-            //            Application.Current.MainPage = new MainPage(); 
-            //            //Navigation.PushAsync(new CategoryPage());
-            //            //  txtBarcode.Text = result.Text;
-
-            //        });
-            //    };
-            //}
-            //catch (Exception ex)
-            //{
-
-            //    throw;
-            //}
+            InitializeComponent(); 
 
         }
         private void btnScan_Clicked(object sender, EventArgs e)
@@ -53,16 +30,12 @@ namespace OrderNow.Views
                 scan.OnScanResult += (result) =>
                 {
                     Device.BeginInvokeOnMainThread(() =>
-                    {
-                        // await Navigation.PopAsync();
-
+                    { 
                         if (IsNumber(result.Text))
                         {
-                            Constants.TableId = Convert.ToInt32(result.Text);
-                            //  Application.Current.MainPage = new MainPage();
-
-                            System.Collections.Generic.List<Resturant.Models.Category> checckList;
-                            checckList = _restFeatureControl.GetAllICategoriesByTable(Constants.TableId);
+                            Constants.TableId = Convert.ToInt32(result.Text); 
+                             List<Resturant.Models.Category> checckList;
+                            checckList = _restControl.GetAllICategoriesByTable(Constants.TableId);
                             if (checckList == null)
                             {
                                 DependencyService.Get<Toast>().Show("Wrong QR Code");
@@ -78,9 +51,7 @@ namespace OrderNow.Views
                             DependencyService.Get<Toast>().Show("Wrong QR Code");
                             CrossLocalNotifications.Current.Show("Error", "Wrong QR Code");
                             return;
-                        }
-                        //Navigation.PushAsync(new CategoryPage());
-                        //  txtBarcode.Text = result.Text;
+                        } 
 
                     });
                 };

@@ -12,13 +12,12 @@ namespace OrderNow.Services
     public class MockDataCategory : IDataCategory<Category>
     {
         List<Category> categories;
-        RestClientFeature<Feature> _restClient = new RestClientFeature<Feature>();
-        RestClientFeature<FeatureControls> _restFeatureControl = new RestClientFeature<FeatureControls>();
+        RestClientMenu _restControl = new RestClientMenu();
 
         public List<Category> GetItemsByTableId(int tableId)
         {
 
-            return _restFeatureControl.GetAllICategoriesByTable(tableId);
+            return _restControl.GetAllICategoriesByTable(tableId);
         }
 
         public MockDataCategory()

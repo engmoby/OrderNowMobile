@@ -9,7 +9,7 @@ using Resturant.Models;
 
 namespace Resturant.RestAPIClient
 {
-    public class RestClientFeature<T>
+    public class RestClientMenu
     {
         HttpClient client;
         readonly Uri baseUri = new Uri(Constants.ApiUrl);
@@ -42,8 +42,7 @@ namespace Resturant.RestAPIClient
         public List<Category> GetAllICategoriesByTable(int categoryId)
         {
             client = new HttpClient();
-            client.MaxResponseContentBufferSize = 256000;
-            // var uri = new Uri(baseUri, "/api/Categories/13/Items?page=" + Constants.Page);
+            client.MaxResponseContentBufferSize = 256000; 
             var uri = new Uri(baseUri, "/api/Categories/GetAllCategoriesByTable/" + Constants.TableId);
             var access_token =  SettingsCross.UEmail;
             client.DefaultRequestHeaders.Clear();
@@ -65,8 +64,7 @@ namespace Resturant.RestAPIClient
         }
        
         public async Task SubmitOrder(RequestModel item)
-        {
-            //var uri = new Uri(string.Format(Constants.ApiUrl + "api/Requests", string.Empty));
+        { 
             using (var client = new HttpClient())
             {
                 var json = JsonConvert.SerializeObject(item);

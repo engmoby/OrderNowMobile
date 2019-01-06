@@ -100,7 +100,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)RestAPIClient\Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestAPIClient\Feature.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestAPIClient\RestClient.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)RestAPIClient\RestClientFeature.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestAPIClient\RestClientMenu.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestAPIClient\UserDetailCredentials.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>

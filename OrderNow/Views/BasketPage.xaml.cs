@@ -17,7 +17,7 @@ namespace OrderNow.Views
     public partial class BasketPage : ContentPage
     {
         public ObservableCollection<OrderClass> Orders { get; set; }
-        RestClientFeature<Feature> _restClient = new RestClientFeature<Feature>();
+        RestClientMenu _restClient = new RestClientMenu();
 
         Timer timer = new Timer();
         OrderViewModel viewModel;
@@ -102,13 +102,13 @@ namespace OrderNow.Views
                     this.viewModel = null;
                     BindingContext = null;
                     ordersLst.ItemsSource = null;
-                  if (Constants.OrderClass.Count != 0)
+                    if (Constants.OrderClass.Count != 0)
                     {
                         this.viewModel.TotalOrder = Constants.OrderClass.Sum(x => x.TotalPrice);
                     }
                 });
-              
-               // Application.Current.MainPage = new MainPage();
+
+                // Application.Current.MainPage = new MainPage();
             }
             else
             {
@@ -124,13 +124,13 @@ namespace OrderNow.Views
                     this.viewModel.TotalOrder = Constants.OrderClass.Sum(x => x.TotalPrice);
 
                 });
-            
+
             }
         }
         private async System.Threading.Tasks.Task Handle_Clicked(object sender, EventArgs e)
         {
             var button = sender as Button;
-            var item = button.BindingContext as OrderClass; 
+            var item = button.BindingContext as OrderClass;
             Constants.OrderClass.RemoveAll(x => x.Item == item.Item && x.Size == item.Size);
             ordersLst.ItemsSource = null;
             ordersLst.ItemsSource = this.viewModel.Orders;
@@ -148,10 +148,6 @@ namespace OrderNow.Views
             item.Quantity++;
             item.TotalPrice = item.Quantity * Convert.ToInt64(item.Size.Price);
 
-            //this.viewModel.TotalOrder = item.Quantity * Convert.ToInt64(item.Item.Price);
-            //  this.viewModel.Orders.Where(x => x.Item.Id == item.Item.Id && x.Item.Sizes.Any(z => z.SizeId == item.Item.Sizes[0].SizeId)).FirstOrDefault().TotalPrice = item.Quantity * Convert.ToInt64(item.Item.Price);
-            //  this.viewModel.Orders.Where(x => x.Item.Id == item.Item.Id && x.Item.Sizes.Any(z => z.SizeId == item.Item.Sizes[0].SizeId)).FirstOrDefault().Quantity = item.Quantity;
-
             ordersLst.ItemsSource = null;
             ordersLst.ItemsSource = this.viewModel.Orders;
 
@@ -160,32 +156,12 @@ namespace OrderNow.Views
                 this.viewModel.TotalOrder = Constants.OrderClass.Sum(x => x.TotalPrice);
 
             });
-            //  timer.Elapsed += OnTimerElapsed;
-            //timer.Start();
-            //timer.Stop();
         }
-        //void Lv_Refreshing(object sender, EventArgs e)
-        //{
-        //    ordersLst.ItemsSource = this.viewModel.Orders;
-        //    if (ordersLst.IsRefreshing)
-        //    {
-        //        ordersLst.EndRefresh();
-        //    }
-        //}
         protected override void OnAppearing()
         {
-            // if (Constants.OrderClass != null)
-            // if (Constants.OrderClass.Count == 0)
-            //{
-            //  BindingContext = null;
-            //}
 
             OrderViewModel vm = this.BindingContext as OrderViewModel;
             BindingContext = vm;
-            //Call command from viewmodel     
-            //if ((vm != null) && (vm.ChangeCommand.CanExecute(null)))
-            //vm.ChangeCommand.Execute(null);
-            //  vm.AddOrder();
         }
 
         public void OnTimerElapsed(object o, ElapsedEventArgs e)
@@ -199,8 +175,7 @@ namespace OrderNow.Views
             timer.Stop();
             timer.Enabled = false;
             timer.AutoReset = false;
-            if (Constants.OrderClass != null)
-            //if (Constants.OrderClass.Count != 0)
+            if (Constants.OrderClass != null) 
             {
                 this.viewModel.TotalOrder = Constants.OrderClass.Sum(x => x.TotalPrice);
             }

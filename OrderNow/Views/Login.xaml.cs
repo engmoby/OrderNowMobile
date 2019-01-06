@@ -62,8 +62,7 @@ namespace OrderNow.Views
                     SettingsCross.UEmail = Constants.userDetailCredentials.access_token;
                     SettingsCross.UserId = Constants.userDetailCredentials.UserId;
                     stackLoading.IsVisible = false;
-                    Application.Current.MainPage = new MainPage();
-                    //  await Navigation.PushAsync(new ScanPage());
+                    Application.Current.MainPage = new MainPage(); 
                 }
             }
         }

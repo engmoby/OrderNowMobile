@@ -11,10 +11,7 @@ namespace OrderNow.ViewModels
         public ObservableCollection<Sizes> SizeList { get; set; }
         public Item Item { get; set; }
         public OrderClass CurrentOrder { get; set; }
-        //public string PriceText
-        //{
-        //    get => (Constants.CurrentLang == "en-us" ? "Price" : "السعر");
-        //}
+      
         public string TitleText
         {
             get => (Constants.CurrentLang == "en-us" ? "Name" : "الاسم");
