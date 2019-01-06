@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="OrderNow.Views.HistoryPage" Title="{Binding Title}" xmlns:controls="clr-namespace:OrderNow.Controls">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="HistoryListView" ItemsSource="{Binding History}" VerticalOptions="FillAndExpand" HasUnevenRows="true" RefreshCommand="{Binding LoadHistoryCommand}" ItemAppearing="Handle_ItemAppearing" IsPullToRefreshEnabled="true" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement" ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Spacing="{DynamicResource CardSpacing}" Padding="{DynamicResource CardPadding}">
+                                <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                                    <StackLayout>
+                                        <Grid RowSpacing="0" AbsoluteLayout.LayoutBounds="0,0,1,.5" AbsoluteLayout.LayoutFlags="All">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Row="0" Grid.Column="0" Text="hamadaaa" FontSize="12" TextColor="Silver" />
+                                            <Image Grid.Row="1" Grid.Column="0" HeightRequest="50" Source="{Binding LogoURL}" />
+                                            <Label Grid.Row="0" Grid.Column="2" Text="{Binding CreateTime, StringFormat='{0:MMMM dd, yyyy}'}" FontSize="15" TextColor="Black" />
+                                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding RestaurantName[en-us]}" FontSize="12" TextColor="Black" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand" />
+                                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding TotalOrder}" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand" />
+                                            <Label Grid.Row="1" Grid.Column="2" Text="{Binding Status}" FontSize="12" TextColor="Silver" />
+                                        </Grid>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

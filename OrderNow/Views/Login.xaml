@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:controls="clr-namespace:OrderNow.Controls" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="OrderNow.Views.Login">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="Center" x:Name="uiMain">
+            <StackLayout.Padding>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS" Value="25, 25, 25, 25" />
+                    <On Platform="Android" Value="15, 15, 15, 15" />
+                    <On Platform="Uwp" Value="10, 10, 10, 10" />
+                </OnPlatform>
+            </StackLayout.Padding>
+            <StackLayout Padding="10">
+                <Label Text="E-Mail" Style="{StaticResource header}" />
+                <Entry Placeholder="Enter your email" x:Name="usernameEntry" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+            <StackLayout Padding="10">
+                <Label Text="Password" Style="{StaticResource header}" />
+                <Entry x:Name="passwordEntry" IsPassword="true" Placeholder="Enter password" HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+            <StackLayout Padding="10" HorizontalOptions="Center">
+                <Label x:Name="messageLabel" TextColor="Red" />
+            </StackLayout>
+            <StackLayout Orientation="Vertical" IsVisible="{Binding IsLoading}" Padding="10" x:Name="loginStack">
+                <controls:AnimateButton Clicked="OnLoginButtonClicked" Text="Log in" BackgroundColor="{StaticResource primaryColor}" WidthRequest="300" HorizontalOptions="Center" />
+                <!--                <Button Clicked="OnLoginButtonClicked" BackgroundColor="{StaticResource primaryColor}" Text="OnLoginButtonClicked" HeightRequest="45" />-->
+            </StackLayout>
+            <!--  <Grid Padding="10" IsVisible="{Binding IsLoading}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions> 
+                <Label Text="Or" FontSize="14" TextColor="Black" Grid.Column="1" /> 
+            </Grid>
+
+            <StackLayout Padding="10" IsVisible="{Binding IsLoading }">
+                <Button Margin="5" Text="Sign in with Google" HeightRequest="45"
+                                        TextColor="{StaticResource grayDark}" BackgroundColor="White"
+                                        Image="google.png" />
+                <Button Margin="5" BorderColor="{StaticResource grayPrimary}"
+                                        Text="Connect with Facebook" HeightRequest="45" TextColor="White"
+                                        Image="facebook.png" BackgroundColor="#3B5998" />
+            </StackLayout>-->
+            <StackLayout x:Name="stackLoading">
+                <ActivityIndicator x:Name="indecator" Color="{StaticResource primaryColor}" HorizontalOptions="Center" VerticalOptions="EndAndExpand" />
+            </StackLayout>
+            <StackLayout>
+                <Button AbsoluteLayout.LayoutBounds=".5, 1, AutoSize, AutoSize" WidthRequest="100" AbsoluteLayout.LayoutFlags="PositionProportional" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="0, 0, 0, 10" Clicked="OnRegisterClicked" Text="Sign Up" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:OrderNow.Controls" x:Class="OrderNow.Views.ItemDetailPage" Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="cartIcon" Icon="cart.png" Clicked="GotoBasket_Clicked">
+        </ToolbarItem>
+        <ToolbarItem x:Name="cartNo">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <AbsoluteLayout>
+        <Grid RowSpacing="0" AbsoluteLayout.LayoutBounds="0,0,1,.5" AbsoluteLayout.LayoutFlags="All">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Image HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill" Source="{Binding Item.imageURL}" />
+            <Grid Opacity=".5" BackgroundColor="{StaticResource asphaltDark}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+            <StackLayout Padding="10, 10, 10,10 " VerticalOptions="EndAndExpand">
+                <StackLayout Spacing="0" Padding="5">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding Item.Text}" FontSize="18" TextColor="White">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS">HelveticaNeue-Light</On>
+                                    <On Platform="Android">sans-serif-light</On>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <!--                        <Label Text="{Binding Item.Price, StringFormat='{0:C}'}" FontSize="18" TextColor="{StaticResource  grayLight}" VerticalOptions="CenterAndExpand" />-->
+                    </StackLayout>
+                    <StackLayout Padding="0, 8">
+                        <Label Text="{Binding Item.Description}" FontSize="12" TextColor="{StaticResource grayLight}" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+        <controls:Divider />
+        <Grid RowSpacing="1" AbsoluteLayout.LayoutBounds="1, 0.75, 1,AutoSize" AbsoluteLayout.LayoutFlags="XProportional,YProportional, WidthProportional">
+            <StackLayout>
+                <StackLayout HeightRequest="100" Margin="10, 10, 10, 10">
+                    <ListView x:Name="ItemsListView1" HasUnevenRows="true" ItemsSource="{Binding Item.Sizes}" ItemSelected="OnItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Margin="10">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Column="0" Text="{Binding SizeName}" TextColor="{StaticResource asphaltDark}" />
+                                            <StackLayout Grid.Column="1" Orientation="Horizontal">
+                                                <Label Text="{Binding Price}" FontSize="Small" TextColor="{StaticResource  asphaltDark}" VerticalOptions="CenterAndExpand" />
+                                                <!--                                                <Label Text="{Binding Price, StringFormat='{0:C}'}" FontSize="Small" TextColor="{StaticResource  asphaltDark}" VerticalOptions="CenterAndExpand" />-->
+                                                <!--                                                <Label Text="{Binding CurrencyText}" FontSize="Small" TextColor="{StaticResource asphaltDark}" VerticalOptions="CenterAndExpand" />-->
+                                            </StackLayout>
+                                        </Grid>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Margin="10, 10, 10, 10">
+                    <Label TextColor="{StaticResource grayDark}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="16" Text="{Binding TotalText}" />
+                    <Label TextColor="{StaticResource grayDark}" VerticalOptions="Center" HorizontalOptions="Center" x:Name="lblTotal" FontSize="16" />
+                </StackLayout>
+                <controls:Divider />
+                <StackLayout Orientation="Horizontal" Margin="10, 10, 10, 10" HorizontalOptions="Center">
+                    <controls:FlatButton Image="minus" WidthRequest="30" HeightRequest="12" Clicked="MinusButton_OnClicked" BackgroundColor="Transparent" />
+                    <Grid VerticalOptions="Center">
+                        <Frame CornerRadius="8" BackgroundColor="{StaticResource grayLight}" HasShadow="False" OutlineColor="Transparent" WidthRequest="30" />
+                        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                            <Label TextColor="Black" x:Name="StepLabel" FontSize="15" />
+                        </StackLayout>
+                    </Grid>
+                    <controls:FlatButton Image="plus" WidthRequest="30" HeightRequest="15" BackgroundColor="Transparent" Clicked="PlusButton_OnClicked" />
+                </StackLayout>
+                <controls:Divider />
+            </StackLayout>
+        </Grid>
+        <Button AbsoluteLayout.LayoutBounds=".5, 1, AutoSize, AutoSize" WidthRequest="300" AbsoluteLayout.LayoutFlags="PositionProportional" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="0, 0, 0, 10" Clicked="AddItemToCart_Clicked" Text="{Binding AddToBasketText}" />
+        <!--     <controls:FloatingActionButton AbsoluteLayout.LayoutBounds=".9, .5, 50, 50"
+        AbsoluteLayout.LayoutFlags="PositionProportional" RippleColor="{StaticResource primaryColorLight}" Image="heart_outline_white" />-->
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="OrderNow.Views.ConfirmOrder">
+    <ContentPage.Content>
+   <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <ContentView>
+                        <Image Source="table.jpg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill" />
+                    </ContentView>
+                </StackLayout>
+            </StackLayout>
+            <ScrollView Grid.Row="1">
+                <StackLayout Orientation="Vertical" Padding="50,8,50,14" Spacing="10">
+                    <Label FontSize="15">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span x:Name="txtMessege" Text="Your Order Is sent Nowplease wait a minute..., will go to Menu in 6 second" ForegroundColor="#999999" FontSize="15" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Button Margin="0,10,0,0" Text="Go To Menu" IsVisible="false" x:Name="btnGoMenu" Clicked="btnGoMenu_Clicked" BackgroundColor="{StaticResource primaryColor}" TextColor="White" />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

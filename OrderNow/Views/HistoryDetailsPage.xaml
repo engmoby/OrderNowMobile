@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:OrderNow.Controls" xmlns:var="clr-namespace:Resturant.Class" x:Class="OrderNow.Views.HistoryDetailsPage">
+    <ContentPage.Content>
+        <!--  <AbsoluteLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="1, 1, 1, .8" AbsoluteLayout.LayoutFlags="All" Margin="0, 15, 0, 0">
+                <ListView x:Name="ordersLst" HasUnevenRows="true" SeparatorVisibility="None" SeparatorColor="{StaticResource grayPrimary}" RowHeight="100">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid StyleId="ordersRoot">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image WidthRequest="60" Margin="10" HeightRequest="60" Source="{Binding Item.imageURL}" HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFill" />
+                                        <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                            <Label Text="{Binding Item.Text}" FontSize="Small" LineBreakMode="TailTruncation" TextColor="{StaticResource asphaltPrimary}" />
+                                            <Label Text="{Binding Item.Description}" FontSize="Micro" TextColor="{StaticResource grayPrimary}" />
+                                            <Label Text="{Binding TotalPrice, StringFormat='Total: {0:C}'}" FontSize="Micro" TextColor="{StaticResource grayPrimary}" LineBreakMode="TailTruncation" />
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="2" Margin="10">
+                                            <StackLayout>
+                                                <AbsoluteLayout HorizontalOptions="Center">
+                                                    <Label TextColor="Black" Text="{Binding Quantity}" FontSize="12" />
+                                                </AbsoluteLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout> 
+        </AbsoluteLayout>-->
+        <TableView >
+            <TableView.Root>
+                <TableSection>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Orientation="Horizontal" Margin="10">
+                                <StackLayout>
+                                    <Label Text="{Binding _requestDetailModel.Price}" TextColor="Blue">
+                                    </Label>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label Text="News Item 2" TextColor="Blue">
+                                    </Label>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label Text="News Item 3" TextColor="Blue">
+                                    </Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </TableSection>
+            </TableView.Root>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>

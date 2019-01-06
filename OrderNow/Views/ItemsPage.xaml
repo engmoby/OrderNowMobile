@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="OrderNow.Views.ItemsPage"
+             xmlns:controls="clr-namespace:OrderNow.Controls" Title="{Binding Title}" x:Name="BrowseItemsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="cartIcon" Icon="cart.png" Clicked="GotoBasket_Clicked">
+        </ToolbarItem>
+        <ToolbarItem x:Name="cartNo">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <ListView x:Name="ItemsListView" ItemsSource="{Binding Items}" VerticalOptions="FillAndExpand" HasUnevenRows="true" RefreshCommand="{Binding LoadItemsCommand}" ItemAppearing="Handle_ItemAppearing" IsPullToRefreshEnabled="true" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement" ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Spacing="{DynamicResource CardSpacing}" Padding="{DynamicResource CardPadding}">
+                            <controls:CardView>
+                                <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                                    <Grid HeightRequest="120">
+                                        <Image x:Name="photoImage" Source="{Binding imageURL}" Aspect="AspectFill" />
+                                    </Grid>
+                                    <StackLayout Padding="10, 10, 10, 3">
+                                        <StackLayout>
+                                            <Label Text="{Binding TextFull}" FontSize="Medium" TextColor="{StaticResource asphaltDark}" VerticalOptions="CenterAndExpand" />
+                                            <Label Text="{Binding DescriptionFull}" FontSize="Micro" TextColor="{StaticResource grayPrimary}" />
+                                        </StackLayout>
+                                        <!--     <controls:HeaderDivider />
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding PriceText}" FontSize="Small" TextColor="{StaticResource asphaltPrimary}" VerticalOptions="CenterAndExpand" />
+                                                                                           <Label Text="{Binding Price, StringFormat='{0:C}'}" FontSize="Small" TextColor="{StaticResource  asphaltPrimary}" VerticalOptions="CenterAndExpand" />
+                                            </StackLayout>
+                                        </Grid>-->
+                                    </StackLayout>
+                                </StackLayout>
+                            </controls:CardView>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
