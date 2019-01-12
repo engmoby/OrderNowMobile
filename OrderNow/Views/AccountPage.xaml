@@ -3,34 +3,42 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
         x:Class="OrderNow.Views.AccountPage">
     <ContentPage.Content>
-        <Frame VerticalOptions="EndAndExpand"
-            BackgroundColor="{StaticResource primaryColor}"
-            CornerRadius="20"
-            Padding="20"
-            HasShadow="false"
-            >
+       
+        <StackLayout  Margin="20">
+        
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>   
             
-            <StackLayout 
-                HorizontalOptions="Center"
-                Orientation="Horizontal" 
-                Margin="10">
-                <Label 
-                    TextColor="White"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center"
-                    FontSize="Large" 
-                    FontAttributes="Bold"
-                    Text="{Binding TotalText}" />
-                
-                    <Label 
-                        TextColor="{StaticResource secondryColorLight}"
-                        VerticalOptions="Center"
-                        HorizontalOptions="Center" 
-                        x:Name="lblTotal"
-                        FontSize="Large" />
+                <StackLayout Grid.Column="0"
+                       HeightRequest="100">
+                     <Frame 
+                       Padding="5"
+                       BackgroundColor="White"
+                       CornerRadius="20">
+                    <Image Source="logo"/>
+                </Frame>
                 </StackLayout>
-            
-        </Frame>
+               
+                <StackLayout Grid.Column="1"
+                    Spacing="5">
+                    <Label Text="chicken"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       Margin="0,5,0,0"/>
+                  
+                    
+                    <Label Text="fried chicken with garlic and butter suace, served with rice, fries and green salad"
+                       FontSize="15"
+                       FontAttributes="None"/>
+                    <Label />
+                </StackLayout>
+            </Grid>
+        
+        </StackLayout>
+        
        <!-- <StackLayout>
             <Image Source="ComingSoon.jpg" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
         </StackLayout>-->

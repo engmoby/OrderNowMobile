@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Java.Security;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace OrderNow.Views
 {
@@ -32,11 +33,15 @@ namespace OrderNow.Views
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
+
             var categoryObj = args.SelectedItem as Category;
+
             if (categoryObj == null)
                 return;
 
-            await Navigation.PushAsync(new ItemsPage(new ItemsViewModel(categoryObj.items)));
+            // we need to revist models and edit them to fit the changes done in UI
+
+            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(categoryObj.itemsKareem)));
 
             // Manually deselect item.
             CategoryListView.SelectedItem = null;

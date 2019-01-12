@@ -45,7 +45,7 @@
                         </Label>
                         <Frame 
                             HorizontalOptions="EndAndExpand"
-                            BackgroundColor="{StaticResource primaryColor}"
+                            BackgroundColor="#E5824E"
                             CornerRadius="20"
                             Padding="10"
                             HasShadow="false">
@@ -212,7 +212,7 @@
                     TextColor="White"
                     BorderRadius="20"
                     FontSize="25"
-                    BackgroundColor="{StaticResource primaryColor}"
+                    BackgroundColor="#E5824E"
                     Text="{Binding AddToBasketText}"
                     Clicked="AddItemToCart_Clicked"/>
                 

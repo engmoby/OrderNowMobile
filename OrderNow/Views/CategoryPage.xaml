@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="OrderNow.Views.CategoryPage" Title="{Binding Title}" xmlns:controls="clr-namespace:OrderNow.Controls">
+        x:Class="OrderNow.Views.CategoryPage" 
+        Title="{Binding Title}"
+        xmlns:controls="clr-namespace:OrderNow.Controls"
+        BackgroundColor="White"
+        BackgroundImage="bg">
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="cartIcon" Icon="cart.png" Clicked="GotoBasket_Clicked">
         </ToolbarItem>
@@ -8,11 +12,16 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <StackLayout>
-        <ListView 
+       
+  <ListView 
             x:Name="CategoryListView"
             ItemsSource="{Binding ListOfCategories}"
             IsGroupingEnabled="true"
-            SeparatorVisibility="None">
+            SeparatorVisibility="Default"
+            ItemSelected="OnItemSelected"
+            HasUnevenRows="true"
+            SeparatorColor="#f7f7f7"
+            >
             <ListView.GroupHeaderTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -20,7 +29,8 @@
                             <Label Text="{Binding Heading}"
                                TextColor="Black"
                                    FontSize="25"
-                                   FontAttributes="Bold"/>
+                                   FontAttributes="Bold"
+                                   Margin="20,10"/>
                         </StackLayout>
                        
                     </ViewCell>
@@ -30,22 +40,41 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal">
-                            <Image Source="{Binding itemsKareem.imageURL}" WidthRequest="20" HeightRequest="20"/>
-                            
-                             <Label Text="{Binding Text}"  TextColor="Gray"
+                        <Grid VerticalOptions="FillAndExpand"
+                            Margin="20,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>   
+                        
+                            <StackLayout Grid.Column="0"
+                                   HeightRequest="100">
+                                 <Frame 
+                                   Padding="5"
+                                   BackgroundColor="White"
+                                   CornerRadius="20">
+                                <Image Source="logo"/>
+                            </Frame>
+                            </StackLayout>
+                           
+                            <StackLayout Grid.Column="1"
+                                Spacing="5">
+                                <Label Text="{Binding Text}"  TextColor="Gray"
                                FontSize="20"
                               />
                             
                              <Label Text="{Binding itemsKareem.Description}"  TextColor="Gray"
                                FontSize="20"
                               />
-                        </StackLayout>
+                            </StackLayout>
+                        </Grid>
                       
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-      
     </StackLayout>
 </ContentPage>
+
+
+

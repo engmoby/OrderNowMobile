@@ -37,7 +37,7 @@ namespace OrderNow.ViewModels
             ///////////////////////////////////////
             var sList = new CategoryList()
             {
-                new Category () { Text = "chiecken crispy", itemsKareem = {Description="hello from the other side", imageURL = "logo"}, items = null },
+                new Category () { Text = "chiecken crispy", itemsKareem = {Description="hello from the other side", imageURL = "logo"}, items = null},
                 new Category () { Text = "faheta fra5", itemsKareem = {Description="hello from the other side", imageURL = "logo"}, items = null},
                 new Category () { Text = "baneh", itemsKareem = {Description="hello from the other side", imageURL = "logo"}, items = null}
             };
