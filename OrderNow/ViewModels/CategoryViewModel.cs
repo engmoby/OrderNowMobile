@@ -9,6 +9,7 @@ using OrderNow.Models;
 using OrderNow.Views;
 using Resturant.Class;
 using Resturant.Models;
+using System.Collections.Generic;
 
 namespace OrderNow.ViewModels
 {
@@ -19,8 +20,57 @@ namespace OrderNow.ViewModels
         public Command LoadMoreCategoryCommand { get; set; }
         bool isLoading = false;
 
+
+       //-------------------------------//
+
+        private List<CategoryList> _listOfCategories;
+        public List<CategoryList> ListOfCategories { get { return _listOfCategories; } set { _listOfCategories = value; base.OnPropertyChanged(); } }
+
+        public class CategoryList : List<Category>
+        {
+            public string Heading { get; set; }
+            public List<Category> Persons => this;
+        }
+        //------------------------------//
         public CategoryViewModel()
+        {
+            ///////////////////////////////////////
+            var sList = new CategoryList()
             {
+                new Category () { Text = "chiecken crispy", itemsKareem = {Description="hello from the other side", imageURL = "logo"}, items = null },
+                new Category () { Text = "faheta fra5", itemsKareem = {Description="hello from the other side", imageURL = "logo"}, items = null},
+                new Category () { Text = "baneh", itemsKareem = {Description="hello from the other side", imageURL = "logo"}, items = null}
+            };
+            sList.Heading = "Chicken";
+
+            var dList = new CategoryList()
+            {
+                new Category () { Text = "beef"},
+                new Category () { Text = "meet balls"}
+            };
+            dList.Heading = "Meat";
+
+
+            var jList = new CategoryList()
+            {
+                new Category () { Text = "tuna salad"},
+                new Category () { Text = "green salad"}
+            };
+
+            jList.Heading = "Salads";
+
+            var list = new List<CategoryList>()
+            {
+                sList,
+                dList,
+                jList
+            };
+
+            ListOfCategories = list;
+            ///////////////////////////////////////
+
+
+
             Title = Constants.CurrentLang == "en-us" ? "Category" : "التصنيف";
             Category = new ObservableCollection<Category>();
             LoadCategoryCommand = new Command(async () => await ExecuteLoadCategoryCommand());

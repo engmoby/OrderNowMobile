@@ -1,23 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:OrderNow.Controls" x:Class="OrderNow.Views.ItemDetailPage" Title="{Binding Title}">
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:controls="clr-namespace:OrderNow.Controls" 
+    x:Class="OrderNow.Views.ItemDetailPage" 
+    Title="{Binding Title}"
+    BackgroundImage="bg"
+    BackgroundColor="Red">
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="cartIcon" Icon="cart.png" Clicked="GotoBasket_Clicked">
+        <ToolbarItem 
+            x:Name="cartIcon" 
+            Icon="cart.png" 
+            Clicked="GotoBasket_Clicked">
         </ToolbarItem>
         <ToolbarItem x:Name="cartNo">
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-    <AbsoluteLayout>
-        <Grid RowSpacing="0" AbsoluteLayout.LayoutBounds="0,0,1,.5" AbsoluteLayout.LayoutFlags="All">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Image HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill" Source="{Binding Item.imageURL}" />
-            <Grid Opacity=".5" BackgroundColor="{StaticResource asphaltDark}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
-            <StackLayout Padding="10, 10, 10,10 " VerticalOptions="EndAndExpand">
-                <StackLayout Spacing="0" Padding="5">
+    
+    <StackLayout VerticalOptions="FillAndExpand">
+        <ScrollView>
+            <StackLayout>
+                <Image 
+                    HeightRequest="150"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand" 
+                    Aspect="AspectFill" 
+                    Source="{Binding Item.imageURL}" />
+                
+                <StackLayout Padding="20" >
+                    
+                    <!--  text and total-->
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="{Binding Item.Text}" FontSize="18" TextColor="White">
+                        
+                        <Label Text="{Binding Item.Text}"
+                            HorizontalOptions="StartAndExpand"
+                            VerticalTextAlignment="Center"
+                            FontSize="18" TextColor="Black">
                             <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS">HelveticaNeue-Light</On>
@@ -25,18 +43,60 @@
                                 </OnPlatform>
                             </Label.FontFamily>
                         </Label>
+                        <Frame 
+                            HorizontalOptions="EndAndExpand"
+                            BackgroundColor="{StaticResource primaryColor}"
+                            CornerRadius="20"
+                            Padding="10"
+                            HasShadow="false">
+            
+                            <StackLayout 
+                                HorizontalOptions="Center"
+                                Orientation="Horizontal" >
+                                <Label 
+                                    TextColor="White"
+                                    VerticalOptions="Center" 
+                                    HorizontalOptions="Center"
+                                    FontSize="Large" 
+                                    FontAttributes="Bold"
+                                    Text="{Binding TotalText}" />
+                                
+                                    <Label 
+                                        TextColor="White"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="Center" 
+                                        x:Name="lblTotal"
+                                        FontSize="Large" />
+                            </StackLayout>         
+                        </Frame>
                     </StackLayout>
-                    <StackLayout Padding="0, 8">
-                        <Label Text="{Binding Item.Description}" FontSize="12" TextColor="{StaticResource grayLight}" />
-                    </StackLayout>
+                   
+                            
+                    <Label 
+                        Text="{Binding Item.Description}"
+                        FontSize="15"
+                        TextColor="Gray" />    
                 </StackLayout>
-            </StackLayout>
-        </Grid>
-        <controls:Divider />
-        <Grid RowSpacing="1" AbsoluteLayout.LayoutBounds="1, 0.75, 1,AutoSize" AbsoluteLayout.LayoutFlags="XProportional,YProportional, WidthProportional">
-            <StackLayout>
-                <StackLayout HeightRequest="100" Margin="10, 10, 10, 10">
-                    <ListView x:Name="ItemsListViewPrice" HasUnevenRows="true" ItemsSource="{Binding Item.Sizes}" ItemSelected="OnItemSelected">
+                    
+                <StackLayout>                    
+                    <StackLayout 
+                        BackgroundColor="#f9f9f9"
+                        Padding="10">
+                        
+                        <Label x:Name="pricesHeaderlbl"
+                           Text="الاسعار" 
+                           FontAttributes="Bold"
+                           FontSize="20"
+                           TextColor="{StaticResource secondryColorLight}"                                                    
+                           HorizontalOptions="StartAndExpand"/>
+                        
+                    </StackLayout>
+                    <ListView x:Name="ItemsListViewPrice" 
+                        Margin="20,0"
+                        SeparatorVisibility="None"
+                        HasUnevenRows="false" 
+                        VerticalOptions="Start"
+                        ItemSelected="OnItemSelected">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -46,11 +106,46 @@
                                                 <ColumnDefinition Width="*" />
                                                 <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
-                                            <Label Grid.Column="0" Text="{Binding SizeName}" TextColor="{StaticResource asphaltDark}" />
-                                            <StackLayout Grid.Column="1" Orientation="Horizontal">
-                                                <Label Text="{Binding Price}" FontSize="Small" TextColor="{StaticResource  asphaltDark}" VerticalOptions="CenterAndExpand" />
-                                                <!--                                                <Label Text="{Binding Price, StringFormat='{0:C}'}" FontSize="Small" TextColor="{StaticResource  asphaltDark}" VerticalOptions="CenterAndExpand" />-->
-                                                <Label Text="{Binding CurrencyText}" FontSize="Small" TextColor="{StaticResource asphaltDark}" VerticalOptions="CenterAndExpand" />
+                                            <StackLayout
+                                                Grid.Column="0" 
+                                                Orientation="Horizontal"
+                                                HorizontalOptions="StartAndExpand"> 
+                                                
+                                                <RelativeLayout>
+                                                    <Button 
+                                                        BackgroundColor="White"
+                                                        WidthRequest="26"
+                                                        HeightRequest="26"
+                                                        CornerRadius="13"
+                                                        BorderColor="Purple"
+                                                        BorderWidth="{Binding BtnColor}"
+                                                       >
+                                                        
+                                                    </Button>
+                                                    <!-- on button selected let borderWidth = 9 and let the others 3-->
+                                                </RelativeLayout>
+                                                
+                                                <Label Grid.Column="0"
+                                                    FontSize="Medium"
+                                                    Text="{Binding SizeName}"
+                                                    TextColor="{StaticResource asphaltDark}"
+                                                   VerticalTextAlignment="Center"/>   
+                                             
+                                            </StackLayout>
+                                            
+                                     
+                                            <StackLayout Grid.Column="1"
+                                                         Orientation="Horizontal">
+                                                <Label 
+                                                    Text="{Binding Price}"
+                                                    FontSize="Medium" 
+                                                    TextColor="{StaticResource asphaltDark}"
+                                                    VerticalOptions="CenterAndExpand" />
+                                               
+                                                <Label Text="{Binding CurrencyText}" 
+                                                       FontSize="Medium" 
+                                                       TextColor="{StaticResource asphaltDark}"
+                                                       VerticalOptions="CenterAndExpand" />
                                             </StackLayout>
                                         </Grid>
                                     </StackLayout>
@@ -59,25 +154,126 @@
                         </ListView.ItemTemplate>
                     </ListView>
                 </StackLayout>
-                <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Margin="10, 10, 10, 10">
-                    <Label TextColor="{StaticResource grayDark}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="16" Text="{Binding TotalText}" />
-                    <Label TextColor="{StaticResource grayDark}" VerticalOptions="Center" HorizontalOptions="Center" x:Name="lblTotal" FontSize="16" />
+                                  
+               
+                
+                
+            </StackLayout>
+        </ScrollView>
+        
+        <StackLayout 
+            HeightRequest="80"
+            BackgroundColor="White"
+            VerticalOptions="EndAndExpand"
+            Padding="20">
+              <Grid ColumnSpacing="10">
+            
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>  
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" >
+                    
+                     <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                    
+                  <controls:FlatButton Grid.Column="2"
+                    Image="plus"
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    BackgroundColor="Transparent"
+                    Clicked="PlusButton_OnClicked" />
+                   
+    
+                    <StackLayout Grid.Column="1" 
+                        VerticalOptions="Center" >
+                        <Label
+                            Text="0"
+                            TextColor="Black"
+                            x:Name="StepLabel" 
+                            FontSize="20"
+                            VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                      
+                    <controls:FlatButton Grid.Column="0"
+                        Image="minus"
+                        WidthRequest="50" 
+                        HeightRequest="50"
+                        Clicked="MinusButton_OnClicked" 
+                        BackgroundColor="Transparent"
+                    />
+                    
+                </Grid>
+                
+                <Button Grid.Column="1"
+                    TextColor="White"
+                    BorderRadius="20"
+                    FontSize="25"
+                    BackgroundColor="{StaticResource primaryColor}"
+                    Text="{Binding AddToBasketText}"
+                    Clicked="AddItemToCart_Clicked"/>
+                
+                </Grid>
+        </StackLayout>
+        
+        
+        
+        
+          
+<!-- <AbsoluteLayout>
+        <Grid RowSpacing="0"
+              AbsoluteLayout.LayoutBounds="0,0,1,.5"
+              AbsoluteLayout.LayoutFlags="All">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+                        <Grid Opacity=".5"
+                              BackgroundColor="{StaticResource asphaltDark}"
+                              HorizontalOptions="FillAndExpand"
+                              VerticalOptions="FillAndExpand" />
+                
+            <StackLayout 
+                    Padding="10, 10, 10,10 " 
+                    VerticalOptions="EndAndExpand">
+                <StackLayout 
+                        Spacing="0"
+                        Padding="5">
+                   
+                    <StackLayout Padding="0, 8">
+                       
+                    </StackLayout>
                 </StackLayout>
+            </StackLayout>
+        </Grid>
+        <controls:Divider />
+        <Grid RowSpacing="1" AbsoluteLayout.LayoutBounds="1, 0.75, 1,AutoSize" AbsoluteLayout.LayoutFlags="XProportional,YProportional, WidthProportional">
+            <StackLayout>
+                <StackLayout HeightRequest="100" Margin="10, 10, 10, 10">
+                   
+                </StackLayout>
+                
                 <controls:Divider />
-                <StackLayout Orientation="Horizontal" Margin="10, 10, 10, 10" HorizontalOptions="Center">
-                    <controls:FlatButton Image="minus" WidthRequest="30" HeightRequest="12" Clicked="MinusButton_OnClicked" BackgroundColor="Transparent" />
-                    <Grid VerticalOptions="Center">
-                        <Frame CornerRadius="8" BackgroundColor="{StaticResource grayLight}" HasShadow="False" OutlineColor="Transparent" WidthRequest="30" />
-                        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                            <Label TextColor="Black" x:Name="StepLabel" FontSize="15" />
-                        </StackLayout>
-                    </Grid>
-                    <controls:FlatButton Image="plus" WidthRequest="30" HeightRequest="15" BackgroundColor="Transparent" Clicked="PlusButton_OnClicked" />
-                </StackLayout>
+                
                 <controls:Divider />
             </StackLayout>
         </Grid>
-        <Button AbsoluteLayout.LayoutBounds=".5, 1, AutoSize, AutoSize" WidthRequest="300" AbsoluteLayout.LayoutFlags="PositionProportional" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="0, 0, 0, 10" Clicked="AddItemToCart_Clicked" Text="{Binding AddToBasketText}" />
+        <Button 
+        AbsoluteLayout.LayoutBounds=".5, 1,
+        AutoSize, AutoSize" 
+        WidthRequest="300" 
+        AbsoluteLayout.LayoutFlags="PositionProportional" 
+        HorizontalOptions="Center" 
+        VerticalOptions="EndAndExpand"
+        Margin="0, 0, 0, 10" 
+        Clicked="AddItemToCart_Clicked"
+        Text="{Binding AddToBasketText}" />
         
-    </AbsoluteLayout>
+    </AbsoluteLayout>-->
+    </StackLayout>
+    
+ 
 </ContentPage>

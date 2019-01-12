@@ -8,28 +8,44 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <StackLayout>
-        <ListView x:Name="CategoryListView" ItemsSource="{Binding Category}" VerticalOptions="FillAndExpand" HasUnevenRows="true" RefreshCommand="{Binding LoadCategoryCommand}" ItemAppearing="Handle_ItemAppearing" IsPullToRefreshEnabled="true" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement" ItemSelected="OnItemSelected">
+        <ListView 
+            x:Name="CategoryListView"
+            ItemsSource="{Binding ListOfCategories}"
+            IsGroupingEnabled="true"
+            SeparatorVisibility="None">
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="#f9f9f9">
+                            <Label Text="{Binding Heading}"
+                               TextColor="Black"
+                                   FontSize="25"
+                                   FontAttributes="Bold"/>
+                        </StackLayout>
+                       
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Spacing="{DynamicResource CardSpacing}" Padding="{DynamicResource CardPadding}">
-                            <controls:CardView>
-                                <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
-                                    <Grid HeightRequest="120">
-                                        <Image x:Name="photoImage" Source="{Binding imageURL}" Aspect="AspectFill" />
-                                    </Grid>
-                                    <StackLayout Padding="5, 1, 10, 5">
-                                        <StackLayout>
-                                            <Label Text="{Binding Text}" FontSize="Medium" TextColor="{StaticResource asphaltDark}" VerticalOptions="CenterAndExpand" />
-                                        </StackLayout>
-                                   
-                                    </StackLayout>
-                                </StackLayout>
-                            </controls:CardView>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="{Binding itemsKareem.imageURL}" WidthRequest="20" HeightRequest="20"/>
+                            
+                             <Label Text="{Binding Text}"  TextColor="Gray"
+                               FontSize="20"
+                              />
+                            
+                             <Label Text="{Binding itemsKareem.Description}"  TextColor="Gray"
+                               FontSize="20"
+                              />
                         </StackLayout>
+                      
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+      
     </StackLayout>
 </ContentPage>

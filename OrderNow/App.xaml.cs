@@ -15,13 +15,14 @@ namespace OrderNow
             InitializeComponent();
             if (!string.IsNullOrEmpty(SettingsCross.UEmail))
             {
-              //   SettingsCross.UEmail = null;
+                //   SettingsCross.UEmail = null;
                 Application.Current.MainPage = new MainPage();
             }
             else
             {
                 MainPage = new Login();
             }
+            //MainPage = new CategoryPage();
         }
 
         protected override void OnStart()

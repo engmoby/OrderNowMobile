@@ -15,7 +15,7 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -70,6 +70,9 @@
     <PackageReference Include="Xam.Plugins.Notifier">
       <Version>3.0.1</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -77,6 +80,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\EmptyClass.cs" />
     <Compile Include="Services\Toast_Android.cs" />
+    <Compile Include="ImageEntryRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -85,7 +89,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
-    <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\mipmap-anydpi-v26\icon.xml" />
@@ -160,12 +163,39 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_shopping_cart_white_24dp.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_wechat.png" />
     <AndroidResource Include="Resources\drawable\cart.png" />
-    <AndroidResource Include="Resources\drawable\scan.jpg" />
     <AndroidResource Include="Resources\drawable\friends.jpg" />
     <AndroidResource Include="Resources\drawable\table.jpg" />
     <AndroidResource Include="Resources\drawable\icon.png" />
     <AndroidResource Include="Resources\drawable\ComingSoon.jpg" />
     <AndroidResource Include="Resources\drawable\delete.png" />
+    <AndroidResource Include="Resources\drawable\gradient.axml" />
+    <AndroidResource Include="Resources\layout\Toolbar.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\user.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\lock.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\user.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\lock.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\user.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\lock.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\user.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\lock.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\scan.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\scan.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\scan.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\scan.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\camera_alt.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\camera_alt.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\camera_alt.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\camera_alt.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\bg.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\bg.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\bg.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\bg.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\profile.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\profile.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\profile.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\profile.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

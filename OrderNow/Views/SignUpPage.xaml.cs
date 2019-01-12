@@ -17,7 +17,7 @@ namespace OrderNow.Views
         {
             InitializeComponent();
             stackLoading.IsVisible = false;
-
+           
             btnRegister.IsEnabled = false;
         }
 

@@ -39,6 +39,8 @@ namespace OrderNow.Views
                     return;
                 MainPage RootPage = Application.Current.MainPage as MainPage;
 
+
+                
                 var id = (int)((HomeMenuItem)e.SelectedItem).Id;
                 if (id == 7)
                 {
@@ -46,6 +48,7 @@ namespace OrderNow.Views
                 }
                 else
                 {
+
                     await RootPage.NavigateFromMenu(id);
 
                 }

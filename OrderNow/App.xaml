@@ -20,6 +20,7 @@
             <Color x:Key="asphaltDark">#1C2B39</Color>
 
             <Color x:Key="primaryColorLight">#FFE0B2</Color>
+            <Color x:Key="secondryColorLight">#624181</Color>
             <Color x:Key="primaryColor">#FF9800</Color>
             <Color x:Key="primaryDarkColor">#F57C00</Color>
             <Color x:Key="accentColor">#FF5252</Color>

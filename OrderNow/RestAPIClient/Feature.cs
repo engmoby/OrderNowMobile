@@ -35,36 +35,13 @@ namespace Resturant.Models
         public Dictionary<string, string> CategoryNameDictionary { get; set; }
         public string imageURL { get; set; }
         public List<Item> items { get; set; }
+        public Item itemsKareem { get; set; } = new Item();
         public string Text { get; set; }
 
     }
-    //public class ItemList
-    //{
-    //    public List<Templates> Templates { get; set; }
-    //}
-    //public class Templates
-    //{
-    //    public List<ItemModels> ItemModels { get; set; }
-    //}
 
-    //public class ItemModels
-    //{
 
-    //    public int ItemID { get; set; }
-    //    public Dictionary<string, string> ItemNameDictionary { get; set; }
-    //    public Dictionary<string, string> ItemDescriptionDictionary { get; set; }
-    //    public string imageURL { get; set; }
 
-    //}
-    //public class Items
-    //{
-    //    public long ItemID { get; set; }
-    //    public Dictionary<string, string> ItemNameDictionary { get; set; }
-    //    public Dictionary<string, string> ItemDescriptionDictionary { get; set; }
-    //    public string imageURL { get; set; }
-    //    public int CategoryId { get; set; }
-
-    //}
     public class OrderClass
     {
         public Item Item { get; set; }

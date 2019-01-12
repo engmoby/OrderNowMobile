@@ -157,6 +157,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\HistoryDetailsPage.xaml.cs">
       <DependentUpon>HistoryDetailsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\NavigationPageGradientHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ImageEntry.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MainPage.xaml">

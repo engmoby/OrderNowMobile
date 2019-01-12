@@ -15,6 +15,7 @@ namespace OrderNow.Views
         public Login()
         {
             InitializeComponent();
+
             SettingsCross.UEmail = null;
             Constants.userDetailCredentials = null;
             Constants.OrderClass = new List<OrderClass>();
@@ -68,7 +69,9 @@ namespace OrderNow.Views
         }
         void OnRegisterClicked(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new SignUpPage();
+            
+            Navigation.PushModalAsync(new SignUpPage());
+            //Application.Current.MainPage = new SignUpPage();
         }
     }
 }

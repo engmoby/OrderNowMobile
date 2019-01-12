@@ -11,7 +11,7 @@ namespace Resturant.Class
         public static int Page = 1;
         public static List<OrderClass> OrderClass = new List<OrderClass>();
 
-        public static int TableId =0;
+        public static int TableId =1;
         public static int RestaurantId = 0;
         public static int UserId ;
 

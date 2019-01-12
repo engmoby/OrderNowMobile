@@ -25,8 +25,6 @@ namespace OrderNow.Views
                 if (newPage != null && Detail != newPage)
                 {
                     Detail = newPage;
-
-
                     IsPresented = false;
                 }
             }

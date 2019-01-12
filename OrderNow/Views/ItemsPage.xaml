@@ -9,8 +9,17 @@
         <ToolbarItem x:Name="cartNo">
         </ToolbarItem>
     </ContentPage.ToolbarItems>
+    
     <StackLayout>
-        <ListView x:Name="ItemsListView" ItemsSource="{Binding Items}" VerticalOptions="FillAndExpand" HasUnevenRows="true" RefreshCommand="{Binding LoadItemsCommand}" ItemAppearing="Handle_ItemAppearing" IsPullToRefreshEnabled="true" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement" ItemSelected="OnItemSelected">
+        <ListView 
+            x:Name="ItemsListView" 
+            ItemsSource="{Binding Items}"
+            VerticalOptions="FillAndExpand" 
+            HasUnevenRows="true"
+            RefreshCommand="{Binding LoadItemsCommand}"
+            ItemAppearing="Handle_ItemAppearing" 
+            IsPullToRefreshEnabled="true" 
+            IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement" ItemSelected="OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

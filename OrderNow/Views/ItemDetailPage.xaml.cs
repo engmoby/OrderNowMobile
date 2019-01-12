@@ -11,6 +11,7 @@ using System.Linq;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using Plugin.LocalNotifications;
+using System.Windows.Input;
 
 namespace OrderNow.Views
 {
@@ -21,14 +22,17 @@ namespace OrderNow.Views
         int currentCount = 1;
         Sizes selectedItemSize = new Sizes();
         float value = 0;
+
         public ItemDetailPage(ItemDetailViewModel viewModel)
         {
             InitializeComponent();
+            ItemsListViewPrice.ItemsSource = viewModel.Item.Sizes;
             if (Constants.OrderClass != null)
                 if (Constants.OrderClass.Count > 0)
                 {
                     cartNo.Text = Constants.OrderClass.Count.ToString();
                 }
+
             this.FlowDirection = (Constants.CurrentLang == "en-us" ? FlowDirection.LeftToRight : FlowDirection.RightToLeft);
             ItemsListViewPrice.FlowDirection = (Constants.CurrentLang == "en-us" ? FlowDirection.LeftToRight : FlowDirection.RightToLeft);
  
@@ -39,6 +43,7 @@ namespace OrderNow.Views
             lblTotal.Text = value.ToString();
 
         }
+       
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -54,9 +59,20 @@ namespace OrderNow.Views
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
+            var index = (ItemsListViewPrice.ItemsSource as List<Sizes>).IndexOf(args.SelectedItem as Sizes);
+
             var item = args.SelectedItem as Sizes;
             if (item == null)
                 return;
+
+            foreach (var element in viewModel.Item.Sizes)
+            {
+                element.BtnColor = 3;
+            }
+            ItemsListViewPrice.ItemsSource = null;
+            viewModel.Item.Sizes[index].BtnColor = 9;
+            ItemsListViewPrice.ItemsSource = viewModel.Item.Sizes;
+
             selectedItemSize = item;
             this.viewModel.Item.Price = item.Price.ToString();
             lblTotal.Text = item.Price.ToString();
@@ -65,6 +81,7 @@ namespace OrderNow.Views
             value = Convert.ToInt32(this.viewModel.Item.Price); 
             ItemsListViewPrice.SelectedItem = null;
         }
+
         void MinusButton_OnClicked(object sender, EventArgs e)
         {
             currentCount--;

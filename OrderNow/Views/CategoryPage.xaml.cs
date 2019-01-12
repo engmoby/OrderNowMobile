@@ -4,7 +4,8 @@ using Resturant.Class;
 using Resturant.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+using Java.Security;
+using System.Collections.Generic;
 
 namespace OrderNow.Views
 {
@@ -12,9 +13,10 @@ namespace OrderNow.Views
     public partial class CategoryPage : ContentPage
     {
         CategoryViewModel viewModel;
-    
+
         public CategoryPage()
         {
+
             InitializeComponent();
             this.FlowDirection = (Constants.CurrentLang == "en-us" ? FlowDirection.LeftToRight : FlowDirection.RightToLeft);
             if (Constants.OrderClass != null)

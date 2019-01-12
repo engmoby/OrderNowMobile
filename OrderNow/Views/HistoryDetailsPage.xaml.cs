@@ -8,6 +8,7 @@ namespace OrderNow.Views
     public partial class HistoryDetailsPage : ContentPage
     {
         List<RequestDetailModel> _requestDetailModel = new List<RequestDetailModel>();
+
         public HistoryDetailsPage(List<RequestDetailModel> requestDetailModel)
         {
             InitializeComponent();

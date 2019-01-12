@@ -15,6 +15,10 @@ namespace OrderNow.Views
         ItemsViewModel viewModel;
         bool isLoading;
 
+        public ItemsPage(){
+            InitializeComponent();
+        }
+
         public ItemsPage(ItemsViewModel viewModel)
         {
             InitializeComponent();
