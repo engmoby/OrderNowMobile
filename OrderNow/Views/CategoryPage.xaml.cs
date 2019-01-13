@@ -26,7 +26,7 @@ namespace OrderNow.Views
                     cartNo.Text = Constants.OrderClass.Count.ToString();
 
                 }
-                 
+
 
             BindingContext = viewModel = new CategoryViewModel();
         }
@@ -41,7 +41,7 @@ namespace OrderNow.Views
 
             // we need to revist models and edit them to fit the changes done in UI
 
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(categoryObj.itemsKareem)));
+            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(categoryObj.categoryItemObj)));
 
             // Manually deselect item.
             CategoryListView.SelectedItem = null;
@@ -59,33 +59,34 @@ namespace OrderNow.Views
             base.OnAppearing();
 
             if (Constants.OrderClass != null)
-               if (Constants.OrderClass.Count > 0)
+                if (Constants.OrderClass.Count > 0)
                 {
                     cartNo.Text = Constants.OrderClass.Count.ToString();
 
                 }
 
-            if (viewModel.Category.Count == 0)
-            {
-                viewModel.LoadCategoryCommand.Execute(null);
+            if (Constants.TableId != 0)
+                if (viewModel.Category.Count == 0)
+                {
+                    viewModel.LoadCategoryCommand.Execute(null);
 
-            }
+                }
 
 
         }
 
         void Handle_ItemAppearing(object sender, Xamarin.Forms.ItemVisibilityEventArgs e)
         {
-            if ( viewModel.Category.Count == 0)
+            if (viewModel.Category.Count == 0)
                 return;
 
             //hit bottom!
             if (e.Item == viewModel.Category[viewModel.Category.Count - 1])
             {
-                Constants.Page++; 
+                Constants.Page++;
             }
 
-        } 
+        }
 
     }
 }

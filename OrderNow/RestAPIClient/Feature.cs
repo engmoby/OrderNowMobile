@@ -35,7 +35,8 @@ namespace Resturant.Models
         public Dictionary<string, string> CategoryNameDictionary { get; set; }
         public string imageURL { get; set; }
         public List<Item> items { get; set; }
-        public Item itemsKareem { get; set; } = new Item();
+        //change from itemsKareem to categoryItemObj
+        public Item categoryItemObj { get; set; } = new Item();
         public string Text { get; set; }
 
     }

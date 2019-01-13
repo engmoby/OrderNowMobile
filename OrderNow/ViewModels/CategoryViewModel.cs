@@ -10,18 +10,20 @@ using OrderNow.Views;
 using Resturant.Class;
 using Resturant.Models;
 using System.Collections.Generic;
+using Resturant.RestAPIClient;
 
 namespace OrderNow.ViewModels
 {
     public class CategoryViewModel : BaseViewModel
     {
+        RestClientMenu _restControl = new RestClientMenu();
         public ObservableCollection<Category> Category { get; set; }
         public Command LoadCategoryCommand { get; set; }
         public Command LoadMoreCategoryCommand { get; set; }
         bool isLoading = false;
 
 
-       //-------------------------------//
+        //-------------------------------//
 
         private List<CategoryList> _listOfCategories;
         public List<CategoryList> ListOfCategories { get { return _listOfCategories; } set { _listOfCategories = value; base.OnPropertyChanged(); } }
@@ -34,39 +36,96 @@ namespace OrderNow.ViewModels
         //------------------------------//
         public CategoryViewModel()
         {
-            ///////////////////////////////////////
-            var sList = new CategoryList()
+            if (Constants.TableId ==0)
             {
-                new Category () { Text = "chiecken crispy", itemsKareem = {Description="hello from the other side", imageURL = "logo"}, items = null},
-                new Category () { Text = "faheta fra5", itemsKareem = {Description="hello from the other side", imageURL = "logo"}, items = null},
-                new Category () { Text = "baneh", itemsKareem = {Description="hello from the other side", imageURL = "logo"}, items = null}
-            };
-            sList.Heading = "Chicken";
-
-            var dList = new CategoryList()
+                return;
+            }
+            var getCategoryList = _restControl.GetAllICategoriesByTable(Constants.TableId);
+            ///////////////////////////////////////// 
+            foreach (var cat in getCategoryList)
             {
-                new Category () { Text = "beef"},
-                new Category () { Text = "meet balls"}
-            };
-            dList.Heading = "Meat";
+                var _List = new CategoryList();
+                var itemObj = new Item();
+                foreach (var item in cat.items)
+                {
+                    var sizesLang = new List<Sizes>();
+                    foreach (var sizeObj in item.Sizes)
+                    {
+                        sizesLang.Add(new Sizes
+                        {
+                            SizeId = sizeObj.SizeId,
+                            SizeName = sizeObj.SizeNameDictionary[Constants.CurrentLang],
+                            SizeNameDictionary = sizeObj.SizeNameDictionary,
+                            Price = sizeObj.Price
+                        });
+                    }
+
+                    itemObj = (new Item
+                    {
+                        Id = item.ItemID,
+                        TextFull = item.ItemNameDictionary[Constants.CurrentLang],
+                        Text = (item.ItemNameDictionary[Constants.CurrentLang].Length >= 25) ? item.ItemNameDictionary[Constants.CurrentLang].Substring(0, 25) : item.ItemNameDictionary[Constants.CurrentLang],
+                        ItemNameDictionary = item.ItemNameDictionary,
+                        DescriptionFull = item.ItemDescriptionDictionary[Constants.CurrentLang],
+                        Description = (item.ItemDescriptionDictionary[Constants.CurrentLang].Length >= 35) ? item.ItemDescriptionDictionary[Constants.CurrentLang].Substring(0, 35) : item.ItemDescriptionDictionary[Constants.CurrentLang],
+                        ItemDescriptionDictionary = item.ItemDescriptionDictionary,
+                        imageURL = item.imageURL + "?type='thumbnail'&date=" + DateTime.Now,
+                        Sizes = sizesLang,
+                        PriceText = Constants.CurrentLang == "en-us" ? "SAR" : "ريال"
+                    });
+                    _List.Add(new Category()
+                    {
+                        Text = item.ItemNameDictionary[Constants.CurrentLang],
+                        categoryItemObj = itemObj
+                    });
+
+                }
+                _List.Heading = cat.CategoryNameDictionary[Constants.CurrentLang];
+
+                if (ListOfCategories == null)
+                {
+                    var bindList = new List<CategoryList>()
+                    {
+                      _List
+                    };
+                    ListOfCategories = bindList;
+                }
+                else
+                    ListOfCategories.Add(_List);
+            }
+
+            //var sList = new CategoryList()
+            //{
+            //    new Category () { Text = "chiecken crispy", itemsKareem = {Description="hello from the other side", imageURL = "logo"}, items = null},
+            //    new Category () { Text = "faheta fra5", itemsKareem = {Description="hello from the other side", imageURL = "logo"}, items = null},
+            //    new Category () { Text = "baneh", itemsKareem = {Description="hello from the other side", imageURL = "logo"}, items = null}
+            //};
+            //sList.Heading = "Chicken";
+
+            //var dList = new CategoryList()
+            //{
+            //    new Category () { Text = "beef"},
+            //    new Category () { Text = "meet balls"}
+            //};
+            //dList.Heading = "Meat";
 
 
-            var jList = new CategoryList()
-            {
-                new Category () { Text = "tuna salad"},
-                new Category () { Text = "green salad"}
-            };
+            //var jList = new CategoryList()
+            //{
+            //    new Category () { Text = "tuna salad"},
+            //    new Category () { Text = "green salad"}
+            //};
 
-            jList.Heading = "Salads";
+            //jList.Heading = "Salads";
 
-            var list = new List<CategoryList>()
-            {
-                sList,
-                dList,
-                jList
-            };
+            //var list = new List<CategoryList>()
+            //{
+            //    sList,
+            //    dList,
+            //    jList
+            //};
 
-            ListOfCategories = list;
+            // ListOfCategories = list;
             ///////////////////////////////////////
 
 
@@ -101,7 +160,7 @@ namespace OrderNow.ViewModels
                 }
                 else
                 {
-                   Application.Current.MainPage = new MainPage();
+                    Application.Current.MainPage = new MainPage();
 
                 }
             }

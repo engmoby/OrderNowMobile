@@ -1,41 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage
-    xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    xmlns:controls="clr-namespace:OrderNow.Controls" 
-    x:Class="OrderNow.Views.ItemDetailPage" 
-    Title="{Binding Title}"
-    BackgroundImage="bg"
-    BackgroundColor="Red">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:OrderNow.Controls" x:Class="OrderNow.Views.ItemDetailPage" Title="{Binding Title}" BackgroundImage="bg" BackgroundColor="Red">
     <ContentPage.ToolbarItems>
-        <ToolbarItem 
-            x:Name="cartIcon" 
-            Icon="cart.png" 
-            Clicked="GotoBasket_Clicked">
+        <ToolbarItem x:Name="cartIcon" Icon="cart.png" Clicked="GotoBasket_Clicked">
         </ToolbarItem>
         <ToolbarItem x:Name="cartNo">
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-    
     <StackLayout VerticalOptions="FillAndExpand">
         <ScrollView>
             <StackLayout>
-                <Image 
-                    HeightRequest="150"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand" 
-                    Aspect="AspectFill" 
-                    Source="{Binding Item.imageURL}" />
-                
-                <StackLayout Padding="20" >
-                    
+                <Image HeightRequest="150" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill" Source="{Binding Item.imageURL}" />
+                <StackLayout Padding="20">
                     <!--  text and total-->
                     <StackLayout Orientation="Horizontal">
-                        
-                        <Label Text="{Binding Item.Text}"
-                            HorizontalOptions="StartAndExpand"
-                            VerticalTextAlignment="Center"
-                            FontSize="18" TextColor="Black">
+                        <Label Text="{Binding Item.TextFull}" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" FontSize="18" TextColor="Black">
                             <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS">HelveticaNeue-Light</On>
@@ -43,60 +21,20 @@
                                 </OnPlatform>
                             </Label.FontFamily>
                         </Label>
-                        <Frame 
-                            HorizontalOptions="EndAndExpand"
-                            BackgroundColor="#E5824E"
-                            CornerRadius="20"
-                            Padding="10"
-                            HasShadow="false">
-            
-                            <StackLayout 
-                                HorizontalOptions="Center"
-                                Orientation="Horizontal" >
-                                <Label 
-                                    TextColor="White"
-                                    VerticalOptions="Center" 
-                                    HorizontalOptions="Center"
-                                    FontSize="Large" 
-                                    FontAttributes="Bold"
-                                    Text="{Binding TotalText}" />
-                                
-                                    <Label 
-                                        TextColor="White"
-                                        VerticalOptions="Center"
-                                        HorizontalOptions="Center" 
-                                        x:Name="lblTotal"
-                                        FontSize="Large" />
-                            </StackLayout>         
+                        <Frame HorizontalOptions="EndAndExpand" BackgroundColor="#E5824E" CornerRadius="20" Padding="10" HasShadow="false">
+                            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                <Label TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold" Text="{Binding TotalText}" />
+                                <Label TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" x:Name="lblTotal" FontSize="Large" />
+                            </StackLayout>
                         </Frame>
                     </StackLayout>
-                   
-                            
-                    <Label 
-                        Text="{Binding Item.Description}"
-                        FontSize="15"
-                        TextColor="Gray" />    
+                    <Label Text="{Binding Item.DescriptionFull}" FontSize="15" TextColor="Gray" />
                 </StackLayout>
-                    
-                <StackLayout>                    
-                    <StackLayout 
-                        BackgroundColor="#f9f9f9"
-                        Padding="10">
-                        
-                        <Label x:Name="pricesHeaderlbl"
-                           Text="الاسعار" 
-                           FontAttributes="Bold"
-                           FontSize="20"
-                           TextColor="{StaticResource secondryColorLight}"                                                    
-                           HorizontalOptions="StartAndExpand"/>
-                        
+                <StackLayout>
+                    <StackLayout BackgroundColor="#f9f9f9" Padding="10">
+                        <Label x:Name="pricesHeaderlbl" Text="الاسعار" FontAttributes="Bold" FontSize="20" TextColor="{StaticResource secondryColorLight}" HorizontalOptions="StartAndExpand" />
                     </StackLayout>
-                    <ListView x:Name="ItemsListViewPrice" 
-                        Margin="20,0"
-                        SeparatorVisibility="None"
-                        HasUnevenRows="false" 
-                        VerticalOptions="Start"
-                        ItemSelected="OnItemSelected">
+                    <ListView x:Name="ItemsListViewPrice" Margin="20,0" SeparatorVisibility="None" HasUnevenRows="false" VerticalOptions="Start" ItemSelected="OnItemSelected">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -106,46 +44,17 @@
                                                 <ColumnDefinition Width="*" />
                                                 <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
-                                            <StackLayout
-                                                Grid.Column="0" 
-                                                Orientation="Horizontal"
-                                                HorizontalOptions="StartAndExpand"> 
-                                                
+                                            <StackLayout Grid.Column="0" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
                                                 <RelativeLayout>
-                                                    <Button 
-                                                        BackgroundColor="White"
-                                                        WidthRequest="26"
-                                                        HeightRequest="26"
-                                                        CornerRadius="13"
-                                                        BorderColor="Purple"
-                                                        BorderWidth="{Binding BtnColor}"
-                                                       >
-                                                        
+                                                    <Button BackgroundColor="White" WidthRequest="26" HeightRequest="26" CornerRadius="13" BorderColor="Purple" BorderWidth="{Binding BtnColor}">
                                                     </Button>
                                                     <!-- on button selected let borderWidth = 9 and let the others 3-->
                                                 </RelativeLayout>
-                                                
-                                                <Label Grid.Column="0"
-                                                    FontSize="Medium"
-                                                    Text="{Binding SizeName}"
-                                                    TextColor="{StaticResource asphaltDark}"
-                                                   VerticalTextAlignment="Center"/>   
-                                             
+                                                <Label Grid.Column="0" FontSize="Medium" Text="{Binding SizeName}" TextColor="{StaticResource asphaltDark}" VerticalTextAlignment="Center" />
                                             </StackLayout>
-                                            
-                                     
-                                            <StackLayout Grid.Column="1"
-                                                         Orientation="Horizontal">
-                                                <Label 
-                                                    Text="{Binding Price}"
-                                                    FontSize="Medium" 
-                                                    TextColor="{StaticResource asphaltDark}"
-                                                    VerticalOptions="CenterAndExpand" />
-                                               
-                                                <Label Text="{Binding CurrencyText}" 
-                                                       FontSize="Medium" 
-                                                       TextColor="{StaticResource asphaltDark}"
-                                                       VerticalOptions="CenterAndExpand" />
+                                            <StackLayout Grid.Column="1" Orientation="Horizontal">
+                                                <Label Text="{Binding Price}" FontSize="Medium" TextColor="{StaticResource asphaltDark}" VerticalOptions="CenterAndExpand" />
+                                                <Label Text="{Binding CurrencyText}" FontSize="Medium" TextColor="{StaticResource asphaltDark}" VerticalOptions="CenterAndExpand" />
                                             </StackLayout>
                                         </Grid>
                                     </StackLayout>
@@ -154,76 +63,30 @@
                         </ListView.ItemTemplate>
                     </ListView>
                 </StackLayout>
-                                  
-               
-                
-                
             </StackLayout>
         </ScrollView>
-        
-        <StackLayout 
-            HeightRequest="80"
-            BackgroundColor="White"
-            VerticalOptions="EndAndExpand"
-            Padding="20">
-              <Grid ColumnSpacing="10">
-            
+        <StackLayout HeightRequest="80" BackgroundColor="White" VerticalOptions="EndAndExpand" Padding="20">
+            <Grid ColumnSpacing="10">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>  
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0" >
-                    
-                     <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                    
-                  <controls:FlatButton Grid.Column="2"
-                    Image="plus"
-                    WidthRequest="50"
-                    HeightRequest="50"
-                    BackgroundColor="Transparent"
-                    Clicked="PlusButton_OnClicked" />
-                   
-    
-                    <StackLayout Grid.Column="1" 
-                        VerticalOptions="Center" >
-                        <Label
-                            Text="0"
-                            TextColor="Black"
-                            x:Name="StepLabel" 
-                            FontSize="20"
-                            VerticalTextAlignment="Center"/>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <controls:FlatButton Grid.Column="2" Image="plus" WidthRequest="50" HeightRequest="50" BackgroundColor="Transparent" Clicked="PlusButton_OnClicked" />
+                    <StackLayout Grid.Column="1" VerticalOptions="Center">
+                        <Label Text="0" TextColor="Black" x:Name="StepLabel" FontSize="20" VerticalTextAlignment="Center" />
                     </StackLayout>
-                      
-                    <controls:FlatButton Grid.Column="0"
-                        Image="minus"
-                        WidthRequest="50" 
-                        HeightRequest="50"
-                        Clicked="MinusButton_OnClicked" 
-                        BackgroundColor="Transparent"
-                    />
-                    
+                    <controls:FlatButton Grid.Column="0" Image="minus" WidthRequest="50" HeightRequest="50" Clicked="MinusButton_OnClicked" BackgroundColor="Transparent" />
                 </Grid>
-                
-                <Button Grid.Column="1"
-                    TextColor="White"
-                    BorderRadius="20"
-                    FontSize="25"
-                    BackgroundColor="#E5824E"
-                    Text="{Binding AddToBasketText}"
-                    Clicked="AddItemToCart_Clicked"/>
-                
-                </Grid>
+                <Button Grid.Column="1" TextColor="White" BorderRadius="20" FontSize="25" BackgroundColor="#E5824E" Text="{Binding AddToBasketText}" Clicked="AddItemToCart_Clicked" />
+            </Grid>
         </StackLayout>
-        
-        
-        
-        
-          
-<!-- <AbsoluteLayout>
+        <!-- <AbsoluteLayout>
         <Grid RowSpacing="0"
               AbsoluteLayout.LayoutBounds="0,0,1,.5"
               AbsoluteLayout.LayoutFlags="All">
@@ -274,6 +137,4 @@
         
     </AbsoluteLayout>-->
     </StackLayout>
-    
- 
 </ContentPage>

@@ -14,7 +14,8 @@ namespace Resturant.RestAPIClient
 		public async Task<bool> checkLogin(string username, string password)
         { 
             HttpClient client;
-            Uri baseUri = new Uri(Constants.ApiUrl); client = new HttpClient();
+            Uri baseUri = new Uri(Constants.ApiUrl); 
+            client = new HttpClient();
             client.MaxResponseContentBufferSize = 256000;
             var uri = new Uri(baseUri, "api/token");
 

@@ -1,119 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:controls="clr-namespace:OrderNow.Controls"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="OrderNow.Views.Login"
-    BackgroundColor="White">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:controls="clr-namespace:OrderNow.Controls" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="OrderNow.Views.Login" BackgroundColor="White">
     <ContentPage.Content>
-          <Grid 
-            HorizontalOptions="FillAndExpand" 
-            RowSpacing="20"> 
+        <Grid HorizontalOptions="FillAndExpand" RowSpacing="20">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="1.5*" />
             </Grid.RowDefinitions>
-            
-
-            <Image  Grid.Row="0" 
-                Source="logo"
-                Aspect="AspectFit"
-                Margin="0,60,0,0"/>
-
-            
-            <StackLayout Grid.Row="1" 
-                VerticalOptions="FillAndExpand"
-                x:Name="uiMain"
-                Padding="40,20">
-            
-                <StackLayout
-                    Padding="10" 
-                    VerticalOptions="StartAndExpand">
-                
-                <!-- email -->
-                <controls:ImageEntry  
-                    Placeholder="Enter your email" 
-                    PlaceholderColor="#bfbfbf"
-                    x:Name="usernameEntry"
-                    HorizontalOptions="FillAndExpand"
-                    LineColor="#bfbfbf"
-                    IsCurvedCornersEnabled="true"
-                    CornerRadius="21"
-                    WidthRequest="30"
-                    ImageAlignment="Right"
-                    Image="user"
-                    ImageWidth="30"
-                    ImageHeight="30">
-                    
-                </controls:ImageEntry>
-                
-                <!-- Password -->
-                 <controls:ImageEntry  
-                    x:Name="passwordEntry"
-                    IsPassword="true" 
-                    WidthRequest="30"
-                    Placeholder="Enter password"  
-                    PlaceholderColor="#bfbfbf"
-                    LineColor="#bfbfbf"
-                    IsCurvedCornersEnabled="true"
-                    CornerRadius="21"
-                    ImageAlignment="Right"                    
-                    HorizontalOptions="FillAndExpand"
-                    Image="lock"
-                    ImageWidth="30"
-                    ImageHeight="30"
-                    >
-                    
-                </controls:ImageEntry>
-                
-                <!-- message -->
-                 <Label x:Name="messageLabel"
-                        TextColor="Red"
-                        HorizontalOptions="CenterAndExpand"
-                        VerticalOptions="StartAndExpand"/>
-                
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>     
-                    </Grid.ColumnDefinitions>
-                
-                    <StackLayout Grid.Column="1" 
-                        IsEnabled ="{Binding IsLoading}"
-                        x:Name="loginStack">
-                        <controls:AnimateButton 
-                            Clicked="OnLoginButtonClicked" 
-                            Text="تسجيل الدخول"
-                            FontSize="18"
-                            TextColor="White"
-                            BackgroundColor="{StaticResource primaryColor}" 
-                            BorderRadius="20"/> 
+            <Image Grid.Row="0" Source="logo" Aspect="AspectFit" Margin="0,60,0,0" />
+            <StackLayout Grid.Row="1" VerticalOptions="FillAndExpand" x:Name="uiMain" Padding="40,20">
+                <StackLayout Padding="10" VerticalOptions="StartAndExpand">
+                    <!-- email -->
+                    <controls:ImageEntry Placeholder="Enter your email" Text="abdoclient@g.com" PlaceholderColor="#bfbfbf" x:Name="usernameEntry" HorizontalOptions="FillAndExpand" LineColor="#bfbfbf" IsCurvedCornersEnabled="true" CornerRadius="21" WidthRequest="30" ImageAlignment="Right" Image="user"
+                        ImageWidth="30" ImageHeight="30">
+                    </controls:ImageEntry>
+                    <!-- Password -->
+                    <controls:ImageEntry x:Name="passwordEntry" IsPassword="true" Text="12345678" WidthRequest="30" Placeholder="Enter password" PlaceholderColor="#bfbfbf" LineColor="#bfbfbf" IsCurvedCornersEnabled="true" CornerRadius="21" ImageAlignment="Right" HorizontalOptions="FillAndExpand"
+                        Image="lock" ImageWidth="30" ImageHeight="30">
+                    </controls:ImageEntry>
+                    <!-- message -->
+                    <Label x:Name="messageLabel" TextColor="Red" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="1" IsEnabled="{Binding IsLoading}" x:Name="loginStack">
+                            <controls:AnimateButton Clicked="OnLoginButtonClicked" Text="تسجيل الدخول" FontSize="18" TextColor="White" BackgroundColor="{StaticResource primaryColor}" BorderRadius="20" />
+                        </StackLayout>
+                        <StackLayout Grid.Column="0">
+                            <Button BorderRadius="20" Clicked="OnRegisterClicked" Text="إنشاء حساب" FontSize="18" TextColor="White" BackgroundColor="{StaticResource secondryColorLight}" />
+                        </StackLayout>
+                    </Grid>
+                    <StackLayout x:Name="stackLoading">
+                        <ActivityIndicator x:Name="indecator" Color="{StaticResource primaryColor}" HorizontalOptions="Center" VerticalOptions="EndAndExpand" />
                     </StackLayout>
-                
-                    <StackLayout Grid.Column="0">
-                     <Button  
-                        BorderRadius="20"
-                        Clicked="OnRegisterClicked" 
-                        Text="إنشاء حساب"
-                        FontSize="18"
-                        TextColor="White"
-                        BackgroundColor="{StaticResource secondryColorLight}"/>
-                    </StackLayout>
-            </Grid>
-                
-                <StackLayout x:Name="stackLoading">
-                    <ActivityIndicator
-                        x:Name="indecator" 
-                        Color="{StaticResource primaryColor}" 
-                        HorizontalOptions="Center" 
-                        VerticalOptions="EndAndExpand" />
+                </StackLayout>
             </StackLayout>
-                
-            </StackLayout>
- 
-        </StackLayout>
         </Grid>
-     
-       
-           
     </ContentPage.Content>
 </ContentPage>
