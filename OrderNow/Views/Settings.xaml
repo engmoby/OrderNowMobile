@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="OrderNow.Views.Settings">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OrderNow.Views.Settings"
+             BackgroundImage="bg">
     <ContentPage.Content>
   <StackLayout Padding="30" VerticalOptions="Start">
-            <ListView x:Name="listviewCategory" ItemTapped="Handle_ItemTappedAsync" HorizontalOptions="FillAndExpand" HasUnevenRows="True">
+            <ListView x:Name="listviewCategory"
+                    ItemTapped="Handle_ItemTappedAsync"
+                    HorizontalOptions="FillAndExpand" HasUnevenRows="True"
+                    SeparatorColor="#f9f9f9">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -11,10 +17,13 @@
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions> 
-                                <Label  Grid.Row="1" Text="{Binding LanguageName}"
-                                        HorizontalOptions="StartAndExpand" TextColor="Black"
-                                        FontAttributes="Bold" />
-                             </Grid>
+                                <Label  Grid.Row="1" 
+                                    Text="{Binding LanguageName}"
+                                    HorizontalOptions="StartAndExpand"
+                                    TextColor="Black"
+                                    FontAttributes="Bold"
+                                    FontSize="20"/>
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

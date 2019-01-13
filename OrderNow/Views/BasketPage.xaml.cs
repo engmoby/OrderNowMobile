@@ -21,6 +21,10 @@ namespace OrderNow.Views
 
         Timer timer = new Timer();
         OrderViewModel viewModel;
+        public BasketPage()
+        {
+            InitializeComponent();
+        }
         public BasketPage(OrderViewModel viewModel)
         {
             InitializeComponent();

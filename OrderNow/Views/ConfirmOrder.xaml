@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="OrderNow.Views.ConfirmOrder">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="OrderNow.Views.ConfirmOrder"
+    BackgroundImage="bg">
     <ContentPage.Content>
    <Grid>
             <Grid.RowDefinitions>
@@ -19,7 +22,7 @@
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
-                                    <Span x:Name="txtMessege" Text="Your Order Is sent Nowplease wait a minute..., will go to Menu in 6 second" ForegroundColor="#999999" FontSize="15" />
+                                    <Span x:Name="txtMessege" Text="Your Order has sent Now please wait a minute..., backing to Menu in 6 second" ForegroundColor="#999999" FontSize="15" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>

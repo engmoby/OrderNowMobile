@@ -4,7 +4,7 @@ using Resturant.Class;
 using Resturant.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Java.Security;
+//using Java.Security;
 using System.Collections.Generic;
 using System.Linq;
 
