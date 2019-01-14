@@ -1,40 +1,21 @@
 ﻿<Properties StartupConfiguration="{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}|Default">
-  <MonoDevelop.Ide.ItemProperties.OrderNow.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.FCCE90F2-11A6-422D-A90E-0F17731746BF" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="OrderNow/ViewModels/OrderViewModel.cs">
+  <MonoDevelop.Ide.ItemProperties.OrderNow.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.192.168.56.101:5555" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="OrderNow Status">
     <Files>
-      <File FileName="OrderNow/Views/BasketPage.xaml" Line="153" Column="55" />
-      <File FileName="OrderNow/Views/CategoryPage.xaml" Line="16" Column="39" />
-      <File FileName="OrderNow/App.xaml.cs" Line="26" Column="38" />
-      <File FileName="OrderNow/Views/BasketPage.xaml.cs" Line="28" Column="41" />
-      <File FileName="OrderNow/ViewModels/OrderViewModel.cs" Line="12" Column="18" />
+      <File FileName="OrderNow/Views/BasketPage.xaml" Line="80" Column="190" />
+      <File FileName="OrderNow/Views/ItemDetailPage.xaml" Line="72" Column="47" />
+      <File FileName="OrderNow/Views/ItemDetailPage.xaml.cs" Line="33" Column="73" />
+      <File FileName="OrderNow/Views/BasketPage.xaml.cs" Line="115" Column="56" />
+      <File FileName="OrderNow/Views/Login.xaml.cs" Line="36" Column="16" />
+      <File FileName="OrderNow/Views/ConfirmOrder.xaml" Line="15" Column="30" />
+      <File FileName="OrderNow/Views/CategoryPage.xaml" Line="30" Column="35" />
+      <File FileName="OrderNow Status" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="OrderNow" expanded="True">
-            <Node name="OrderNow" expanded="True">
-              <Node name="ViewModels" expanded="True">
-                <Node name="OrderViewModel.cs" selected="True" />
-              </Node>
-              <Node name="Views" expanded="True">
-                <Node name="BasketPage.xaml" expanded="True" />
-              </Node>
-              <Node name="App.xaml" expanded="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/Views/Login.xaml.cs" relfile="OrderNow/Views/Login.xaml.cs" line="63" column="1" />
-      <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/Views/BasketPage.xaml.cs" relfile="OrderNow/Views/BasketPage.xaml.cs" line="47" column="1" />
-      <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/Views/BasketPage.xaml.cs" relfile="OrderNow/Views/BasketPage.xaml.cs" line="49" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.OrderNow.Android AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.my_device" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
   <MultiItemStartupConfigurations />
 </Properties>

@@ -25,21 +25,10 @@
                                 <ColumnDefinition Width="100" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <StackLayout Grid.Column="0" >
-                               
-                                <Frame 
-                                   HasShadow="true"   
-                                   Padding="5"
-                                   BackgroundColor="White"
-                                   CornerRadius="0"
-                                   BorderColor="{StaticResource secondryColorLight}"
-                                   IsClippedToBounds="true">
-                                    <Image Source="{Binding categoryItemObj.imageURL}"
-                                        Aspect="Fill"
-                                        HeightRequest="100"
-                                        WidthRequest="100"/>
+                            <StackLayout Grid.Column="0">
+                                <Frame HasShadow="true" Padding="5" BackgroundColor="White" CornerRadius="0" BorderColor="{StaticResource secondryColorLight}" IsClippedToBounds="true">
+                                    <Image Source="{Binding categoryItemObj.imageURL}" Aspect="Fill" HeightRequest="100" WidthRequest="100" />
                                 </Frame>
-                           
                             </StackLayout>
                             <StackLayout Grid.Column="1" Spacing="5">
                                 <Label Text="{Binding Text}" TextColor="Gray" FontSize="20" />

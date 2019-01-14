@@ -1,11 +1,11 @@
+Newtonsoft.Json
+System.Runtime
 FastAndroidCamera
 FormsViewGroup
-Newtonsoft.Json
 Plugin.LocalNotifications.Abstractions
 Plugin.LocalNotifications
 Plugin.Settings.Abstractions
 Plugin.Settings
-System.Runtime
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Lifecycle.Common
 Xamarin.Android.Arch.Lifecycle.Runtime

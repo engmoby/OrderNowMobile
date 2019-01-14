@@ -1,30 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage
-    xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    xmlns:controls="clr-namespace:OrderNow.Controls"
-    xmlns:var="clr-namespace:Resturant.Class" 
-    x:Class="OrderNow.Views.BasketPage" Title="{Binding Title}"
-    BackgroundImage="bg">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:OrderNow.Controls" xmlns:var="clr-namespace:Resturant.Class" x:Class="OrderNow.Views.BasketPage" Title="{Binding Title}" BackgroundImage="bg">
     <ContentPage.Content>
-        <StackLayout >
-            <StackLayout 
-                BackgroundColor="#f9f9f9">
-                <Label Text="Order Details"
-                    TextColor="Black"
-                    FontSize="25"
-                    FontAttributes="Bold"
-                    Margin="20,10" />
+        <StackLayout>
+            <StackLayout BackgroundColor="#f9f9f9">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="{Binding OrderDetailsText}" TextColor="Black" FontSize="25" FontAttributes="Bold" Margin="20,10" />
+                    
+                    <Button Grid.Column="1" Clicked="GoToCategory" Text="{Binding OtherItemText}" TextColor="Black" FontSize="15" FontAttributes="Bold" Margin="20,10" />
+                </Grid>
             </StackLayout>
-            
             <!-- i have not started with the list yet, 
             i will enhance it when the issue being fixed-->
-            <ListView
-                x:Name="ordersLst"
-                HasUnevenRows="true" 
-                SeparatorVisibility="None"
-                SeparatorColor="{StaticResource grayPrimary}"
-                RowHeight="100">
+            <ListView x:Name="ordersLst" HasUnevenRows="true" SeparatorVisibility="None" SeparatorColor="{StaticResource grayPrimary}" RowHeight="100">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -35,11 +27,7 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
-                                    <Image WidthRequest="60"
-                                        Margin="10" 
-                                        HeightRequest="60" 
-                                        Source="{Binding Item.imageURL}"
-                                        HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFill" />
+                                    <Image WidthRequest="60" Margin="10" HeightRequest="60" Source="{Binding Item.imageURL}" HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFill" />
                                     <StackLayout Grid.Column="1" VerticalOptions="Center">
                                         <Label Text="{Binding Item.TextFull}" FontSize="Small" LineBreakMode="TailTruncation" TextColor="{StaticResource asphaltPrimary}" />
                                         <Label Text="{Binding Item.DescriptionFull}" FontSize="Micro" TextColor="{StaticResource grayPrimary}" />
@@ -53,8 +41,7 @@
                                             </AbsoluteLayout>
                                         </StackLayout>
                                         <controls:AnimateButton Image="arrow_down.png" Clicked="ButtonDown_OnClickedAsync" BackgroundColor="Transparent" WidthRequest="30" HeightRequest="30" />
-<!--                                            <controls:AnimateButton Image="delete.png" Clicked="Handle_Clicked" BackgroundColor="Transparent" WidthRequest="30" HeightRequest="20" />-->
-                                  
+                                        <!--                                            <controls:AnimateButton Image="delete.png" Clicked="Handle_Clicked" BackgroundColor="Transparent" WidthRequest="30" HeightRequest="20" />-->
                                     </StackLayout>
                                 </Grid>
                             </ViewCell.View>
@@ -62,104 +49,37 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-       
-            <StackLayout VerticalOptions="EndAndExpand"
-                Padding="20, 5, 20, 5">
-                
-                <StackLayout 
-                    Orientation="Horizontal" 
-                    HorizontalOptions="CenterAndExpand">
-                    <Label
-                        Text="SubTotal"
-                        FontSize="15"
-                        TextColor="Black" 
-                        HorizontalOptions="StartAndExpand"/>
-                    <Label 
-                        Text="{Binding TotalOrder, StringFormat='{0:C}'}"
-                        FontSize="Medium"
-                        TextColor="Black" />
-                    
-                </StackLayout>
-                
-                <BoxView 
-                    BackgroundColor="#f9f9f9"
-                    HeightRequest="2"
-                />
-                
-                <StackLayout 
-                    Orientation="Horizontal"
-                    HorizontalOptions="CenterAndExpand">
-                    <Label
-                        Text="{Binding TotalOrderText}"
-                        FontSize="Large"
-                        TextColor="Black" 
-                        HorizontalOptions="StartAndExpand"/>
-                    <Label 
-                        Text="{Binding TotalOrder, StringFormat='{0:C}'}"
-                        FontSize="Medium"
-                        TextColor="Black" />
-                </StackLayout>
-               
-                
-                    
-                <Frame
-                    CornerRadius="20"  
-                    Padding="10,20"
-                    BackgroundColor="{StaticResource primaryColor}">
+            <StackLayout VerticalOptions="EndAndExpand" Padding="20, 5, 20, 5">
+                <!--  <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label Text="SubTotal" FontSize="15" TextColor="Black" HorizontalOptions="StartAndExpand" />
+                    <Label Text="{Binding TotalOrder, StringFormat='{0:C}'}" FontSize="Medium" TextColor="Black" />
+                </StackLayout>-->
+                <BoxView BackgroundColor="#f9f9f9" HeightRequest="2" />
+                <!--    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label Text="{Binding TotalOrderText}" FontSize="Large" TextColor="Black" HorizontalOptions="StartAndExpand" />
+                    <Label Text="{Binding TotalOrder, StringFormat='{0:C}'}" FontSize="Medium" TextColor="Black" />
+                </StackLayout>-->
+                <Frame CornerRadius="20" Padding="10,13" BackgroundColor="{StaticResource primaryColor}">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        
-                        <StackLayout
-                            Grid.Column="0"
-                            VerticalOptions="CenterAndExpand">
-                            
+                        <StackLayout Grid.Column="0" VerticalOptions="CenterAndExpand">
                             <!--Bind num of ordered items -->
-                            <RelativeLayout  >
-                                <Button Text="2"
-                                    FontSize="14"
-                                    TextColor="{StaticResource primaryColor}"
-                                    WidthRequest="50"
-                                    HeightRequest="50"
-                                    CornerRadius="25"
-                                    BackgroundColor="White"
-                                    IsEnabled="false"/>
+                            <RelativeLayout>
+                                <Button x:Name="txtOrderCount" Text="2" FontSize="14" TextColor="{StaticResource primaryColor}" WidthRequest="50" HeightRequest="45" CornerRadius="25" BackgroundColor="White" IsEnabled="false" />
                             </RelativeLayout>
                         </StackLayout>
-                       
-                        <Label Grid.Column="1" Text="Check out Order"
-                           FontSize="18"
-                           FontAttributes="Bold"
-                           TextColor="White"
-                           HorizontalTextAlignment="Center"
-                           VerticalTextAlignment="Center"/>
-                        
+                        <Label Grid.Column="1" Text="{Binding CheckoutText}" FontSize="18" FontAttributes="Bold" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
                         <!-- bind total -->
-                        <Label Grid.Column="2" Text="250 EGP"
-                           FontSize="14"
-                           FontAttributes="Bold"
-                           TextColor="White"
-                           HorizontalTextAlignment="End"
-                           VerticalTextAlignment="Center"/>
-                        
-                          <!-- this button is added above the frame with
+                        <Label Grid.Column="2" Text="{Binding TotalOrder, StringFormat='{0:C}'}" FontSize="14" FontAttributes="Bold" TextColor="White" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                        <!-- this button is added above the frame with
                            transparent background so you feel that the frame is clickable -->
-               
-                        <controls:FloatingActionButton Grid.ColumnSpan="3" Margin="-10,-20"
-                            Command="{Binding CompleteOrder}"    
-                            BackgroundColor="Transparent"
-                            Clicked="SubmitOrder_ClickedAsync"
-                            CornerRadius="20"
-                            />
+                        <controls:FloatingActionButton Grid.ColumnSpan="3" Margin="-10,-20" Command="{Binding CompleteOrder}" BackgroundColor="Transparent" Clicked="SubmitOrder_ClickedAsync" CornerRadius="20" />
                     </Grid>
                 </Frame>
-                    
-                  
-                
-                
                 <!--<StackLayout VerticalOptions="EndAndExpand">                  
                     <controls:FloatingActionButton 
                         Command="{Binding CompleteOrder}" 
@@ -168,7 +88,7 @@
                         ButtonColor="{StaticResource accentColor}"
                         Image="check" Clicked="SubmitOrder_ClickedAsync" />    
                 </StackLayout>-->
-            </StackLayout>   
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

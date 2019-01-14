@@ -41,6 +41,7 @@ namespace OrderNow.Views
             }
             BindingContext = changeLang;
             ordersLst.ItemsSource = viewModel.Orders;
+            txtOrderCount.Text = Constants.OrderClass.Count.ToString();
 
         }
         async System.Threading.Tasks.Task SubmitOrder_ClickedAsync(object sender, System.EventArgs e)
@@ -48,7 +49,8 @@ namespace OrderNow.Views
 
             if (Constants.OrderClass.Count == 0)
             {
-                return;
+                await DisplayAlert("Alert", "No Items in your cart", "ok");
+                 return;
             }
             var request = new RequestModel();
             request.RequestDetails = new List<RequestDetailModel>();
@@ -103,13 +105,15 @@ namespace OrderNow.Views
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     Constants.OrderClass = new List<OrderClass>();
-                    this.viewModel = null;
-                    BindingContext = null;
+                   // this.viewModel = null;
+                   // BindingContext = null;
                     ordersLst.ItemsSource = null;
                     if (Constants.OrderClass.Count != 0)
                     {
                         this.viewModel.TotalOrder = Constants.OrderClass.Sum(x => x.TotalPrice);
                     }
+                    txtOrderCount.Text = Constants.OrderClass.Count.ToString();
+                    this.viewModel.TotalOrder = 0;
                 });
 
                 // Application.Current.MainPage = new MainPage();
@@ -126,12 +130,12 @@ namespace OrderNow.Views
                 {
 
                     this.viewModel.TotalOrder = Constants.OrderClass.Sum(x => x.TotalPrice);
-
+                    txtOrderCount.Text= Constants.OrderClass.Count.ToString();
                 });
 
             }
         }
-        private async System.Threading.Tasks.Task Handle_Clicked(object sender, EventArgs e)
+        private void Handle_Clicked(object sender, EventArgs e)
         {
             var button = sender as Button;
             var item = button.BindingContext as OrderClass;
@@ -188,6 +192,11 @@ namespace OrderNow.Views
 
             }
 
+        }
+
+        void GoToCategory(object sender, System.EventArgs e)
+        {
+            Application.Current.MainPage = new MainPage();
         }
     }
 }

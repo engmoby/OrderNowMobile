@@ -69,7 +69,7 @@
             <Grid ColumnSpacing="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <Grid.ColumnDefinitions>
@@ -83,7 +83,7 @@
                     </StackLayout>
                     <controls:FlatButton Grid.Column="0" Image="minus" WidthRequest="50" HeightRequest="50" Clicked="MinusButton_OnClicked" BackgroundColor="Transparent" />
                 </Grid>
-                <Button Grid.Column="1" TextColor="White" BorderRadius="20" FontSize="25" BackgroundColor="#E5824E" Text="{Binding AddToBasketText}" Clicked="AddItemToCart_Clicked" />
+                <Button Grid.Column="1" TextColor="White" BorderRadius="20" FontSize="17" BackgroundColor="#E5824E" Text="{Binding AddToBasketText}" Clicked="AddItemToCart_Clicked" />
             </Grid>
         </StackLayout>
         <!-- <AbsoluteLayout>

@@ -40,6 +40,18 @@ namespace OrderNow.ViewModels
         {
             get => (Constants.CurrentLang == "en-us" ? "Total Order :" : "المجموع الكلي: ");
         }
+        public string OtherItemText
+        {
+            get => (Constants.CurrentLang == "en-us" ? "Add Other Item" : "اضافه عنصر جديد");
+        }
+        public string OrderDetailsText
+        {
+            get => (Constants.CurrentLang == "en-us" ? "Order Details" : "تفاصيل الطلب");
+        }
+        public string CheckoutText
+        {
+            get => (Constants.CurrentLang == "en-us" ? "Check out Order :" : "الدفع: ");
+        }
         public string Title
         {
             get => (Constants.CurrentLang == "en-us" ? "Your Basket :" : "السلة الخاصة بك");
