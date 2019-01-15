@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="OrderNow.Views.MenuPage" Title="Menu" BackgroundColor="White" BackgroundImage="bg">
     <StackLayout Padding="40" VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand">
-        <Image Source="profile" WidthRequest="100" Aspect="AspectFit" />
+<!--        <Image Source="profile" WidthRequest="100" Aspect="AspectFit" />-->
         <ListView x:Name="ListViewMenu" HasUnevenRows="True" SeparatorVisibility="Default" SeparatorColor="#959595">
             <ListView.ItemTemplate>
                 <DataTemplate>

@@ -30,7 +30,7 @@ namespace OrderNow.ViewModels
         public List<CategoryList> ListOfCategories { get { return _listOfCategories; } set { _listOfCategories = value; base.OnPropertyChanged(); } }
 
 
-        public List<String> Headers { get; set; }   
+        public List<String> Headers { get; set; }
         public class CategoryList : List<Category>
         {
             public string Heading { get; set; }
@@ -39,14 +39,14 @@ namespace OrderNow.ViewModels
         //------------------------------//
         public CategoryViewModel()
         {
-            if (Constants.TableId ==0)
+            if (Constants.TableId == 0)
             {
                 return;
             }
             var getCategoryList = _restControl.GetAllICategoriesByTable(Constants.TableId);
 
             Headers = getCategoryList.Select(a => a.CategoryNameDictionary[Constants.CurrentLang]).ToList();
-            Headers.Insert(0,"All");
+            Headers.Insert(0, "All");
             ///////////////////////////////////////// 
             foreach (var cat in getCategoryList)
             {

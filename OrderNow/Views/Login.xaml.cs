@@ -19,7 +19,7 @@ namespace OrderNow.Views
             SettingsCross.UEmail = null;
             Constants.userDetailCredentials = null;
             Constants.OrderClass = new List<OrderClass>();
-            Constants.TableId = 1;
+            Constants.TableId = 0;
         }
 
 

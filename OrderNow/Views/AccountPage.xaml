@@ -5,10 +5,43 @@
     xmlns:controls="clr-namespace:OrderNow.Controls"
     BackgroundImage="bg">
     <ContentPage.Content>
-      
-        <StackLayout x:Name="layout" BackgroundColor="Green">
+    <!--  <StackLayout VerticalOptions="Center" Padding="25">
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Vertical" Padding="15">
+                    <Label Text="Email" Style="{StaticResource header}" />
+                    <controls:RestaurantEntry  Keyboard="Email" x:Name="usernameEntry" TextChanged="EMail_TextChanged" Placeholder="Email" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HasBorder="False" />
+                    <Label x:Name="lblmailvalidaiton" IsVisible="false" TextColor="Red" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="15">
+                    <Label Text="Password" Style="{StaticResource header}" />
+                    <controls:RestaurantEntry HasBorder="False" Placeholder="Password" HorizontalOptions="FillAndExpand" IsPassword="true" x:Name="passwordEntry" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="15">
+                    <Label Text="Confirm password" Style="{StaticResource header}" />
+                    <controls:RestaurantEntry HasBorder="False" TextChanged="confirm_TextChanged" Placeholder="Confirm password" HorizontalOptions="FillAndExpand" IsPassword="true" x:Name="confirmpasswordEntry" />
+                    <Label x:Name="lblconfirmvalidaiton" IsVisible="false" TextColor="Red" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="15">
+                    <Label Text="Phone" Style="{StaticResource header}" />
+                    <controls:RestaurantEntry HasBorder="False" Keyboard="Numeric" Placeholder="Phone" TextChanged="phone_TextChanged" HorizontalOptions="FillAndExpand" x:Name="phoneEntry" />
+                    <Label x:Name="lblphonevalidaiton" IsVisible="false" TextColor="Red" />
+                </StackLayout>
+                <StackLayout Padding="15">
+                    <controls:AnimateButton  x:Name="btnRegister" Clicked="SignUp_ClickedAsync" Text="Sign Up" BackgroundColor="{StaticResource primaryColor}" WidthRequest="300" HorizontalOptions="Center" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout x:Name="stackLoading" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="End" IsVisible="{Binding IsLoading}">
+                <Label VerticalOptions="Center" TextColor="{StaticResource asphaltPrimary}">Please wait...</Label>
+                <ActivityIndicator x:Name="indecator" VerticalOptions="Center" />
+            </StackLayout>
+            <StackLayout>
+                <Button AbsoluteLayout.LayoutBounds=".5, 1, AutoSize, AutoSize" WidthRequest="100" AbsoluteLayout.LayoutFlags="PositionProportional" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="0, 0, 0, 10" Clicked="onloginClick" Text="Log in" />
+            </StackLayout>
+        </StackLayout>-->
+        
+    <!--    <StackLayout x:Name="layout" BackgroundColor="Green">
             
-        </StackLayout>
+        </StackLayout>-->
         
     
         

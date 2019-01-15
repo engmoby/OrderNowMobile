@@ -26,6 +26,7 @@ namespace OrderNow.Views
         public ItemDetailPage(ItemDetailViewModel viewModel)
         {
             InitializeComponent();
+            ItemsListViewPrice.SelectedItem = null;
             ItemsListViewPrice.ItemsSource = viewModel.Item.Sizes;
             if (Constants.OrderClass != null)
                 if (Constants.OrderClass.Count > 0)
@@ -35,7 +36,7 @@ namespace OrderNow.Views
 
             this.FlowDirection = (Constants.CurrentLang == "en-us" ? FlowDirection.LeftToRight : FlowDirection.RightToLeft);
             ItemsListViewPrice.FlowDirection = (Constants.CurrentLang == "en-us" ? FlowDirection.LeftToRight : FlowDirection.RightToLeft);
- 
+
             BindingContext = this.viewModel = viewModel;
 
             value = Convert.ToInt32(this.viewModel.Item.Price);
@@ -43,14 +44,14 @@ namespace OrderNow.Views
             lblTotal.Text = value.ToString();
 
         }
-       
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
             if (Constants.OrderClass != null)
                 if (Constants.OrderClass.Count == 0)
                 {
-                    cartNo.Text = ""; 
+                    cartNo.Text = "";
 
                 }
 
@@ -78,8 +79,9 @@ namespace OrderNow.Views
             lblTotal.Text = item.Price.ToString();
             currentCount = 1;
             StepLabel.Text = currentCount.ToString();
-            value = Convert.ToInt32(this.viewModel.Item.Price); 
-            ItemsListViewPrice.SelectedItem = null;
+            value = Convert.ToInt32(this.viewModel.Item.Price);
+
+       
         }
 
         void MinusButton_OnClicked(object sender, EventArgs e)
@@ -111,7 +113,7 @@ namespace OrderNow.Views
         {
 
             await Navigation.PushAsync(new BasketPage(new OrderViewModel(Constants.OrderClass)));
- 
+
         }
         void AddItemToCart_Clicked(object sender, EventArgs e)
         {
@@ -121,14 +123,14 @@ namespace OrderNow.Views
             {
                 var addItemInfo = new Item();
 
-                addItemInfo = this.viewModel.Item; 
+                addItemInfo = this.viewModel.Item;
 
                 Constants.OrderClass.Add(new Resturant.Models.OrderClass
                 {
                     Item = addItemInfo,
                     Size = selectedItemSize,
                     Quantity = currentCount,
-                    TotalPrice = value, 
+                    TotalPrice = value,
                 });
                 cartNo.Text = Constants.OrderClass.Count.ToString();
             }
@@ -142,11 +144,12 @@ namespace OrderNow.Views
             StepLabel.Text = "1";
             lblTotal.Text = "0";
             selectedItemSize = new Sizes();
+
         }
         public ItemDetailPage()
         {
             InitializeComponent();
-   
+
         }
     }
 }

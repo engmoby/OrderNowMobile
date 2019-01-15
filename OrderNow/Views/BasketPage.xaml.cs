@@ -74,54 +74,7 @@ namespace OrderNow.Views
             await Navigation.PushAsync(new ConfirmOrder());
         }
 
-        void Delete_Clicked(object sender, System.EventArgs e)
-        {
-            var button = ((MenuItem)sender);
-            var item = button.BindingContext as OrderClass;
-            deleteFromBasket(true,item);
-        }
-
-        void deleteFromBasket(bool delete, OrderClass item){
-           
-            if (item.Quantity == 0 || delete == true)
-                Constants.OrderClass.RemoveAll(x => x.Item == item.Item && x.Size == item.Size);
-
-            if (Constants.OrderClass.Count == 0)
-            {
-
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    Constants.OrderClass = new List<OrderClass>();
-                    // this.viewModel = null;
-                    // BindingContext = null;
-                    ordersLst.ItemsSource = null;
-                    if (Constants.OrderClass.Count != 0)
-                    {
-                        this.viewModel.TotalOrder = Constants.OrderClass.Sum(x => x.TotalPrice);
-                    }
-                    txtOrderCount.Text = Constants.OrderClass.Count.ToString();
-                    this.viewModel.TotalOrder = 0;
-                });
-
-                // Application.Current.MainPage = new MainPage();
-            }
-            else
-            {
-                ordersLst.ItemsSource = null;
-                ordersLst.ItemsSource = this.viewModel.Orders;
-                // timer.Elapsed += OnTimerElapsed;
-                //timer.Start();
-
-
-                Device.BeginInvokeOnMainThread(() =>
-                {
-
-                    this.viewModel.TotalOrder = Constants.OrderClass.Sum(x => x.TotalPrice);
-                    txtOrderCount.Text = Constants.OrderClass.Count.ToString();
-                });
-
-            }
-        }
+       
         private async System.Threading.Tasks.Task ButtonDown_OnClickedAsync(object sender, EventArgs e)
         {
             var button = sender as Button;
@@ -199,7 +152,56 @@ namespace OrderNow.Views
 
             });
         }
+        void Delete_Clicked(object sender, System.EventArgs e)
+        {
+            var button = ((MenuItem)sender);
+            var item = button.BindingContext as OrderClass;
+            Constants.OrderClass.RemoveAll(x => x.Item == item.Item && x.Size == item.Size);
+            ordersLst.ItemsSource = null;
+            ordersLst.ItemsSource = this.viewModel.Orders;
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                this.viewModel.TotalOrder = Constants.OrderClass.Sum(x => x.TotalPrice);
 
+            });
+            // deleteFromBasket(true, item);
+        }
+
+        void deleteFromBasket(bool delete, OrderClass item)
+        {
+
+            if (item.Quantity == 0 || delete == true)
+                Constants.OrderClass.RemoveAll(x => x.Item == item.Item && x.Size == item.Size);
+
+            if (Constants.OrderClass.Count == 0)
+            {
+
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    Constants.OrderClass = new List<OrderClass>();
+                    ordersLst.ItemsSource = null;
+                    if (Constants.OrderClass.Count != 0)
+                    {
+                        this.viewModel.TotalOrder = Constants.OrderClass.Sum(x => x.TotalPrice);
+                    }
+                    txtOrderCount.Text = Constants.OrderClass.Count.ToString();
+                    this.viewModel.TotalOrder = 0;
+                });
+            }
+            else
+            {
+                ordersLst.ItemsSource = null;
+                ordersLst.ItemsSource = this.viewModel.Orders;
+
+                Device.BeginInvokeOnMainThread(() =>
+                {
+
+                    this.viewModel.TotalOrder = Constants.OrderClass.Sum(x => x.TotalPrice);
+                    txtOrderCount.Text = Constants.OrderClass.Count.ToString();
+                });
+
+            }
+        }
         public void ButtonUp_OnClicked(object sender, EventArgs e)
         {
             var button = sender as Button;

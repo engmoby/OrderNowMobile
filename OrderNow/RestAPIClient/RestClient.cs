@@ -78,5 +78,42 @@ namespace Resturant.RestAPIClient
 
             return response.IsSuccessStatusCode;
         }
+        //public void GetUserInfoByUserId()
+        //{
+        //    HttpClient client;
+        //    Uri baseUri = new Uri(Constants.ApiUrl);
+        //    client = new HttpClient();
+        //    client.MaxResponseContentBufferSize = 256000;
+        //    var uri = new Uri(baseUri, "api/token");
+
+
+        //    var postBody = new Dictionary<string, string>()
+        //        {
+        //        {"username", username},
+        //        {"password", password},
+        //        {"grant_type", "password"}
+        //        };
+
+        //    var content = new FormUrlEncodedContent(postBody);
+        //    var response = await client.PostAsync(uri, content);
+
+        //    var sdsd = new UserDetailCredentials();
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        //var storeService = DependencyService.Get<IUserDetailsStore>();
+        //        var result = await response.Content.ReadAsStringAsync();
+        //        var jsonData = JsonConvert.DeserializeObject<UserDetailCredentials>(result);
+        //        sdsd = jsonData;
+        //        //var token = jsonData["access_token"].Value<string>();
+        //        //Token should be saved in key chain instead of singleton class
+        //        //But for demo purposes, ill put it here
+        //        //  AccountDetailsStore.Instance.Token = token;
+        //        //storeService.SaveCredentials(phoneNumber, token);
+        //    }
+        //    Constants.userDetailCredentials = sdsd;
+
+        //    return response.IsSuccessStatusCode;
+        //}
+
     }
 }
