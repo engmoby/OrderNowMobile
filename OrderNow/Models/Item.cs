@@ -25,7 +25,7 @@ namespace OrderNow.Models
     }
     public class Sizes : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+         public event PropertyChangedEventHandler PropertyChanged;
         public long SizeId { get; set; }
         public Dictionary<string, string> SizeNameDictionary { get; set; }
         public string SizeName { get; set; }
