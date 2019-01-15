@@ -194,7 +194,9 @@ namespace OrderNow.Views
 
         void GoToCategory(object sender, System.EventArgs e)
         {
-            Application.Current.MainPage = new MainPage();
+            var x = Navigation.NavigationStack;
+            Navigation.PopAsync(); 
+           //Application.Current.MainPage = new MainPage();
         }
     }
 }

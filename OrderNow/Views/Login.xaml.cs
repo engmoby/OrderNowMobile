@@ -69,7 +69,6 @@ namespace OrderNow.Views
         }
         void OnRegisterClicked(object sender, EventArgs e)
         {
-            
             Navigation.PushModalAsync(new SignUpPage());
             //Application.Current.MainPage = new SignUpPage();
         }

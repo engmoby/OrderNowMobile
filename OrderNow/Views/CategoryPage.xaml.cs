@@ -7,7 +7,7 @@ using Xamarin.Forms.Xaml;
 //using Java.Security;
 using System.Collections.Generic;
 using System.Linq;
-using Android.Media.Audiofx;
+//using Android.Media.Audiofx;
 
 namespace OrderNow.Views
 {

@@ -296,6 +296,10 @@
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/R.cs.flag
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/R.txt
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/uploadflags.txt
+/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/res/drawable/instagram.png
+/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/res/drawable/twitter.png
+/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/res/drawable/done.png
+/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/res/drawable/confirm.png
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/bin/Debug/Mono.Android.pdb
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/bin/Debug/Newtonsoft.Json.pdb
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/bin/Debug/Xamarin.Forms.Core.pdb

@@ -118,7 +118,6 @@
     <AndroidResource Include="Resources\drawable\check.xml" />
     <AndroidResource Include="Resources\drawable\close.xml" />
     <AndroidResource Include="Resources\drawable\drawer_header_background.png" />
-    <AndroidResource Include="Resources\drawable\facebook.png" />
     <AndroidResource Include="Resources\drawable\google.png" />
     <AndroidResource Include="Resources\drawable\heart_outline_white.xml" />
     <AndroidResource Include="Resources\drawable\heart.xml" />
@@ -196,6 +195,11 @@
     <AndroidResource Include="Resources\drawable-hdpi\profile.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\profile.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\profile.png" />
+    <AndroidResource Include="Resources\drawable\instagram.png" />
+    <AndroidResource Include="Resources\drawable\twitter.png" />
+    <AndroidResource Include="Resources\drawable\facebook.png" />
+    <AndroidResource Include="Resources\drawable\confirm.png" />
+    <AndroidResource Include="Resources\drawable\done.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

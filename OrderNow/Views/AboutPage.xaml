@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="OrderNow.Views.AboutPage" xmlns:vm="clr-namespace:OrderNow.ViewModels" Title="{Binding Title}">
+             x:Class="OrderNow.Views.AboutPage" xmlns:vm="clr-namespace:OrderNow.ViewModels"
+             Title="{Binding Title}"
+             BackgroundImage="bg">
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
@@ -16,54 +18,55 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <StackLayout   VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="friends.jpg" VerticalOptions="Center" HeightRequest="200" />
-                </ContentView>
+        <StackLayout  
+            VerticalOptions="FillAndExpand" 
+            HorizontalOptions="Fill">
+            <StackLayout Padding="0,0"
+                Orientation="Horizontal" 
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+               
+                    <Image Source="friends.jpg" VerticalOptions="Center" Aspect="AspectFill" />
+               
             </StackLayout>
         </StackLayout>
-        <ScrollView Grid.Row="1">
-            <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
-                <Label FontSize="22">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="AppName" FontAttributes="Bold" FontSize="22" />
-                                <Span Text=" " />
-                                <Span Text="1.0" ForegroundColor="{StaticResource LightTextColor}" />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
+        <ScrollView Grid.Row="1" VerticalOptions="FillAndExpand" Margin="20,0">
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="10">
+                <Label FontSize="32"
+                       Text="App Name"
+                       TextColor="#6c2c91"
+                       FontAttributes="Bold">  
                 </Label>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="This app is written in C# and native APIs using the" />
-                                <Span Text=" " />
-                                <Span Text="Xamarin Platform" FontAttributes="Bold" />
-                                <Span Text="." />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="It shares code with its" />
-                                <Span Text=" " />
-                                <Span Text="iOS, Android, and Windows" FontAttributes="Bold" />
-                                <Span Text=" " />
-                                <Span Text="versions." />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-<!--                <Button Margin="0,10,0,0" Text="Learn more" Command="{Binding OpenWebCommand}" BackgroundColor="{StaticResource Primary}" TextColor="White" />-->
+                <Label 
+                    TextColor="#6c2c91"
+                    FontSize="15"
+                    Text="This app is written in C# and native APIs using the"/>
             </StackLayout>
+           
         </ScrollView>
+        
+         <Grid Grid.Row="2"
+               Padding="20" ColumnSpacing="0"
+               VerticalOptions="EndAndExpand">
+                <Button Image="facebook" 
+                    Grid.Column="0"
+                    BackgroundColor="Transparent"
+                    HeightRequest="100"
+                    WidthRequest="100"/>
+                
+               <Button Image="instagram" 
+                    Grid.Column="1"
+                    BackgroundColor="Transparent"
+                    HeightRequest="100"
+                    WidthRequest="100"/>
+                
+                 <Button Image="twitter" 
+                    Grid.Column="2"
+                    BackgroundColor="Transparent"
+                    HeightRequest="100"
+                    WidthRequest="100"/>
+            </Grid>
     </Grid>
 </ContentPage>
