@@ -6,15 +6,12 @@
     BackgroundImage="bg">
     <ContentPage.Content>
       
-        <StackLayout x:Name="layout" BackgroundColor="Green">
-            
-        </StackLayout>
-        
+     
     
         
-       <!-- <StackLayout>
+        <StackLayout>
             <Image Source="ComingSoon.jpg" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
-        </StackLayout>-->
+        </StackLayout>
           
             <!--<controls:FlatButton 
                 Image="minus" 

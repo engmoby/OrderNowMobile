@@ -33,32 +33,36 @@ namespace OrderNow.Views
 
             BindingContext = viewModel = new CategoryViewModel();
 
-            Grid grid = new Grid();
+            Grid grid = new Grid() { HorizontalOptions = LayoutOptions.FillAndExpand};
             grid.ColumnDefinitions = new ColumnDefinitionCollection();
-            for (int MyCount = 0; MyCount < viewModel.Headers.Count; MyCount++)
+            for (int MyCount = 0; MyCount < viewModel.ListOfCategories.Count; MyCount++)
             {
 
                 grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 button = new Button() 
                 {
                     TextColor = Color.Black,
-                    Text = viewModel.Headers[MyCount],
-                    ClassId = MyCount.ToString(),  // will be the categoryID to switch on it and do the filtering 
+                    Text = viewModel.ListOfCategories[MyCount].Heading,
+                    ClassId = viewModel.ListOfCategories[MyCount].categories[0].CategoryId.ToString(),  // will be the categoryID to switch on it and do the filtering 
                     BackgroundColor = Color.FromHex("#f9f9f9"),
                     BorderRadius = 20
                 };
-           
+
+                button.Clicked += Button_Clicked;
+
+
                 grid.Children.Add(button, MyCount,0);
             }
 
-            button.Clicked += Button_Clicked;
 
-            HeaderStack.Children.Add(grid);
+            HeaderStack.Content = grid;
         }
 
         void Button_Clicked(object sender, EventArgs e)
         {
-            var headerItemText = (sender as Button).ClassId;
+            var headerItemText = (sender as Button).Text;
+            CategoryListView.ItemsSource = null;
+            CategoryListView.ItemsSource= viewModel.ReOrderCategoriesList(headerItemText);
         }
 
        

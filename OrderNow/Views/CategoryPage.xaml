@@ -8,8 +8,8 @@
     </ContentPage.ToolbarItems>
     <StackLayout>
         
-        <ScrollView Orientation="Horizontal"  Padding="20,10">
-        <StackLayout x:Name="HeaderStack" Orientation="Horizontal">  </StackLayout>
+        <ScrollView x:Name="HeaderStack"  Orientation="Horizontal"  Padding="20,10">
+        
         </ScrollView>
         <ListView x:Name="CategoryListView"
                   ItemsSource="{Binding ListOfCategories}"

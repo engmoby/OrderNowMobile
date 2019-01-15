@@ -1,25 +1,24 @@
 ﻿<Properties StartupConfiguration="{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="OrderNow/RestAPIClient/RestClientMenu.cs">
+  <MonoDevelop.Ide.ItemProperties.OrderNow.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.FCCE90F2-11A6-422D-A90E-0F17731746BF" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="OrderNow/Views/AccountPage.xaml.cs">
     <Files>
-      <File FileName="OrderNow/RestAPIClient/RestClientMenu.cs" Line="52" Column="1" />
-      <File FileName="OrderNow/Views/CategoryPage.xaml" Line="12" Column="66" />
-      <File FileName="OrderNow/Views/MainPage.xaml.cs" Line="17" Column="1" />
-      <File FileName="OrderNow/App.xaml.cs" Line="26" Column="15" />
-      <File FileName="OrderNow.Android/MainActivity.cs" Line="22" Column="1" />
-      <File FileName="OrderNow/Views/AccountPage.xaml" Line="53" Column="15" />
-      <File FileName="OrderNow/Views/AccountPage.xaml.cs" Line="21" Column="88" />
-      <File FileName="OrderNow/Views/CategoryPage.xaml.cs" Line="56" Column="42" />
-      <File FileName="OrderNow/ViewModels/CategoryViewModel.cs" Line="48" Column="109" />
-      <File FileName="OrderNow/Views/ItemDetailPage.xaml" Line="140" Column="15" />
+      <File FileName="OrderNow/Views/CategoryPage.xaml.cs" Line="36" Column="85" />
+      <File FileName="OrderNow/ViewModels/CategoryViewModel.cs" Line="108" Column="1" />
+      <File FileName="OrderNow/RestAPIClient/Feature.cs" Line="37" Column="32" />
+      <File FileName="OrderNow/Views/AboutPage.xaml" Line="69" Column="15" />
+      <File FileName="OrderNow/Views/AccountPage.xaml" Line="14" Column="23" />
+      <File FileName="OrderNow/Views/CategoryPage.xaml" Line="12" Column="9" />
+      <File FileName="OrderNow/Views/AccountPage.xaml.cs" Line="26" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/Views/BasketPage.xaml.cs" relfile="OrderNow/Views/BasketPage.xaml.cs" line="80" column="1" />
       <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/Views/BasketPage.xaml.cs" relfile="OrderNow/Views/BasketPage.xaml.cs" line="79" column="1" />
-      <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/Views/BasketPage.xaml.cs" relfile="OrderNow/Views/BasketPage.xaml.cs" line="127" column="1" />
-      <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/Views/CategoryPage.xaml.cs" relfile="OrderNow/Views/CategoryPage.xaml.cs" line="61" column="61" />
+      <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/Views/BasketPage.xaml.cs" relfile="OrderNow/Views/BasketPage.xaml.cs" line="128" column="1" />
+      <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/Views/BasketPage.xaml.cs" relfile="OrderNow/Views/BasketPage.xaml.cs" line="90" column="1" />
+      <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/Views/BasketPage.xaml.cs" relfile="OrderNow/Views/BasketPage.xaml.cs" line="95" column="1" />
+      <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/Views/BasketPage.xaml.cs" relfile="OrderNow/Views/BasketPage.xaml.cs" line="130" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
