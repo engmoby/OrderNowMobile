@@ -8,7 +8,9 @@
     </ContentPage.ToolbarItems>
     <StackLayout>
         
-        <ScrollView Orientation="Horizontal" x:Name="HeaderStack" Padding="20,10"></ScrollView>
+        <ScrollView Orientation="Horizontal"  Padding="20,10">
+        <StackLayout x:Name="HeaderStack" Orientation="Horizontal">  </StackLayout>
+        </ScrollView>
         <ListView x:Name="CategoryListView"
                   ItemsSource="{Binding ListOfCategories}"
                   IsGroupingEnabled="true" SeparatorVisibility="Default"

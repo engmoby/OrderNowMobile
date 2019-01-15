@@ -51,7 +51,14 @@ namespace OrderNow.Views
                 grid.Children.Add(button, MyCount,0);
             }
 
+            button.Clicked += Button_Clicked;
+
             HeaderStack.Children.Add(grid);
+        }
+
+        void Button_Clicked(object sender, EventArgs e)
+        {
+            var headerItemText = (sender as Button).ClassId;
         }
 
        
