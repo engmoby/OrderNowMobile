@@ -5,8 +5,10 @@
     xmlns:controls="clr-namespace:OrderNow.Controls"
     BackgroundImage="bg">
     <ContentPage.Content>
-       <StackLayout BackgroundColor="Red">
-       </StackLayout>
+      
+        <StackLayout x:Name="layout" BackgroundColor="Green">
+            
+        </StackLayout>
         
     
         

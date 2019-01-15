@@ -34,7 +34,7 @@
                     <StackLayout BackgroundColor="#f9f9f9" Padding="10">
                         <Label x:Name="pricesHeaderlbl" Text="الاسعار" FontAttributes="Bold" FontSize="20" TextColor="{StaticResource secondryColorLight}" HorizontalOptions="StartAndExpand" />
                     </StackLayout>
-                    <ListView x:Name="ItemsListViewPrice" Margin="20,0" SeparatorVisibility="None" HasUnevenRows="false" VerticalOptions="Start" ItemSelected="OnItemSelected">
+                    <ListView x:Name="ItemsListViewPrice" Margin="20,0" SeparatorVisibility="None" HasUnevenRows="false" VerticalOptions="Start" ItemSelected="OnItemSelected" HeightRequest="250">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>

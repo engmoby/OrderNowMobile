@@ -7,7 +7,12 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <StackLayout>
-        <ListView x:Name="CategoryListView" ItemsSource="{Binding ListOfCategories}" IsGroupingEnabled="true" SeparatorVisibility="Default" ItemSelected="OnItemSelected" HasUnevenRows="true" SeparatorColor="#f7f7f7">
+        
+        <ScrollView Orientation="Horizontal" x:Name="HeaderStack" Padding="20,10"></ScrollView>
+        <ListView x:Name="CategoryListView"
+                  ItemsSource="{Binding ListOfCategories}"
+                  IsGroupingEnabled="true" SeparatorVisibility="Default"
+                  ItemSelected="OnItemSelected" HasUnevenRows="true" SeparatorColor="#f7f7f7">
             <ListView.GroupHeaderTemplate>
                 <DataTemplate>
                     <ViewCell>

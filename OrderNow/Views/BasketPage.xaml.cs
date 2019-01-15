@@ -74,29 +74,16 @@ namespace OrderNow.Views
             await Navigation.PushAsync(new ConfirmOrder());
         }
 
-        private async System.Threading.Tasks.Task ButtonDown_OnClickedAsync(object sender, EventArgs e)
+        void Delete_Clicked(object sender, System.EventArgs e)
         {
-            var button = sender as Button;
+            var button = ((MenuItem)sender);
             var item = button.BindingContext as OrderClass;
-            //if (item.Quantity ==1)
-            //{
-            //    return;
-            //}
-            item.Quantity--;
-            item.TotalPrice = item.Quantity * Convert.ToInt64(item.Size.Price);
+            deleteFromBasket(true,item);
+        }
 
-            //if (item.Quantity != 0)
-            //{
-            //this.viewModel.TotalOrder = item.Quantity * Convert.ToInt64(item.Item.Price);
-            //this.viewModel.Orders.FirstOrDefault
-            //(x => x.Item == item.Item && x.Item.Sizes.Any(z => z.SizeId == item.Item.Sizes[0].SizeId)).TotalPrice = item.Quantity * Convert.ToInt64(item.Item.Price);
-
-            // this.viewModel.Orders.Where(x => x.Item.Id == item.Item.Id && x.Item.Sizes.Any(z => z.SizeId == item.Item.Sizes[0].SizeId)).FirstOrDefault().TotalPrice = item.Quantity * Convert.ToInt64(item.Item.Price);
-            //this.viewModel.Orders.FirstOrDefault
-            //(x => x.Item == item.Item && x.Item.Sizes.Any(z => z.SizeId == item.Item.Sizes[0].SizeId)).Quantity = item.Quantity;
-
-            // }
-            if (item.Quantity == 0)
+        void deleteFromBasket(bool delete, OrderClass item){
+           
+            if (item.Quantity == 0 || delete == true)
                 Constants.OrderClass.RemoveAll(x => x.Item == item.Item && x.Size == item.Size);
 
             if (Constants.OrderClass.Count == 0)
@@ -105,8 +92,8 @@ namespace OrderNow.Views
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     Constants.OrderClass = new List<OrderClass>();
-                   // this.viewModel = null;
-                   // BindingContext = null;
+                    // this.viewModel = null;
+                    // BindingContext = null;
                     ordersLst.ItemsSource = null;
                     if (Constants.OrderClass.Count != 0)
                     {
@@ -130,10 +117,74 @@ namespace OrderNow.Views
                 {
 
                     this.viewModel.TotalOrder = Constants.OrderClass.Sum(x => x.TotalPrice);
-                    txtOrderCount.Text= Constants.OrderClass.Count.ToString();
+                    txtOrderCount.Text = Constants.OrderClass.Count.ToString();
                 });
 
             }
+        }
+        private async System.Threading.Tasks.Task ButtonDown_OnClickedAsync(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            var item = button.BindingContext as OrderClass;
+            //var button = sender as Button;
+            //var item = button.BindingContext as OrderClass;
+            //if (item.Quantity ==1)
+            //{
+            //    return;
+            //}
+            item.Quantity--;
+            item.TotalPrice = item.Quantity * Convert.ToInt64(item.Size.Price);
+            deleteFromBasket(false, item);
+
+            //if (item.Quantity != 0)
+            //{
+            //this.viewModel.TotalOrder = item.Quantity * Convert.ToInt64(item.Item.Price);
+            //this.viewModel.Orders.FirstOrDefault
+            //(x => x.Item == item.Item && x.Item.Sizes.Any(z => z.SizeId == item.Item.Sizes[0].SizeId)).TotalPrice = item.Quantity * Convert.ToInt64(item.Item.Price);
+
+            // this.viewModel.Orders.Where(x => x.Item.Id == item.Item.Id && x.Item.Sizes.Any(z => z.SizeId == item.Item.Sizes[0].SizeId)).FirstOrDefault().TotalPrice = item.Quantity * Convert.ToInt64(item.Item.Price);
+            //this.viewModel.Orders.FirstOrDefault
+            //(x => x.Item == item.Item && x.Item.Sizes.Any(z => z.SizeId == item.Item.Sizes[0].SizeId)).Quantity = item.Quantity;
+
+            // }
+            //if (item.Quantity == 0)
+            //Constants.OrderClass.RemoveAll(x => x.Item == item.Item && x.Size == item.Size);
+
+            //if (Constants.OrderClass.Count == 0)
+            //{
+
+            //    Device.BeginInvokeOnMainThread(() =>
+            //    {
+            //        Constants.OrderClass = new List<OrderClass>();
+            //       // this.viewModel = null;
+            //       // BindingContext = null;
+            //        ordersLst.ItemsSource = null;
+            //        if (Constants.OrderClass.Count != 0)
+            //        {
+            //            this.viewModel.TotalOrder = Constants.OrderClass.Sum(x => x.TotalPrice);
+            //        }
+            //        txtOrderCount.Text = Constants.OrderClass.Count.ToString();
+            //        this.viewModel.TotalOrder = 0;
+            //    });
+
+            //    // Application.Current.MainPage = new MainPage();
+            //}
+            //else
+            //{
+            //    ordersLst.ItemsSource = null;
+            //    ordersLst.ItemsSource = this.viewModel.Orders;
+            //    // timer.Elapsed += OnTimerElapsed;
+            //    //timer.Start();
+
+
+            //    Device.BeginInvokeOnMainThread(() =>
+            //    {
+
+            //        this.viewModel.TotalOrder = Constants.OrderClass.Sum(x => x.TotalPrice);
+            //        txtOrderCount.Text= Constants.OrderClass.Count.ToString();
+            //    });
+
+            //}
         }
         private void Handle_Clicked(object sender, EventArgs e)
         {

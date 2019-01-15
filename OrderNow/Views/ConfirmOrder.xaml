@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="OrderNow.Views.ConfirmOrder" BackgroundImage="bg">
     <ContentPage.Content>
-        <Grid>
+        <Grid VerticalOptions="CenterAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
@@ -13,14 +13,25 @@
                     </ContentView>
                 </StackLayout>
             </StackLayout>-->
-            <Frame CornerRadius="20" BackgroundColor="Gray" Margin="30,200" HeightRequest="200">
+            
+            <Frame CornerRadius="20" 
+                   BackgroundColor="#999999"
+                   Margin="30,0"
+                   HeightRequest="200" >
                                      
-                <StackLayout Orientation="Vertical" Padding="50,8,50,14" Spacing="10">
-                    <Label FontSize="15">
+                <StackLayout Orientation="Vertical" 
+                        Padding="50" Spacing="10">
+                    <Label 
+                        FontSize="18"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center">
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
-                                    <Span x:Name="txtMessege" Text="Your Order has sent Now please wait a minute..., backing to Menu in 6 second" ForegroundColor="#999999" FontSize="15" />
+                                    <Span x:Name="txtMessege" 
+                                        Text="Your Order has sent Now please wait a minute..., backing to Menu in 6 second" 
+                                          ForegroundColor="White"
+                                    />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>

@@ -7,6 +7,7 @@ using Xamarin.Forms.Xaml;
 //using Java.Security;
 using System.Collections.Generic;
 using System.Linq;
+using Android.Media.Audiofx;
 
 namespace OrderNow.Views
 {
@@ -14,6 +15,8 @@ namespace OrderNow.Views
     public partial class CategoryPage : ContentPage
     {
         CategoryViewModel viewModel;
+        Button button;
+       
 
         public CategoryPage()
         {
@@ -29,7 +32,30 @@ namespace OrderNow.Views
 
 
             BindingContext = viewModel = new CategoryViewModel();
+
+            Grid grid = new Grid();
+            grid.ColumnDefinitions = new ColumnDefinitionCollection();
+            for (int MyCount = 0; MyCount < viewModel.Headers.Count; MyCount++)
+            {
+
+                grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                button = new Button() 
+                {
+                    TextColor = Color.Black,
+                    Text = viewModel.Headers[MyCount],
+                    ClassId = MyCount.ToString(),  // will be the categoryID to switch on it and do the filtering 
+                    BackgroundColor = Color.FromHex("#f9f9f9"),
+                    BorderRadius = 20
+                };
+           
+                grid.Children.Add(button, MyCount,0);
+            }
+
+            HeaderStack.Children.Add(grid);
         }
+
+       
+
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {

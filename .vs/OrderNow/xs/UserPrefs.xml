@@ -1,21 +1,29 @@
 ﻿<Properties StartupConfiguration="{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}|Default">
-  <MonoDevelop.Ide.ItemProperties.OrderNow.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.192.168.56.101:5555" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="OrderNow Status">
+  <MonoDevelop.Ide.Workbench ActiveDocument="OrderNow/Views/ItemDetailPage.xaml">
     <Files>
-      <File FileName="OrderNow/Views/BasketPage.xaml" Line="80" Column="190" />
-      <File FileName="OrderNow/Views/ItemDetailPage.xaml" Line="72" Column="47" />
-      <File FileName="OrderNow/Views/ItemDetailPage.xaml.cs" Line="33" Column="73" />
-      <File FileName="OrderNow/Views/BasketPage.xaml.cs" Line="115" Column="56" />
-      <File FileName="OrderNow/Views/Login.xaml.cs" Line="36" Column="16" />
-      <File FileName="OrderNow/Views/ConfirmOrder.xaml" Line="15" Column="30" />
-      <File FileName="OrderNow/Views/CategoryPage.xaml" Line="30" Column="35" />
-      <File FileName="OrderNow Status" />
+      <File FileName="OrderNow/RestAPIClient/RestClientMenu.cs" Line="43" Column="1" />
+      <File FileName="OrderNow/Views/CategoryPage.xaml" Line="13" Column="59" />
+      <File FileName="OrderNow/Views/MainPage.xaml.cs" Line="17" Column="1" />
+      <File FileName="OrderNow/App.xaml.cs" Line="26" Column="15" />
+      <File FileName="OrderNow.Android/MainActivity.cs" Line="22" Column="1" />
+      <File FileName="OrderNow/Views/AccountPage.xaml" Line="9" Column="60" />
+      <File FileName="OrderNow/Views/AccountPage.xaml.cs" Line="21" Column="88" />
+      <File FileName="OrderNow/Views/CategoryPage.xaml.cs" Line="48" Column="53" />
+      <File FileName="OrderNow/ViewModels/CategoryViewModel.cs" Line="99" Column="1" />
+      <File FileName="OrderNow/Views/ItemDetailPage.xaml" Line="140" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/Views/BasketPage.xaml.cs" relfile="OrderNow/Views/BasketPage.xaml.cs" line="80" column="1" />
+      <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/Views/BasketPage.xaml.cs" relfile="OrderNow/Views/BasketPage.xaml.cs" line="79" column="1" />
+      <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/Views/BasketPage.xaml.cs" relfile="OrderNow/Views/BasketPage.xaml.cs" line="127" column="1" />
+      <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/ViewModels/CategoryViewModel.cs" relfile="OrderNow/ViewModels/CategoryViewModel.cs" line="49" column="1" />
+      <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/ViewModels/CategoryViewModel.cs" relfile="OrderNow/ViewModels/CategoryViewModel.cs" line="99" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.OrderNow.Android AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.my_device" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
   <MultiItemStartupConfigurations />
 </Properties>

@@ -11,6 +11,7 @@ using Resturant.Class;
 using Resturant.Models;
 using System.Collections.Generic;
 using Resturant.RestAPIClient;
+using System.Linq;
 
 namespace OrderNow.ViewModels
 {
@@ -28,6 +29,8 @@ namespace OrderNow.ViewModels
         private List<CategoryList> _listOfCategories;
         public List<CategoryList> ListOfCategories { get { return _listOfCategories; } set { _listOfCategories = value; base.OnPropertyChanged(); } }
 
+
+        public List<String> Headers { get; set; }   
         public class CategoryList : List<Category>
         {
             public string Heading { get; set; }
@@ -41,6 +44,9 @@ namespace OrderNow.ViewModels
                 return;
             }
             var getCategoryList = _restControl.GetAllICategoriesByTable(Constants.TableId);
+
+            Headers = getCategoryList.Select(a => a.CategoryNameDictionary[Constants.CurrentLang]).ToList();
+            Headers.Insert(0,"All");
             ///////////////////////////////////////// 
             foreach (var cat in getCategoryList)
             {

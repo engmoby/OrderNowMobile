@@ -23,7 +23,7 @@ namespace OrderNow
             {
                 MainPage = new Login();
             }
-          //  MainPage = new BasketPage();
+            //MainPage = new AccountPage();
         }
 
         protected override void OnStart()
