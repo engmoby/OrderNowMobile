@@ -123,13 +123,21 @@ namespace OrderNow.Views
 
             }
         }
-        private async System.Threading.Tasks.Task ButtonDown_OnClickedAsync(object sender, EventArgs e)
+        private void ButtonDown_OnClicked(object sender, EventArgs e)
         {
             var button = sender as Button;
             var item = button.BindingContext as OrderClass;
-            item.Quantity--;
-            item.TotalPrice = item.Quantity * Convert.ToInt64(item.Size.Price);
-            deleteFromBasket(item);
+            Constants.OrderClass.RemoveAll(x => x.Item == item.Item && x.Size == item.Size);
+            ordersLst.ItemsSource = null;
+            ordersLst.ItemsSource = this.viewModel.Orders;
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                this.viewModel.TotalOrder = Constants.OrderClass.Sum(x => x.TotalPrice);
+
+            });
+             //item.Quantity--;
+            //item.TotalPrice = item.Quantity * Convert.ToInt64(item.Size.Price);
+            //deleteFromBasket(item);
 
 
         }

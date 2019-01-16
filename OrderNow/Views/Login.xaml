@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:controls="clr-namespace:OrderNow.Controls" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="OrderNow.Views.Login" BackgroundColor="White">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:controls="clr-namespace:OrderNow.Controls"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="OrderNow.Views.Login" BackgroundColor="White">
     <ContentPage.Content>
         <Grid HorizontalOptions="FillAndExpand" RowSpacing="20">
             <Grid.RowDefinitions>

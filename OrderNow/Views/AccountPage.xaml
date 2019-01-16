@@ -1,89 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage  xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="OrderNow.Views.AccountPage"
-    xmlns:controls="clr-namespace:OrderNow.Controls"
-    BackgroundImage="bg">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="OrderNow.Views.AccountPage" xmlns:controls="clr-namespace:OrderNow.Controls" BackgroundImage="bg">
     <ContentPage.Content>
-      <Frame BackgroundColor="#f9f9f9"
-            Margin="15,50"
-            Padding="20,30"
-             OutlineColor="#f0f0f0"
-            HasShadow="true"
-            CornerRadius="30"
-             VerticalOptions="Start">
-        <Grid 
-            HorizontalOptions="FillAndExpand" 
-            
-            RowSpacing="20">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            
-            <Label Grid.Column="0" Grid.Row="0"
-                Text="Name: "
-                FontSize="20"
-                TextColor="#D0674B"/>
-            
-            <Label Grid.Column="1" Grid.Row="0"
-                Text="Kareem mohamed ibrhaeem"
-                FontSize="20"
-                TextColor="#6C2C91"
-                FontAttributes="Bold"/>
-            
-          <BoxView Grid.ColumnSpan="2" 
-                Grid.Row="1"
-                BackgroundColor="#f3f3f3"
-                HeightRequest="2"/>
-            
-            
-            
-            <Label Grid.Column="0" Grid.Row="2"
-                Text="Email: "
-                FontSize="20"
-                TextColor="#D0674B"/>
-            
-            <Label Grid.Column="1" Grid.Row="2"
-                Text="Kareem@mohamed.com"
-                FontSize="20"
-                TextColor="#6C2C91"
-                FontAttributes="Bold"/>
-            
-             <BoxView Grid.ColumnSpan="2" 
-                Grid.Row="3"
-                BackgroundColor="#f3f3f3"
-                HeightRequest="2"/>
-            
-            
-         
-            <Label Grid.Column="0" Grid.Row="4"
-                Text="Phone: "
-                FontSize="20"
-                TextColor="#D0674B"/>
-            
-            <Label Grid.Column="1" Grid.Row="4"
-                Text="010001113324"
-                FontSize="20"
-                TextColor="#6C2C91"
-                FontAttributes="Bold"/>
-            
-            
-            
-            
-        </Grid> 
-      </Frame>
-        
-    
-      
-        
+        <Frame BackgroundColor="#f9f9f9" Margin="15,50" Padding="20,30" OutlineColor="#f0f0f0" HasShadow="true" CornerRadius="30" VerticalOptions="Start">
+            <Grid HorizontalOptions="FillAndExpand" RowSpacing="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" Text="Email: " FontSize="20" TextColor="#D0674B" />
+                <Entry Grid.Column="1" Grid.Row="0" x:Name="TxtUsername" Keyboard="Email" FontSize="20" TextColor="#6C2C91" FontAttributes="Bold" />
+                <Label x:Name="lblmailvalidaiton" IsVisible="false" TextColor="Red" />
+                <BoxView Grid.ColumnSpan="2" Grid.Row="3" BackgroundColor="#f3f3f3" HeightRequest="2" />
+                <Label Grid.Column="0" Grid.Row="4" Text="Phone: " FontSize="20" TextColor="#D0674B" />
+                <Entry Grid.Column="1" Grid.Row="4" x:Name="TxtPhone" Keyboard="Telephone" FontSize="20" TextColor="#6C2C91" FontAttributes="Bold" />
+                <Label x:Name="lblphonevalidaiton" IsVisible="false" TextColor="Red" />
+                <BoxView Grid.ColumnSpan="2" Grid.Row="5" BackgroundColor="#f3f3f3" HeightRequest="2" />
+                <Label Grid.Column="0" Grid.Row="6" Text="Password: " FontSize="20" TextColor="#D0674B" />
+                <Entry Grid.Column="1" Grid.Row="6" x:Name="TxtPassword" IsPassword="true" FontSize="20" TextColor="#6C2C91" FontAttributes="Bold" />
+                <StackLayout Grid.Row="7">
+                    <controls:AnimateButton x:Name="btnRegister" Clicked="SignUp_ClickedAsync" Text="Submit" TextColor="#624181" BackgroundColor="#f7f7f7" WidthRequest="300" HorizontalOptions="Center" />
+                </StackLayout>
+                <StackLayout Grid.Row="8" x:Name="stackLoading" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="End" IsVisible="{Binding IsLoading}">
+                    <Label VerticalOptions="Center" TextColor="{StaticResource asphaltPrimary}">Please wait...</Label>
+                    <ActivityIndicator x:Name="indecator" VerticalOptions="Center" />
+                </StackLayout>
+            </Grid>
+        </Frame>
     </ContentPage.Content>
 </ContentPage>

@@ -1,19 +1,16 @@
 ﻿<Properties StartupConfiguration="{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}|Default">
-  <MonoDevelop.Ide.ItemProperties.OrderNow.Android PreferredExecutionTarget="Android.192.168.56.101:5555" />
+  <MonoDevelop.Ide.ItemProperties.OrderNow.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.192.168.56.101:5555" />
   <MonoDevelop.Ide.Workbench ActiveDocument="OrderNow Status">
     <Files>
-      <File FileName="OrderNow/Views/BasketPage.xaml.cs" Line="12" Column="26" />
-      <File FileName="OrderNow/Views/BasketPage.xaml" Line="147" Column="15" />
-      <File FileName="OrderNow/Views/CategoryPage.xaml" Line="50" Column="15" />
-      <File FileName="OrderNow/Views/CategoryPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="OrderNow/ViewModels/CategoryViewModel.cs" Line="1" Column="1" />
-      <File FileName="OrderNow/Views/ItemDetailPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="OrderNow/Views/AccountPage.xaml" Line="89" Column="15" />
-      <File FileName="OrderNow/Views/AccountPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="OrderNow/RestAPIClient/RestClient.cs" Line="1" Column="1" />
-      <File FileName="OrderNow/RestAPIClient/UserDetailCredentials.cs" Line="12" Column="26" />
-      <File FileName="../../../../Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="1323" Column="1" />
-      <File FileName="OrderNow.Android/Resources/values/styles.xml" Line="2" Column="1" />
+      <File FileName="OrderNow/Views/BasketPage.xaml.cs" Line="61" Column="54" />
+      <File FileName="OrderNow/Views/BasketPage.xaml" Line="88" Column="117" />
+      <File FileName="OrderNow/RestAPIClient/RestClient.cs" Line="89" Column="76" />
+      <File FileName="OrderNow/Views/AccountPage.xaml" Line="14" Column="45" />
+      <File FileName="OrderNow/Views/AccountPage.xaml.cs" Line="35" Column="56" />
+      <File FileName="OrderNow/Views/SignUpPage.xaml.cs" Line="14" Column="6" />
+      <File FileName="OrderNow/Views/SignUpPage.xaml" Line="22" Column="21" />
+      <File FileName="OrderNow/Views/Login.xaml" Line="2" Column="60" />
+      <File FileName="OrderNow/Views/AboutPage.xaml" Line="26" Column="20" />
       <File FileName="OrderNow Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
@@ -21,7 +18,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/mac/Projects/OrderNow/OrderNow/Views/CategoryPage.xaml.cs" relfile="OrderNow/Views/CategoryPage.xaml.cs" line="60" column="1" />
+      <Breakpoint file="/Users/mac/Projects/OrderNow/OrderNow/RestAPIClient/RestClient.cs" relfile="OrderNow/RestAPIClient/RestClient.cs" line="126" column="1" />
+      <Breakpoint file="/Users/mac/Projects/OrderNow/OrderNow/RestAPIClient/RestClient.cs" relfile="OrderNow/RestAPIClient/RestClient.cs" line="127" column="13" />
+      <Breakpoint file="/Users/mac/Projects/OrderNow/OrderNow/RestAPIClient/RestClient.cs" relfile="OrderNow/RestAPIClient/RestClient.cs" line="116" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
