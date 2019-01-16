@@ -25,6 +25,7 @@ namespace OrderNow.ViewModels
             set { SetProperty(ref isBusy, value); }
         }
 
+
         string title = string.Empty;
         public string Title
         {

@@ -17,8 +17,14 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-            <StackLayout Padding="0,0" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+        <StackLayout
+            VerticalOptions="FillAndExpand" 
+            HorizontalOptions="Fill">
+            <StackLayout 
+                Padding="0,0" 
+                Orientation="Horizontal" 
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
                 <Image Source="friends.jpg" VerticalOptions="Center" Aspect="AspectFill" />
             </StackLayout>
         </StackLayout>

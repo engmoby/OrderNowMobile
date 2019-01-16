@@ -2,15 +2,25 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Java.Lang;
+using Resturant.RestAPIClient;
+using OrderNow.RestAPIClient;
 
 namespace OrderNow.Views
 {
     public partial class ConfirmOrder : ContentPage
     {
-        public ConfirmOrder()
+        RestClientMenu _restClient = new RestClientMenu();
+        RequestModel _request = new RequestModel();
+        public ConfirmOrder(RequestModel request)
         {
-            InitializeComponent();
+            _request = request;
+
+
+            InitializeComponent( );
             base.OnAppearing();
+
+            submit();
             Device.StartTimer(TimeSpan.FromMilliseconds(6000), () =>
             {
                 Application.Current.MainPage = new MainPage();
@@ -18,7 +28,13 @@ namespace OrderNow.Views
             });
 
         }
-        private void btnGoMenu_Clicked(object sender, EventArgs e)
+        private async void submit ()
+        {
+            await _restClient.SubmitOrder(_request);
+        }
+
+       
+                   private void btnGoMenu_Clicked(object sender, EventArgs e)
         {
 
             Application.Current.MainPage = new MainPage();

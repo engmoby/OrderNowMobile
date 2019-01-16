@@ -34,12 +34,30 @@
                             </Grid.ColumnDefinitions>
                             <StackLayout Grid.Column="0">
                                 <Frame HasShadow="true" Padding="5" BackgroundColor="White" CornerRadius="0" BorderColor="{StaticResource secondryColorLight}" IsClippedToBounds="true">
-                                    <Image Source="{Binding categoryItemObj.imageURL}" Aspect="Fill" HeightRequest="100" WidthRequest="100" />
+                                    <Grid>
+                                    <ActivityIndicator 
+                                        IsRunning="true" 
+                                        Color="Purple" 
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="CenterAndExpand"/>
+                                    <Image
+                                        Source="{Binding categoryItemObj.imageURL}"
+                                        Aspect="Fill"
+                                        HeightRequest="100"
+                                        WidthRequest="100" />
+
+                                    </Grid>   
                                 </Frame>
                             </StackLayout>
                             <StackLayout Grid.Column="1" Spacing="5">
-                                <Label Text="{Binding Text}" TextColor="Gray" FontSize="20" />
-                                <Label Text="{Binding categoryItemObj.Description}" TextColor="Gray" FontSize="20" />
+                                <Label
+                                    Text="{Binding Text}"
+                                    TextColor="#743b87"
+                                    FontSize="27" />
+                                <Label 
+                                    Text="{Binding categoryItemObj.Description}"
+                                    TextColor="#646464"
+                                    FontSize="20" />
                             </StackLayout>
                         </Grid>
                     </ViewCell>

@@ -47,7 +47,9 @@
                                         <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
                                   
-                                     <Frame Margin="20,0"
+                                     <Frame Margin="20,0" Grid.Column="0"
+                                        WidthRequest="100"
+                                        HeightRequest="100"
                                         HasShadow="true" 
                                         Padding="5" 
                                         BackgroundColor="White"
@@ -64,14 +66,16 @@
                                     <StackLayout Grid.Column="1" VerticalOptions="Center">
                                         <Label 
                                             Text="{Binding Item.TextFull}" 
-                                            FontSize="15"
+                                            TextColor="#743b87"
+                                            FontSize="27"
                                             LineBreakMode="TailTruncation"
-                                            TextColor="{StaticResource asphaltPrimary}" 
+                                             
                                         />
                                         <Label 
                                             Text="{Binding Item.DescriptionFull}"
-                                            FontSize="13"
-                                            TextColor="{StaticResource grayPrimary}" />
+                                            TextColor="#646464"
+                                            FontSize="20"
+                                         />
                                         
                                         <Label Text="{Binding TotalPrice, StringFormat='Total: {0:C}'}"
                                             FontSize="15"

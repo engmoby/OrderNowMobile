@@ -17,6 +17,14 @@ namespace OrderNow.ViewModels
 {
     public class CategoryViewModel : BaseViewModel
     {
+
+        private bool isRunning = true;
+        public bool IsRunning
+        {
+            get { return isRunning; }
+            set { SetProperty(ref isRunning, value); }
+        }
+
         RestClientMenu _restControl = new RestClientMenu();
         public ObservableCollection<Category> Category { get; set; }
         public Command LoadCategoryCommand { get; set; }
@@ -60,6 +68,7 @@ namespace OrderNow.ViewModels
                     {
                         sizesLang.Add(new Sizes
                         {
+                            BtnColor = 3,
                             SizeId = sizeObj.SizeId,
                             SizeName = sizeObj.SizeNameDictionary[Constants.CurrentLang],
                             SizeNameDictionary = sizeObj.SizeNameDictionary,

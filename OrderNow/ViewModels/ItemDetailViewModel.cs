@@ -34,6 +34,8 @@ namespace OrderNow.ViewModels
         {
             Title = item?.Text;
             Item = item;
+           
+
         }
     }
 }

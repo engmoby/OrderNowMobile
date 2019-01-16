@@ -69,9 +69,9 @@ namespace OrderNow.Views
                     ItemSizeId = orderObj.Size.SizeId
                 });
             }
-            await _restClient.SubmitOrder(request);
+            //await _restClient.SubmitOrder(request);
             Constants.OrderClass = new List<OrderClass>();
-            await Navigation.PushAsync(new ConfirmOrder());
+            await Navigation.PushAsync(new ConfirmOrder(request));
         }
 
         void Delete_Clicked(object sender, System.EventArgs e)

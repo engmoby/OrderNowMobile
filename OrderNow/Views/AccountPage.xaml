@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="OrderNow.Views.AccountPage" xmlns:controls="clr-namespace:OrderNow.Controls" BackgroundImage="bg">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OrderNow.Views.AccountPage" 
+             xmlns:controls="clr-namespace:OrderNow.Controls"
+             BackgroundImage="bg">
     <ContentPage.Content>
-        <Frame BackgroundColor="#f9f9f9" Margin="15,50" Padding="20,30" OutlineColor="#f0f0f0" HasShadow="true" CornerRadius="30" VerticalOptions="Start">
-            <Grid HorizontalOptions="FillAndExpand" RowSpacing="20">
+        <Frame 
+            BackgroundColor="#f9f9f9"
+            Margin="15,50" Padding="20,30"
+            OutlineColor="Purple"
+            HasShadow="true" 
+            CornerRadius="30" 
+            VerticalOptions="Start">
+            <Grid HorizontalOptions="FillAndExpand" 
+                  RowSpacing="20"
+                  VerticalOptions="CenterAndExpand">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="3*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -18,22 +30,107 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <Label Grid.Column="0" Grid.Row="0" Text="Email: " FontSize="20" TextColor="#D0674B" />
-                <Entry Grid.Column="1" Grid.Row="0" x:Name="TxtUsername" Keyboard="Email" FontSize="20" TextColor="#6C2C91" FontAttributes="Bold" />
-                <Label x:Name="lblmailvalidaiton" IsVisible="false" TextColor="Red" />
-                <BoxView Grid.ColumnSpan="2" Grid.Row="3" BackgroundColor="#f3f3f3" HeightRequest="2" />
-                <Label Grid.Column="0" Grid.Row="4" Text="Phone: " FontSize="20" TextColor="#D0674B" />
-                <Entry Grid.Column="1" Grid.Row="4" x:Name="TxtPhone" Keyboard="Telephone" FontSize="20" TextColor="#6C2C91" FontAttributes="Bold" />
-                <Label x:Name="lblphonevalidaiton" IsVisible="false" TextColor="Red" />
-                <BoxView Grid.ColumnSpan="2" Grid.Row="5" BackgroundColor="#f3f3f3" HeightRequest="2" />
-                <Label Grid.Column="0" Grid.Row="6" Text="Password: " FontSize="20" TextColor="#D0674B" />
-                <Entry Grid.Column="1" Grid.Row="6" x:Name="TxtPassword" IsPassword="true" FontSize="20" TextColor="#6C2C91" FontAttributes="Bold" />
-                <StackLayout Grid.Row="7">
-                    <controls:AnimateButton x:Name="btnRegister" Clicked="SignUp_ClickedAsync" Text="Submit" TextColor="#624181" BackgroundColor="#f7f7f7" WidthRequest="300" HorizontalOptions="Center" />
+                <Label 
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Text="Email: "
+                    FontSize="20" 
+                    TextColor="#6C2C91"
+                    FontAttributes="Bold"
+                    VerticalTextAlignment="Center"/>
+                
+                <StackLayout Spacing="0" Grid.Column="1"
+                    Grid.Row="0">
+                    <controls:ImageEntry 
+                        x:Name="TxtUsername" 
+                        Keyboard="Email" 
+                        FontSize="20" 
+                        TextColor="Gray"
+                        FontAttributes="Bold"
+                        CornerRadius="20"
+                        LineColor="#D0674B"
+                        HorizontalOptions="StartAndExpand"
+                        HorizontalTextAlignment="Start"/>
+                
+                <Label
+                    x:Name="lblmailvalidaiton" 
+                    IsVisible="false"
+                    TextColor="Red" />
                 </StackLayout>
-                <StackLayout Grid.Row="8" x:Name="stackLoading" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="End" IsVisible="{Binding IsLoading}">
+                
+                    
+                <BoxView Grid.ColumnSpan="2" Grid.Row="3" BackgroundColor="#f3f3f3" HeightRequest="2" />
+                <Label
+                    Grid.Column="0" 
+                    Grid.Row="4" 
+                    Text="Phone: "
+                    FontSize="20"
+                    TextColor="#6C2C91"
+                    FontAttributes="Bold"
+                    VerticalTextAlignment="Center" />
+                
+                <StackLayout Grid.Row="4" Grid.Column="1"> 
+                    <controls:ImageEntry
+                        
+                        x:Name="TxtPhone"
+                        Keyboard="Telephone" 
+                        FontSize="20" 
+                        TextColor="Gray"
+                        FontAttributes="Bold"
+                        CornerRadius="20"
+                        LineColor="#D0674B"/>
+                    
+                    <Label 
+                        x:Name="lblphonevalidaiton"
+                        IsVisible="false"
+                        TextColor="Red" />
+                </StackLayout>
+                
+                
+                <BoxView Grid.ColumnSpan="2" Grid.Row="5" BackgroundColor="#f3f3f3" HeightRequest="2" />
+                <Label
+                    Grid.Column="0" 
+                    Grid.Row="6"    
+                    Text="Password: "
+                    FontSize="20"
+                     TextColor="#6C2C91"
+                    FontAttributes="Bold"
+                    VerticalTextAlignment="Center"
+                />
+                <controls:ImageEntry
+                    Grid.Column="1" 
+                    Grid.Row="6"
+                    x:Name="TxtPassword"
+                    IsPassword="true" 
+                    FontSize="20"
+                    TextColor="Gray" 
+                    FontAttributes="Bold" 
+                    CornerRadius="20"
+                    LineColor="#D0674B"/>
+                
+                <StackLayout Grid.Row="7" VerticalOptions="EndAndExpand" Grid.ColumnSpan="2">
+                    <controls:AnimateButton 
+                        x:Name="btnRegister" 
+                        Clicked="SignUp_ClickedAsync" 
+                        Text="Submit" 
+                        TextColor="White"
+                        BackgroundColor="#D0674B" 
+                        Margin="0,50,0,0"
+                        HorizontalOptions="FillAndExpand" 
+                        BorderRadius="20"/>
+                </StackLayout>
+                
+                <StackLayout Grid.Row="8" 
+                    Grid.ColumnSpan="2"
+                    x:Name="stackLoading"
+                    Orientation="Vertical" 
+                    HorizontalOptions="Center"
+                    IsVisible="{Binding IsLoading}">
                     <Label VerticalOptions="Center" TextColor="{StaticResource asphaltPrimary}">Please wait...</Label>
-                    <ActivityIndicator x:Name="indecator" VerticalOptions="Center" />
+                    <ActivityIndicator 
+                        x:Name="indecator"
+                        VerticalOptions="Center"
+                        Color="Purple"/>
                 </StackLayout>
             </Grid>
         </Frame>

@@ -41,7 +41,9 @@ namespace OrderNow.Views
                 grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 button = new Button() 
                 {
-                    TextColor = Color.Black,
+                    TextColor = Color.FromHex("#703384"),
+                    FontSize = 20,
+                    FontAttributes = FontAttributes.Bold,
                     Text = viewModel.ListOfCategories[MyCount].Heading,
                     ClassId = viewModel.ListOfCategories[MyCount].categories[0].CategoryId.ToString(),  // will be the categoryID to switch on it and do the filtering 
                     BackgroundColor = Color.FromHex("#f9f9f9"),

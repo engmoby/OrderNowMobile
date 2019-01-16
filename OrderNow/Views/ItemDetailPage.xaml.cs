@@ -18,7 +18,7 @@ namespace OrderNow.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemDetailPage : ContentPage
     {
-        ItemDetailViewModel viewModel;
+        ItemDetailViewModel viewModel = new ItemDetailViewModel();
         int currentCount = 1;
         Sizes selectedItemSize = new Sizes();
         float value = 0;
@@ -53,6 +53,10 @@ namespace OrderNow.Views
                     cartNo.Text = ""; 
 
                 }
+            foreach (var element in viewModel.Item.Sizes)
+            {
+                element.BtnColor = 3;
+            }
 
 
         }
@@ -115,6 +119,12 @@ namespace OrderNow.Views
         }
         void AddItemToCart_Clicked(object sender, EventArgs e)
         {
+            foreach (var element in viewModel.Item.Sizes)
+            {
+                element.BtnColor = 3;
+            }
+            ItemsListViewPrice.ItemsSource = null;
+            ItemsListViewPrice.ItemsSource = viewModel.Item.Sizes;
             if (selectedItemSize.SizeId == 0) return;
             var checkItemExist = Constants.OrderClass.Where(x => x.Item == this.viewModel.Item && x.Size == selectedItemSize).FirstOrDefault();
             if (checkItemExist == null)

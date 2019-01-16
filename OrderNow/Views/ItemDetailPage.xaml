@@ -13,7 +13,12 @@
                 <StackLayout Padding="20">
                     <!--  text and total-->
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="{Binding Item.TextFull}" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" FontSize="18" TextColor="Black">
+                        <Label 
+                            Text="{Binding Item.TextFull}" 
+                            HorizontalOptions="StartAndExpand" 
+                            VerticalTextAlignment="Center"
+                            TextColor="#743b87"
+                            FontSize="27">
                             <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS">HelveticaNeue-Light</On>
@@ -28,7 +33,10 @@
                             </StackLayout>
                         </Frame>
                     </StackLayout>
-                    <Label Text="{Binding Item.DescriptionFull}" FontSize="15" TextColor="Gray" />
+                    <Label
+                        Text="{Binding Item.DescriptionFull}" 
+                        FontSize="20" 
+                        TextColor="#646464" />
                 </StackLayout>
                 <StackLayout>
                     <StackLayout BackgroundColor="#f9f9f9" Padding="10">
