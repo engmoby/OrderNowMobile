@@ -36,12 +36,14 @@
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string></string>
+		<string>STC-Bold.ttf</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>Custom Property</key>
+	<dict/>
 </dict>
 </plist>

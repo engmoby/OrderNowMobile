@@ -60,7 +60,12 @@ namespace OrderNow.Views
                     SettingsCross.UserName = Constants.userDetailCredentials.Username;
                     SettingsCross.UserId = Constants.userDetailCredentials.UserId;
                     stackLoading.IsVisible = false;
-                    Application.Current.MainPage = new MainPage(); 
+                    Application.Current.MainPage = new GradientNavigationHeader.Controls
+                        .NavigationPageGradientHeader(new MainPage())
+                    {
+                        LeftColor = Color.FromHex("#713C86"),
+                        RightColor = Color.FromHex("#F5803A")
+                    };
                     //Application.Current.MainPage = new MyPage();
                 }
             }

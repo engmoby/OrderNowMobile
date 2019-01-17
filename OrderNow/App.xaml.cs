@@ -14,17 +14,26 @@ namespace OrderNow
         public App()
         {
             InitializeComponent();
-            //if (!string.IsNullOrEmpty(SettingsCross.UEmail))
+            if (!string.IsNullOrEmpty(SettingsCross.UEmail))
+            {
+                //   SettingsCross.UEmail = null;
+                Application.Current.MainPage = new GradientNavigationHeader.Controls.NavigationPageGradientHeader(new MainPage())
+                {
+                    LeftColor = Color.FromHex("#713C86"),
+                    RightColor = Color.FromHex("#F5803A"),
+                    Title = "hehe"
+                };
+            }
+            else
+            {
+                MainPage = new Login();
+            }
+           // MainPage = new Login();
+            //MainPage = new GradientNavigationHeader.Controls.NavigationPageGradientHeader(new Login())
             //{
-            //    //   SettingsCross.UEmail = null;
-            //    Application.Current.MainPage = new MainPage();
-            //}
-            //else
-            //{
-            //    MainPage = new Login();
-            //}
-            MainPage = new Login();
-           
+            //    LeftColor = Color.FromHex("#36ED81"),
+            //    RightColor = Color.FromHex("#109F8D")
+            //};
         }
 
         protected override void OnStart()

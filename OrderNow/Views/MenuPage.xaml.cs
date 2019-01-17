@@ -21,13 +21,13 @@ namespace OrderNow.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Category, Title= Constants.CurrentLang == "en-us" ? "Menu" : "قائمة الطعام" ,Icon="@drawable/ic_food.png" },
-                new HomeMenuItem {Id = MenuItemType.Scan, Title= Constants.CurrentLang == "en-us" ? "Scan" :"مسح" ,Icon="@drawable/ic_settings.png" },
-                new HomeMenuItem {Id = MenuItemType.Account, Title= Constants.CurrentLang == "en-us" ? "Account" :"الحساب" ,Icon="@drawable/ic_account.png" },
-                //new HomeMenuItem {Id = MenuItemType.History, Title= Constants.CurrentLang == "en-us" ? "History" : "الطلبات السابقه" ,Icon="@drawable/ic_account.png" },
-                new HomeMenuItem {Id = MenuItemType.About, Title=Constants.CurrentLang == "en-us" ? "About" : "عن الشركه " ,Icon="@drawable/ic_alert_circle_outline.png" },
-                new HomeMenuItem {Id = MenuItemType.Settings, Title= Constants.CurrentLang == "en-us" ? "Settings" :"الاعدادات" ,Icon="@drawable/ic_settings.png" },
-                new HomeMenuItem {Id = MenuItemType.SignOut, Title= Constants.CurrentLang == "en-us" ? "Logout" :"خروج" ,Icon="@drawable/ic_key_variant.png" }
+                new HomeMenuItem {Id = MenuItemType.Category, Title= Constants.CurrentLang == "en-us" ? "Menu" : "قائمة الطعام"  },
+                new HomeMenuItem {Id = MenuItemType.Scan, Title= Constants.CurrentLang == "en-us" ? "Scan" :"مسح"  },
+                new HomeMenuItem {Id = MenuItemType.Account, Title= Constants.CurrentLang == "en-us" ? "Account" :"الحساب"  },
+                //new HomeMenuItem {Id = MenuItemType.History, Title= Constants.CurrentLang == "en-us" ? "History" : "الطلبات السابقه"  },
+                new HomeMenuItem {Id = MenuItemType.About, Title=Constants.CurrentLang == "en-us" ? "About" : "عن الشركه " },
+                new HomeMenuItem {Id = MenuItemType.Settings, Title= Constants.CurrentLang == "en-us" ? "Settings" :"الاعدادات"  },
+                new HomeMenuItem {Id = MenuItemType.SignOut, Title= Constants.CurrentLang == "en-us" ? "Logout" :"خروج"  }
             };
 
             ListViewMenu.ItemsSource = menuItems;
@@ -48,8 +48,13 @@ namespace OrderNow.Views
                 }
                 else
                 {
+                    try
+                    {
+                        await RootPage.NavigateFromMenu(id);
+                    } catch(Exception ex){
+                        
+                    }
 
-                    await RootPage.NavigateFromMenu(id);
 
                 }
             };

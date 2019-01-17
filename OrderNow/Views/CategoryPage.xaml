@@ -24,7 +24,8 @@
                                 TextColor="Black" 
                                 FontSize="25"
                                 FontAttributes="Bold"
-                                Margin="20,10"/>
+                                Margin="20,10" FontFamily="STC Bold"
+                                />
                                                          
                         </StackLayout>
                     </ViewCell>
