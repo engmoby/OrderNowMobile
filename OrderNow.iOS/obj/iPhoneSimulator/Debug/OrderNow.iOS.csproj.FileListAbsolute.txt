@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/bin/iPhoneSimulator/Debug/OrderNow.iOS.exe
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/bin/iPhoneSimulator/Debug/OrderNow.iOS.pdb
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.dll
@@ -98,3 +99,42 @@
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/optimized/bg.png
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/optimized/bg@2x.png
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/optimized/bg@3x.png
+=======
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/ibtool/_BundleResourceWithLogicalName.items
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/actool/_PartialAppManifest.items
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/actool/_BundleResourceWithLogicalName.items
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/coremlc/_PartialAppManifest.items
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/coremlc/_BundleResourceWithLogicalName.items
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/optimized/tab_about.png
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/optimized/tab_about@2x.png
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/optimized/tab_about@3x.png
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/optimized/tab_feed.png
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/optimized/tab_feed@2x.png
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/optimized/tab_feed@3x.png
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/optimized/xamarin_logo.png
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/optimized/xamarin_logo@2x.png
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/optimized/xamarin_logo@3x.png
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/optimized/
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/OrderNow.iOS.csprojAssemblyReference.cache
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/OrderNow.iOS.csproj.CoreCompileInputs.cache
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/App.xaml.g.cs
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/Login.xaml.g.cs
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/Settings.xaml.g.cs
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/Controls/HeaderDivider.xaml.g.cs
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/Controls/Divider.xaml.g.cs
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/BasketPage.xaml.g.cs
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/Controls/StepperView.xaml.g.cs
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/ScanPage.xaml.g.cs
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/CategoryPage.xaml.g.cs
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/ConfirmOrder.xaml.g.cs
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/SignUpPage.xaml.g.cs
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/AccountPage.xaml.g.cs
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/HistoryPage.xaml.g.cs
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/HistoryDetailsPage.xaml.g.cs
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/MainPage.xaml.g.cs
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/AboutPage.xaml.g.cs
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/ItemDetailPage.xaml.g.cs
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/ItemsPage.xaml.g.cs
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/NewItemPage.xaml.g.cs
+/Users/mac/Projects/OrderNow/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/MenuPage.xaml.g.cs
+>>>>>>> 86384682ab8badf03fa16c9e33001fd3d95d535b

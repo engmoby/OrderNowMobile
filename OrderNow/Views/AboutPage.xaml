@@ -32,10 +32,10 @@
             <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="10">
                 <Label FontSize="32" Text="Order Now" TextColor="#6c2c91" FontAttributes="Bold">
                 </Label>
-                <Label TextColor="#6c2c91" FontSize="15" Text="This app is written in C# and native APIs using the" />
+                <Label TextColor="#6c2c91" FontSize="15" Text="Order Now is the easy way to get the food you love delivered" />
             </StackLayout>
         </ScrollView>
-        <Grid Grid.Row="2" Padding="20" ColumnSpacing="0" VerticalOptions="EndAndExpand">
+        <Grid Grid.Row="2"  IsVisible="false" Padding="30" ColumnSpacing="0" VerticalOptions="EndAndExpand">
             <Button Image="facebook" Grid.Column="0" BackgroundColor="Transparent" HeightRequest="50" WidthRequest="100" />
             <Button Image="instagram" Grid.Column="1" BackgroundColor="Transparent" HeightRequest="50" WidthRequest="100" />
             <Button Image="twitter" Grid.Column="2" BackgroundColor="Transparent" HeightRequest="50" WidthRequest="100" />

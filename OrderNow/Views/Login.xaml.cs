@@ -38,11 +38,7 @@ namespace OrderNow.Views
             else
             {
                 stackLoading.IsVisible = true;
-                indecator.IsRunning = true;
-
-
-
-                // Application.Current.MainPage = new MainPage();
+                indecator.IsRunning = true; 
                 var check = await _restClient.checkLogin(usernameEntry.Text, passwordEntry.Text);
                 if (!check)
                 {
@@ -61,6 +57,7 @@ namespace OrderNow.Views
                         return;
                     }
                     SettingsCross.UEmail = Constants.userDetailCredentials.access_token;
+                    SettingsCross.UserName = Constants.userDetailCredentials.Username;
                     SettingsCross.UserId = Constants.userDetailCredentials.UserId;
                     stackLoading.IsVisible = false;
                     Application.Current.MainPage = new MainPage(); 

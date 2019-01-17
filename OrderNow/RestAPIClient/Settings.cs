@@ -21,6 +21,12 @@ namespace OrderNow.RestAPIClient
 
             set => AppSettings.AddOrUpdateValue(nameof(UserId), value);
         }
+        public static string UserName
+        {
+            get => AppSettings.GetValueOrDefault(nameof(UserName), string.Empty);
+
+            set => AppSettings.AddOrUpdateValue(nameof(UserName), value);
+        }
 
         public static string Phone
         {

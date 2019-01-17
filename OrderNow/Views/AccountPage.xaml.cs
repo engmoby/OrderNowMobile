@@ -32,7 +32,7 @@ namespace OrderNow.Views
             {
                 TxtPhone.Text = SettingsCross.Phone;
                 TxtPassword.Text = SettingsCross.Password;
-                TxtUsername.Text = SettingsCross.UEmail;
+                TxtUsername.Text = SettingsCross.UserName;
             }
         }
 
