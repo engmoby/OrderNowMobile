@@ -8,6 +8,16 @@ namespace OrderNow.Controls
     {
         public AnimateButton()
         {
+            switch (Device.RuntimePlatform)
+            {
+                case Device.Android:
+                    FontFamily = "STC-Bold.ttf#STC Bold";
+                    break;
+                case Device.iOS:
+                    FontFamily = "STC Bold";
+                    break;
+
+            }
             const int animationTime = 75;
             Clicked += async (sender, e) =>
             {

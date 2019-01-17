@@ -7,6 +7,17 @@ namespace OrderNow.Controls
     {
         public ImageEntry()
         {
+            switch (Device.RuntimePlatform)
+            {
+                case Device.Android:
+                    FontFamily = "STC-Bold.ttf#STC Bold";
+                    break;
+                case Device.iOS:
+                    FontFamily = "STC Bold";
+                    break;
+                    
+            }
+
           //  this.HeightRequest = 50;
         }
         /*------------------------add border to entry-----------------------------*/

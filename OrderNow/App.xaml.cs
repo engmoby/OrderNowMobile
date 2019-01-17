@@ -14,16 +14,17 @@ namespace OrderNow
         public App()
         {
             InitializeComponent();
-            if (!string.IsNullOrEmpty(SettingsCross.UEmail))
-            {
-                //   SettingsCross.UEmail = null;
-                Application.Current.MainPage = new MainPage();
-            }
-            else
-            {
-                MainPage = new Login();
-            }
-           //MainPage = new ConfirmOrder();
+            //if (!string.IsNullOrEmpty(SettingsCross.UEmail))
+            //{
+            //    //   SettingsCross.UEmail = null;
+            //    Application.Current.MainPage = new MainPage();
+            //}
+            //else
+            //{
+            //    MainPage = new Login();
+            //}
+            MainPage = new Login();
+           
         }
 
         protected override void OnStart()

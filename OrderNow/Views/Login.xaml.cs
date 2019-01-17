@@ -64,6 +64,7 @@ namespace OrderNow.Views
                     SettingsCross.UserId = Constants.userDetailCredentials.UserId;
                     stackLoading.IsVisible = false;
                     Application.Current.MainPage = new MainPage(); 
+                    //Application.Current.MainPage = new MyPage();
                 }
             }
         }

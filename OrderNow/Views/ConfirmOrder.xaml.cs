@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using Java.Lang;
+//using Java.Lang;
 using Resturant.RestAPIClient;
 using OrderNow.RestAPIClient;
 

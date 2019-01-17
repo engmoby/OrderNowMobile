@@ -9,12 +9,12 @@
         <item name="windowNoTitle">true</item>
         <!--We will be using the toolbar so no need to show ActionBar-->
         <item name="windowActionBar">false</item>
-        <item name="android:windowFullscreen">true</item>
+       <!-- <item name="android:windowFullscreen">true</item>-->
         <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette -->
         <!-- colorPrimary is used for the default action bar background -->
         <item name="colorPrimary">#FF9800</item>
         <!-- colorPrimaryDark is used for the status bar -->
-        <item name="colorPrimaryDark">#F57C00</item>
+        <item name="colorPrimaryDark">#DD763D</item>
         <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
         <item name="colorAccent">#FF5252</item>

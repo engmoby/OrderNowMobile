@@ -7,7 +7,7 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <StackLayout VerticalOptions="FillAndExpand">
-        <ScrollView>
+        
             <StackLayout>
                 <Image HeightRequest="150" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill" Source="{Binding Item.imageURL}" />
                 <StackLayout Padding="20">
@@ -15,7 +15,7 @@
                     <StackLayout Orientation="Horizontal">
                         <Label 
                             Text="{Binding Item.TextFull}" 
-                            HorizontalOptions="StartAndExpand" 
+                            HorizontalOptions="Start" 
                             VerticalTextAlignment="Center"
                             TextColor="#743b87"
                             FontSize="27">
@@ -52,13 +52,22 @@
                                                 <ColumnDefinition Width="*" />
                                                 <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
-                                            <StackLayout Grid.Column="0" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                            <StackLayout Grid.Column="0"
+                                                         Orientation="Horizontal"
+                                                         HorizontalOptions="StartAndExpand">
                                                 <RelativeLayout>
-                                                    <Button BackgroundColor="White" WidthRequest="26" HeightRequest="26" CornerRadius="13" BorderColor="Purple" BorderWidth="{Binding BtnColor}">
+                                                    <Button BackgroundColor="White" 
+                                                            WidthRequest="26" 
+                                                            HeightRequest="26" 
+                                                            CornerRadius="13" 
+                                                            BorderColor="Purple" 
+                                                            BorderWidth="{Binding BtnColor}">
                                                     </Button>
                                                     <!-- on button selected let borderWidth = 9 and let the others 3-->
                                                 </RelativeLayout>
-                                                <Label Grid.Column="0" FontSize="Medium" Text="{Binding SizeName}" TextColor="{StaticResource asphaltDark}" VerticalTextAlignment="Center" />
+                                                <Label Grid.Column="0"
+                                                       FontSize="Medium"
+                                                       Text="{Binding SizeName}" TextColor="{StaticResource asphaltDark}" VerticalTextAlignment="Center" />
                                             </StackLayout>
                                             <StackLayout Grid.Column="1" Orientation="Horizontal">
                                                 <Label Text="{Binding Price}" FontSize="Medium" TextColor="{StaticResource asphaltDark}" VerticalOptions="CenterAndExpand" />
@@ -72,9 +81,12 @@
                     </ListView>
                 </StackLayout>
             </StackLayout>
-        </ScrollView>
-        <StackLayout HeightRequest="80" BackgroundColor="White" VerticalOptions="EndAndExpand" Padding="20">
-            <Grid ColumnSpacing="10">
+        
+        <StackLayout HeightRequest="60"
+                     BackgroundColor="#f9f9f9" 
+                     VerticalOptions="EndAndExpand" 
+                     Padding="20,10">
+            <Grid ColumnSpacing="10" VerticalOptions="CenterAndExpand">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="2*" />

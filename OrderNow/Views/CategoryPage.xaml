@@ -19,7 +19,13 @@
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout BackgroundColor="#f9f9f9">
-                            <Label Text="{Binding Heading}" TextColor="Black" FontSize="25" FontAttributes="Bold" Margin="20,10" />
+                            <Label
+                                Text="{Binding Heading}" 
+                                TextColor="Black" 
+                                FontSize="25"
+                                FontAttributes="Bold"
+                                Margin="20,10"/>
+                                                         
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
