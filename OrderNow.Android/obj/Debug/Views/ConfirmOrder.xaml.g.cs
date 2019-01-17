@@ -13,12 +13,20 @@
 namespace OrderNow.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/Views/ConfirmOrder.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/mac/Projects/OrderNow/OrderNow/Views/ConfirmOrder.xaml")]
     public partial class ConfirmOrder : global::Xamarin.Forms.ContentPage {
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.Label LblTime;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.Label LblTotalOrder;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ConfirmOrder));
+            LblTime = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "LblTime");
+            LblTotalOrder = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "LblTotalOrder");
         }
     }
 }

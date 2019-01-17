@@ -20,7 +20,6 @@
   </ManifestDocuments>
   <NativeLibraries />
   <Jars>
-    <Jar>obj/Debug/lp/1/jl/formsviewgroup.jar</Jar>
     <Jar>obj/Debug/lp/10/jl/bin/classes.jar</Jar>
     <Jar>obj/Debug/lp/11/jl/bin/classes.jar</Jar>
     <Jar>obj/Debug/lp/12/jl/support-annotations.jar</Jar>
@@ -38,6 +37,7 @@
     <Jar>obj/Debug/lp/24/jl/bin/classes.jar</Jar>
     <Jar>obj/Debug/lp/25/jl/bin/classes.jar</Jar>
     <Jar>obj/Debug/lp/26/jl/bin/classes.jar</Jar>
+    <Jar>obj/Debug/lp/3/jl/formsviewgroup.jar</Jar>
     <Jar>obj/Debug/lp/8/jl/arch-core-common.jar</Jar>
     <Jar>obj/Debug/lp/9/jl/arch-lifecycle-common.jar</Jar>
   </Jars>

@@ -48,7 +48,8 @@ namespace Resturant.RestAPIClient
 
             return response.IsSuccessStatusCode;
         }
-        public async Task<bool> SignUp(Dictionary<string, string> userModel)
+       
+         public async Task<bool> SignUp(Dictionary<string, string> userModel)
         {
             HttpClient client;
             Uri baseUri = new Uri(Constants.ApiUrl); client = new HttpClient();
