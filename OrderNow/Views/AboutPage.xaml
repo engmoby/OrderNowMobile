@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="OrderNow.Views.AboutPage" xmlns:vm="clr-namespace:OrderNow.ViewModels" Title="{Binding Title}" BackgroundImage="bg">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             x:Class="OrderNow.Views.AboutPage"
+             xmlns:vm="clr-namespace:OrderNow.ViewModels" Title="{Binding Title}" 
+             BackgroundImage="bg.png"
+             >
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>

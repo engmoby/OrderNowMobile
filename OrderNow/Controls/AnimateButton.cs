@@ -14,7 +14,7 @@ namespace OrderNow.Controls
                     FontFamily = "STC-Bold.ttf#STC Bold";
                     break;
                 case Device.iOS:
-                    FontFamily = "STC Bold";
+                    FontFamily = "STC-Bold";
                     break;
 
             }

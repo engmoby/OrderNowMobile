@@ -6,7 +6,7 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-[assembly: ExportRenderer(typeof(NavigationPageGradientHeader), typeof(NavigationPageGradientHeaderRenderer))]
+[assembly: ExportRenderer(typeof(UINavigationBar), typeof(NavigationRenderer))]
 namespace OrderNow.iOS
 {
     public class NavigationPageGradientHeaderRenderer : NavigationRenderer

@@ -16,13 +16,14 @@ namespace OrderNow
             InitializeComponent();
             if (!string.IsNullOrEmpty(SettingsCross.UEmail))
             {
-                //   SettingsCross.UEmail = null;
-                Application.Current.MainPage = new GradientNavigationHeader.Controls.NavigationPageGradientHeader(new MainPage())
-                {
-                    LeftColor = Color.FromHex("#713C86"),
-                    RightColor = Color.FromHex("#F5803A"),
-                    Title = "hehe"
-                };
+                Application.Current.MainPage = new MainPage();
+                //Application.Current.MainPage = new
+                //    GradientNavigationHeader.Controls.NavigationPageGradientHeader(new MainPage())
+                //{
+                //    LeftColor = Color.FromHex("#713C86"),
+                //    RightColor = Color.FromHex("#F5803A"),
+                  
+                //};
             }
             else
             {

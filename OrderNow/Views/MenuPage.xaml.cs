@@ -17,6 +17,7 @@ namespace OrderNow.Views
         public MenuPage()
         {
             InitializeComponent();
+            ListViewMenu.SelectedItem = null;
             this.FlowDirection = (Constants.CurrentLang == "en-us" ? FlowDirection.LeftToRight : FlowDirection.RightToLeft);
 
             menuItems = new List<HomeMenuItem>
@@ -32,11 +33,14 @@ namespace OrderNow.Views
 
             ListViewMenu.ItemsSource = menuItems;
 
-            ListViewMenu.SelectedItem = menuItems[0];
+            //ListViewMenu.SelectedItem = menuItems[0];
+            
             ListViewMenu.ItemSelected += async (sender, e) =>
             {
+                ListViewMenu.SelectedItem = null;
                 if (e.SelectedItem == null)
                     return;
+
                 MainPage RootPage = Application.Current.MainPage as MainPage;
 
 
@@ -51,8 +55,11 @@ namespace OrderNow.Views
                     try
                     {
                         await RootPage.NavigateFromMenu(id);
-                    } catch(Exception ex){
-                        
+                    }
+                    catch (Exception ex)
+                    {
+                        throw (ex);
+
                     }
 
 

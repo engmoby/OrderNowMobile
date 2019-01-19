@@ -8,6 +8,8 @@ using Xamarin.Forms.Xaml;
 using System.Collections.Generic;
 using System.Linq;
 //using Android.Media.Audiofx;
+//using Security;
+//using UIKit;
 
 namespace OrderNow.Views
 {
@@ -33,7 +35,7 @@ namespace OrderNow.Views
 
             BindingContext = viewModel = new CategoryViewModel();
 
-            Grid grid = new Grid() { HorizontalOptions = LayoutOptions.FillAndExpand};
+            Grid grid = new Grid() { HorizontalOptions = LayoutOptions.EndAndExpand};
             grid.ColumnDefinitions = new ColumnDefinitionCollection();
             for (int MyCount = 0; MyCount < viewModel.ListOfCategories.Count; MyCount++)
             {
@@ -41,13 +43,17 @@ namespace OrderNow.Views
                 grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 button = new Button() 
                 {
+
+                    HorizontalOptions = LayoutOptions.FillAndExpand,
                     TextColor = Color.FromHex("#703384"),
                     FontSize = 20,
                     FontAttributes = FontAttributes.Bold,
                     Text = viewModel.ListOfCategories[MyCount].Heading,
                     ClassId = viewModel.ListOfCategories[MyCount].categories[0].CategoryId.ToString(),  // will be the categoryID to switch on it and do the filtering 
                     BackgroundColor = Color.FromHex("#f9f9f9"),
+#pragma warning disable CS0618 // Type or member is obsolete
                     BorderRadius = 20
+#pragma warning restore CS0618 // Type or member is obsolete
                 };
 
                 button.Clicked += Button_Clicked;

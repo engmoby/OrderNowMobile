@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="OrderNow.Views.ConfirmOrder" BackgroundColor="#DD763D"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OrderNow.Views.ConfirmOrder" BackgroundColor="#DD7645"
              NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand" Margin="0,-50,0,0">
-            <Image Source="done" HeightRequest="128" WidthRequest="128" HorizontalOptions="CenterAndExpand" />
+        <StackLayout  VerticalOptions="CenterAndExpand"  Margin="0,-50,0,0">
+            <Image Source="done" 
+                   HeightRequest="128"
+                   WidthRequest="128"
+                   HorizontalOptions="CenterAndExpand" />
             <Grid RowSpacing="10" Padding="20">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -19,19 +24,52 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <StackLayout Grid.Column="1">
-                    <Label Text="placed" TextColor="#f0f0f0" Opacity="0.6" />
-                    <Label x:Name="LblTime" Text="5:30 PM" TextColor="#f0f0f0" FontSize="14" />
+                    <Label 
+                        Text="placed"
+                        TextColor="#f0f0f0" 
+                        Opacity="0.6" />
+                    <Label 
+                        x:Name="LblTime" 
+                        Text="5:30 PM" 
+                        TextColor="#f0f0f0" 
+                        FontSize="14" />
                 </StackLayout>
-                <StackLayout Grid.Row="1" Grid.Column="0">
-                    <Image Source="confirm" HeightRequest="32" HorizontalOptions="CenterAndExpand" WidthRequest="32" Margin="0,30,0,0" />
-                    <BoxView HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="White" HeightRequest="1" Rotation="90" WidthRequest="60" />
+                <StackLayout 
+                        Grid.Row="1"
+                        Grid.Column="0">
+                    <Image 
+                        Source="confirm" 
+                        HeightRequest="32"
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="32" Margin="0,30,0,0" />
+                    
+                    <BoxView    
+                        HorizontalOptions="CenterAndExpand" 
+                        VerticalOptions="CenterAndExpand" 
+                        BackgroundColor="White" 
+                        HeightRequest="1"
+                        Rotation="90"
+                        WidthRequest="60" />
                 </StackLayout>
                 <StackLayout Grid.Row="1" Margin="0,10,0,0" Grid.Column="1">
                     <Label Text="Your order has been placed" TextColor="#f0f0f0" FontSize="25" FontAttributes="Bold" />
                     <Label Text="and waiting to be approved" TextColor="#f0f0f0" FontSize="15" Opacity="0.7" />
                     <Label x:Name="LblTotalOrder" Text="180 SR" TextColor="White" FontSize="18" FontAttributes="Bold" Opacity="0.8" />
                 </StackLayout>
-              <!--  <StackLayout Grid.Row="2" Grid.Column="0">
+                     <!--
+                <StackLayout Grid.Row="2" Grid.Column="0">
+                    <RelativeLayout>
+                        <Button 
+                            IsEnabled="false"
+                            BackgroundColor="#f0f0f0"
+                            Opacity="0.7"
+                            WidthRequest="18" 
+                            HeightRequest="18" 
+                            CornerRadius="9"
+                            Margin="20,5" />
+                    </RelativeLayout>
+                </StackLayout>
+           <StackLayout Grid.Row="2" Grid.Column="0">
                     <RelativeLayout>
                         <Button IsEnabled="false" BackgroundColor="#f0f0f0" Opacity="0.7" WidthRequest="18" HeightRequest="18" CornerRadius="9" Margin="20,5" />
                     </RelativeLayout>

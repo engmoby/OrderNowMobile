@@ -12,7 +12,7 @@
                     <Setter.Value>
                         <OnPlatform x:TypeArguments="x:String">
                             <OnPlatform.Android>STC-Bold.ttf#STC Bold</OnPlatform.Android> 
-                            <OnPlatform.iOS>STC Bold</OnPlatform.iOS>
+                            <OnPlatform.iOS>STC-Bold</OnPlatform.iOS>
                         </OnPlatform>
                      
                     </Setter.Value>
@@ -26,7 +26,7 @@
                     <Setter.Value>
                         <OnPlatform x:TypeArguments="x:String">
                             <OnPlatform.Android>STC-Bold.ttf#STC Bold</OnPlatform.Android> 
-                            <OnPlatform.iOS>STC Bold</OnPlatform.iOS>
+                            <OnPlatform.iOS>STC-Bold</OnPlatform.iOS>
                         </OnPlatform>
                       <!--  <OnPlatform iOS="STC Bold" Android="STC-Bold.ttf#STC Bold"  />-->
                     </Setter.Value>

@@ -44,12 +44,12 @@ namespace OrderNow.Views
             txtOrderCount.Text = Constants.OrderClass.Count.ToString();
 
         }
-        async System.Threading.Tasks.Task SubmitOrder_ClickedAsync(object sender, System.EventArgs e)
+        void SubmitOrder_ClickedAsync(object sender, System.EventArgs e)
         {
 
             if (Constants.OrderClass.Count == 0)
             {
-                await DisplayAlert("Alert", "No Items in your cart", "ok");
+                DisplayAlert("Alert", "No Items in your cart", "ok");
                 return;
             }
             var request = new RequestModel();
@@ -71,7 +71,7 @@ namespace OrderNow.Views
             }
             //await _restClient.SubmitOrder(request);
            // Constants.OrderClass = new List<OrderClass>();
-            await Navigation.PushAsync(new ConfirmOrder(request));
+             Navigation.PushAsync(new ConfirmOrder(request));
         }
 
         void Delete_Clicked(object sender, System.EventArgs e)

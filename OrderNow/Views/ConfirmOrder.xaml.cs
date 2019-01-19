@@ -22,6 +22,7 @@ namespace OrderNow.Views
 
         public ConfirmOrder(RequestModel request)
         {
+            InitializeComponent();
             _request = request;
 
 
@@ -32,12 +33,12 @@ namespace OrderNow.Views
             InitializeComponent();
             base.OnAppearing();
 
-            //submit();
-            //Device.StartTimer(TimeSpan.FromMilliseconds(6000), () =>
-            //{
-            //    Application.Current.MainPage = new MainPage();
-            //    return false;
-            //});
+            submit();
+            Device.StartTimer(TimeSpan.FromMilliseconds(6000), () =>
+            {
+                Application.Current.MainPage = new MainPage();
+                return false;
+            });
             Constants.OrderClass = new List<OrderClass>();
 
         }

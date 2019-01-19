@@ -28,7 +28,6 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidLinkMode>None</AndroidLinkMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -107,8 +106,6 @@
     <AndroidResource Include="Resources\drawable\_cart.png" />
     <AndroidResource Include="Resources\drawable\like_empty.png" />
     <AndroidResource Include="Resources\drawable\like_filled.png" />
-    <AndroidResource Include="Resources\drawable\minus.xml" />
-    <AndroidResource Include="Resources\drawable\plus.xml" />
     <AndroidResource Include="Resources\drawable\rounded_square.xml" />
     <AndroidResource Include="Resources\drawable\search.xml" />
     <AndroidResource Include="Resources\drawable\up_arrow.png" />
@@ -161,7 +158,6 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_settings.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_shopping_cart_white_24dp.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_wechat.png" />
-    <AndroidResource Include="Resources\drawable\cart.png" />
     <AndroidResource Include="Resources\drawable\friends.jpg" />
     <AndroidResource Include="Resources\drawable\table.jpg" />
     <AndroidResource Include="Resources\drawable\icon.png" />
@@ -200,6 +196,22 @@
     <AndroidResource Include="Resources\drawable\facebook.png" />
     <AndroidResource Include="Resources\drawable\confirm.png" />
     <AndroidResource Include="Resources\drawable\done.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\cart.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\cart.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\cart.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\cart.png" />
+    <AndroidResource Include="Resources\drawable\app_icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\app_icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\app_icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\app_icon.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\app_icon.png" />
+    <AndroidResource Include="Resources\drawable\splash.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable\minus.png" />
+    <AndroidResource Include="Resources\drawable\plus.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
