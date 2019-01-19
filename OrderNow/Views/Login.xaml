@@ -4,9 +4,9 @@
      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
      x:Class="OrderNow.Views.Login"
      BackgroundColor="White"
-     NavigationPage.HasNavigationBar="false">
+     NavigationPage.HasNavigationBar="true">
     <ContentPage.Content>
-        <Grid HorizontalOptions="FillAndExpand" RowSpacing="20">
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" RowSpacing="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="1.5*" />
@@ -30,10 +30,19 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <StackLayout Grid.Column="1" IsEnabled="{Binding IsLoading}" x:Name="loginStack">
-                            <controls:AnimateButton Clicked="OnLoginButtonClicked" Text="تسجيل الدخول" FontSize="18" TextColor="White" BackgroundColor="{StaticResource primaryColor}" BorderRadius="20" />
+                            <controls:AnimateButton 
+                            Clicked="OnLoginButtonClicked" 
+                            Text="تسجيل الدخول" FontSize="18"
+                            TextColor="White"
+                            BackgroundColor="{StaticResource primaryColor}" BorderRadius="20" />
                         </StackLayout>
                         <StackLayout Grid.Column="0">
-                            <Button BorderRadius="20" Clicked="OnRegisterClicked" Text="إنشاء حساب" FontSize="18" TextColor="White" BackgroundColor="{StaticResource secondryColorLight}" />
+                            <Button BorderRadius="20" 
+                                Clicked="OnRegisterClicked" 
+                                 Text="إنشاء حساب"
+                                    FontSize="18" 
+                                    TextColor="White" 
+                                    BackgroundColor="{StaticResource secondryColorLight}" />
                         </StackLayout>
                     </Grid>
                     <StackLayout x:Name="stackLoading">

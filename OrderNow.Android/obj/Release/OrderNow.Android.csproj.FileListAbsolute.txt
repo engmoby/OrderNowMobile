@@ -2,6 +2,7 @@
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/bin/Release/OrderNow.Android.pdb
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/bin/Release/com.GMG.OrderNow.apk
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/bin/Release/com.GMG.OrderNow-Signed.apk
+/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Release/OrderNow.Android.csprojAssemblyReference.cache
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Release/res.flag
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Release/App.xaml.g.cs
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Release/Views/Login.xaml.g.cs
@@ -157,6 +158,7 @@
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Release/R.cs.flag
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Release/R.txt
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Release/uploadflags.txt
+/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Release/res/drawable/back.png
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/bin/Release/Mono.Android.pdb
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/bin/Release/Newtonsoft.Json.pdb
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/bin/Release/Xamarin.Forms.Core.pdb

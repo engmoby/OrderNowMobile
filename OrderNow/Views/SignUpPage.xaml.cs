@@ -17,8 +17,11 @@ namespace OrderNow.Views
         {
             InitializeComponent();
             stackLoading.IsVisible = false;
-           
             btnRegister.IsEnabled = false;
+            NavigationPage.SetHasNavigationBar(this, true);
+            NavigationPage.SetHasBackButton(this, true);
+
+
         }
 
         async System.Threading.Tasks.Task SignUp_ClickedAsync(object sender, System.EventArgs e)

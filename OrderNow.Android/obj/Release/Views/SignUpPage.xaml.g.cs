@@ -17,22 +17,22 @@ namespace OrderNow.Views {
     public partial class SignUpPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::OrderNow.Controls.RestaurantEntry usernameEntry;
+        private global::OrderNow.Controls.ImageEntry usernameEntry;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Label lblmailvalidaiton;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::OrderNow.Controls.RestaurantEntry passwordEntry;
+        private global::OrderNow.Controls.ImageEntry passwordEntry;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::OrderNow.Controls.RestaurantEntry confirmpasswordEntry;
+        private global::OrderNow.Controls.ImageEntry confirmpasswordEntry;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Label lblconfirmvalidaiton;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::OrderNow.Controls.RestaurantEntry phoneEntry;
+        private global::OrderNow.Controls.ImageEntry phoneEntry;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Label lblphonevalidaiton;
@@ -49,12 +49,12 @@ namespace OrderNow.Views {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(SignUpPage));
-            usernameEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::OrderNow.Controls.RestaurantEntry>(this, "usernameEntry");
+            usernameEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::OrderNow.Controls.ImageEntry>(this, "usernameEntry");
             lblmailvalidaiton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblmailvalidaiton");
-            passwordEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::OrderNow.Controls.RestaurantEntry>(this, "passwordEntry");
-            confirmpasswordEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::OrderNow.Controls.RestaurantEntry>(this, "confirmpasswordEntry");
+            passwordEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::OrderNow.Controls.ImageEntry>(this, "passwordEntry");
+            confirmpasswordEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::OrderNow.Controls.ImageEntry>(this, "confirmpasswordEntry");
             lblconfirmvalidaiton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblconfirmvalidaiton");
-            phoneEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::OrderNow.Controls.RestaurantEntry>(this, "phoneEntry");
+            phoneEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::OrderNow.Controls.ImageEntry>(this, "phoneEntry");
             lblphonevalidaiton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblphonevalidaiton");
             btnRegister = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::OrderNow.Controls.AnimateButton>(this, "btnRegister");
             stackLoading = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "stackLoading");

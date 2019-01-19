@@ -18,7 +18,7 @@ namespace OrderNow.Controls
                     
             }
 
-          //  this.HeightRequest = 50;
+            this.HeightRequest = 50;
         }
         /*------------------------add border to entry-----------------------------*/
         public static readonly BindableProperty BorderColorProperty =
