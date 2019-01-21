@@ -1,9 +1,15 @@
 ﻿<Properties StartupConfiguration="{05566676-F5D6-4037-A737-AF6AC330B283}|Default">
   <MonoDevelop.Ide.ItemProperties.OrderNow.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.DA7DAF20-4640-465B-9BB6-51D7337DE230" automaticSigning="False" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="OrderNow.iOS/Main.cs">
     <Files>
-      <File FileName="OrderNow.iOS/Entitlements.plist" />
-      <File FileName="OrderNow.iOS/Info.plist" />
+      <File FileName="OrderNow/Views/ItemDetailPage.xaml" Line="4" Column="62" />
+      <File FileName="OrderNow/Views/AboutPage.xaml" Line="50" Column="4" />
+      <File FileName="OrderNow/Views/ItemDetailPage.xaml.cs" Line="43" Column="13" />
+      <File FileName="OrderNow/Views/TabedPage.xaml" Line="12" Column="39" />
+      <File FileName="OrderNow/Views/TabedPage.xaml.cs" Line="16" Column="1" />
+      <File FileName="OrderNow/Views/CategoryPage.xaml.cs" Line="14" Column="25" />
+      <File FileName="OrderNow/App.xaml.cs" Line="19" Column="63" />
+      <File FileName="OrderNow.iOS/Main.cs" Line="17" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -21,9 +27,10 @@
       <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/NavigationPageGradientHeaderRenderer.cs" relfile="OrderNow.iOS/NavigationPageGradientHeaderRenderer.cs" line="21" column="1" />
       <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/NavigationPageGradientHeaderRenderer.cs" relfile="OrderNow.iOS/NavigationPageGradientHeaderRenderer.cs" line="22" column="1" />
       <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/NavigationPageGradientHeaderRenderer.cs" relfile="OrderNow.iOS/NavigationPageGradientHeaderRenderer.cs" line="24" column="1" />
+      <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/Views/ItemDetailPage.xaml" relfile="OrderNow/Views/ItemDetailPage.xaml" line="89" column="49" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.OrderNow.Android PreferredExecutionTarget="Android.my_device" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
+  <MonoDevelop.Ide.ItemProperties.OrderNow.Android PreferredExecutionTarget="Android.Android_Accelerated_Oreo" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
   <MultiItemStartupConfigurations />
 </Properties>

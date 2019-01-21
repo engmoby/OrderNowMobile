@@ -155,10 +155,10 @@
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Release/res/drawable-xxxhdpi/splash.png
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Release/res/drawable/minus.png
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Release/res/drawable/plus.png
+/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Release/res/drawable/back.png
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Release/R.cs.flag
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Release/R.txt
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Release/uploadflags.txt
-/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Release/res/drawable/back.png
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/bin/Release/Mono.Android.pdb
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/bin/Release/Newtonsoft.Json.pdb
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/bin/Release/Xamarin.Forms.Core.pdb

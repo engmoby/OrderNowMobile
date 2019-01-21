@@ -16,7 +16,16 @@ namespace OrderNow
             InitializeComponent();
             if (!string.IsNullOrEmpty(SettingsCross.UEmail))
             {
-                Application.Current.MainPage = new MainPage();
+                switch (Device.RuntimePlatform)
+                {
+                    case Device.iOS:
+                        Application.Current.MainPage = new TabedPage();
+                        break;
+                    case Device.Android:
+                        Application.Current.MainPage = new MainPage();
+                        break;
+                }
+
                 //Application.Current.MainPage = new
                 //    GradientNavigationHeader.Controls.NavigationPageGradientHeader(new MainPage())
                 //{

@@ -47,4 +47,5 @@
             <Button Image="twitter" Grid.Column="2" BackgroundColor="Transparent" HeightRequest="50" WidthRequest="100" />
         </Grid>
     </Grid>
+   
 </ContentPage>

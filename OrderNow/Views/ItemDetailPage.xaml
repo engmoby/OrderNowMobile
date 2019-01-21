@@ -12,7 +12,8 @@
     </ContentPage.ToolbarItems>
     <StackLayout VerticalOptions="FillAndExpand"  BackgroundColor="Transparent">
         
-        <StackLayout>
+        <ScrollView>
+            <StackLayout>
                 <Image HeightRequest="150" 
                        HorizontalOptions="FillAndExpand"
                        VerticalOptions="StartAndExpand" 
@@ -23,7 +24,7 @@
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
                         <Label 
                             Grid.Column="0"
@@ -34,12 +35,33 @@
                             FontSize="27">
                             
                         </Label>
-                        <Frame Grid.Column="1" HorizontalOptions="EndAndExpand" BackgroundColor="#E5824E" CornerRadius="20" Padding="10" HasShadow="false">
-                            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                                <Label TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold" Text="{Binding TotalText}" />
-                                <Label TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" x:Name="lblTotal" FontSize="Large" />
+                        <StackLayout  Grid.Column="1">
+                            <Frame 
+                                HorizontalOptions="EndAndExpand" 
+                                BackgroundColor="#E5824E"
+                                CornerRadius="20" 
+                                Padding="20" HasShadow="false">
+                                <StackLayout 
+                                    HorizontalOptions="Center"
+                                    Orientation="Horizontal">
+                                    <Label
+                                        TextColor="White"
+                                        VerticalOptions="Center" 
+                                        HorizontalOptions="Center"
+                                        FontSize="18" 
+                                        FontAttributes="Bold"
+                                        Text="{Binding TotalText}" />
+                                    <Label
+                                        TextColor="White"
+                                        VerticalOptions="Center" 
+                                        HorizontalOptions="Center" 
+                                        x:Name="lblTotal"
+                                        FontSize="16" 
+                                        />
                             </StackLayout>
                         </Frame>
+                        </StackLayout>
+                       
                     </Grid>
                     <Label
                         Text="{Binding Item.DescriptionFull}" 
@@ -51,51 +73,68 @@
                         <Label x:Name="pricesHeaderlbl" Text="الاسعار" FontAttributes="Bold" FontSize="20" TextColor="{StaticResource secondryColorLight}" HorizontalOptions="StartAndExpand" />
                     </StackLayout>
                     <ListView x:Name="ItemsListViewPrice"
+                             HeightRequest="200"
                               Margin="20,0"
                               SeparatorVisibility="None" 
-                              HasUnevenRows="false" 
-                              VerticalOptions="Start"
-                              ItemSelected="OnItemSelected" 
-                              HeightRequest="250"
-                              BackgroundColor="Transparent">
+                              HasUnevenRows="true" 
+                              VerticalOptions="Start" 
+                              ItemSelected="OnItemSelected">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    <StackLayout Margin="10">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*" />
-                                                <ColumnDefinition Width="Auto" />
-                                            </Grid.ColumnDefinitions>
-                                            <StackLayout Grid.Column="0"
-                                                         Orientation="Horizontal"
-                                                         HorizontalOptions="StartAndExpand">
-                                                <RelativeLayout>
+                                    <StackLayout Padding="10"
+                                        VerticalOptions="FillAndExpand" 
+                                        Orientation="Horizontal">
+                                        <StackLayout 
+                                            HorizontalOptions="Start"
+                                            Orientation="Horizontal">
+                                        
+                                            <StackLayout>
+                                               <RelativeLayout>
                                                     <Button BackgroundColor="White" 
-                                                            WidthRequest="26" 
-                                                            HeightRequest="26" 
-                                                            CornerRadius="13" 
-                                                            BorderColor="Purple" 
-                                                            BorderWidth="{Binding BtnColor}">
+                                                        WidthRequest="26" 
+                                                        HeightRequest="26" 
+                                                        CornerRadius="13" 
+                                                        BorderColor="Purple" 
+                                                        BorderWidth="{Binding BtnColor}">
+                                                        
                                                     </Button>
-                                                    <!-- on button selected let borderWidth = 9 and let the others 3-->
+                                                    
                                                 </RelativeLayout>
-                                                <Label Grid.Column="0"
-                                                       FontSize="Medium"
-                                                       Text="{Binding SizeName}" TextColor="{StaticResource asphaltDark}" VerticalTextAlignment="Center" />
                                             </StackLayout>
-                                            <StackLayout Grid.Column="1" Orientation="Horizontal">
-                                                <Label Text="{Binding Price}" FontSize="Medium" TextColor="{StaticResource asphaltDark}" VerticalOptions="CenterAndExpand" />
-                                                <Label Text="{Binding CurrencyText}" FontSize="Medium" TextColor="{StaticResource asphaltDark}" VerticalOptions="CenterAndExpand" />
-                                            </StackLayout>
-                                        </Grid>
+                                           
+                                            <Label 
+                                               FontSize="Medium"
+                                               Text="{Binding SizeName}"
+                                               TextColor="{StaticResource asphaltDark}" 
+                                            />
+                                        </StackLayout>
+                                       
+                                        <StackLayout
+                                            HorizontalOptions="EndAndExpand"
+                                            Orientation="Horizontal">
+                                            
+                                            <Label 
+                                                Text="{Binding Price}"
+                                                FontSize="Medium"
+                                                TextColor="{StaticResource asphaltDark}"        
+                                            />
+                                        
+                                            <Label 
+                                                Text="{Binding CurrencyText}"
+                                                FontSize="Medium"
+                                                TextColor="{StaticResource asphaltDark}"
+                                            />
+                                        </StackLayout>
+                                       
                                     </StackLayout>
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
                 </StackLayout>
-            </StackLayout>
+                </StackLayout>
+        </ScrollView>
         
         <StackLayout HeightRequest="80"
                      BackgroundColor="#f9f9f9" 

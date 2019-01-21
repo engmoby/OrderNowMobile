@@ -66,6 +66,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\TabedPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -165,6 +169,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controls\ImageEntry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\MyPage.xaml.cs">
       <DependentUpon>MyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\TabedPage.xaml.cs">
+      <DependentUpon>TabedPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

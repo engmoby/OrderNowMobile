@@ -86,7 +86,7 @@ namespace OrderNow.Views
 
             // we need to revist models and edit them to fit the changes done in UI
 
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(categoryObj.categoryItemObj)));
+            await Navigation.PushModalAsync(new ItemDetailPage(new ItemDetailViewModel(categoryObj.categoryItemObj)));
 
             // Manually deselect item.
             CategoryListView.SelectedItem = null;
@@ -96,7 +96,7 @@ namespace OrderNow.Views
 
         async void GotoBasket_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new BasketPage(new OrderViewModel(Constants.OrderClass)));
+            await Navigation.PushModalAsync(new BasketPage(new OrderViewModel(Constants.OrderClass)));
 
         }
         protected override void OnAppearing()
