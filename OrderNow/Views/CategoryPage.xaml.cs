@@ -86,7 +86,17 @@ namespace OrderNow.Views
 
             // we need to revist models and edit them to fit the changes done in UI
 
-            await Navigation.PushModalAsync(new ItemDetailPage(new ItemDetailViewModel(categoryObj.categoryItemObj)));
+
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    await Navigation.PushModalAsync(new ItemDetailPage(new ItemDetailViewModel(categoryObj.categoryItemObj)));
+                    break;
+                case Device.Android:
+                    await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(categoryObj.categoryItemObj)));
+                    break;
+            }
+
 
             // Manually deselect item.
             CategoryListView.SelectedItem = null;
