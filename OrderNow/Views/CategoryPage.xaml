@@ -12,14 +12,47 @@
         <ToolbarItem x:Name="cartNo">
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-    <StackLayout>
-        
-        <ScrollView x:Name="HeaderStack" 
-                    HorizontalOptions="FillAndExpand"
-                    Orientation="Horizontal" Padding="20,10">
-        
-        </ScrollView>
-        <ListView x:Name="CategoryListView"
+    <Grid>
+        <Image VerticalOptions="FillAndExpand" Source="bg" Aspect="AspectFill">
+            <Image.IsVisible>
+                <OnPlatform 
+                    x:TypeArguments="x:Boolean" 
+                    Android="false"
+                    iOS="true"/>
+            </Image.IsVisible>
+        </Image>
+        <StackLayout >       
+            <Grid 
+                Margin="10,40,10,10" 
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="StartAndExpand">
+                <Grid.IsVisible>
+                <OnPlatform 
+                    x:TypeArguments="x:Boolean" 
+                    Android="false"
+                    iOS="true"/>
+                </Grid.IsVisible>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="cartIcon1" Image="cart" Clicked="GotoBasket_Clicked" Grid.Column="1" HorizontalOptions="StartAndExpand"/>
+                <Label x:Name="cartNo1" 
+                   TextColor="White" 
+                   Grid.Column="0" 
+                   VerticalOptions="CenterAndExpand"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="StartAndExpand"/>
+                   
+                </Grid>
+      <StackLayout Margin="0,20,0,0">
+            <ScrollView x:Name="HeaderStack" 
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal" Padding="20,0,20,10" >
+            
+            </ScrollView>
+            <ListView x:Name="CategoryListView"
                   ItemsSource="{Binding ListOfCategories}"
                   IsGroupingEnabled="true" SeparatorVisibility="Default"
                   ItemSelected="OnItemSelected" HasUnevenRows="true"
@@ -80,5 +113,8 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+                </StackLayout>
     </StackLayout>
+    </Grid>
+   
 </ContentPage>

@@ -156,6 +156,18 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appIcon%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appIcon%403x.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <BundleResource Include="Resources\menuBarIcon.png" />
+    <BundleResource Include="Resources\menuBarIcon%402x.png" />
+    <BundleResource Include="Resources\menuBarIcon%403x.png" />
+    <BundleResource Include="Resources\qrIcon.png" />
+    <BundleResource Include="Resources\qrIcon%402x.png" />
+    <BundleResource Include="Resources\qrIcon%403x.png" />
+    <BundleResource Include="Resources\settingsIcon.png" />
+    <BundleResource Include="Resources\settingsIcon%402x.png" />
+    <BundleResource Include="Resources\settingsIcon%403x.png" />
+    <BundleResource Include="Resources\userProfileIcon.png" />
+    <BundleResource Include="Resources\userProfileIcon%402x.png" />
+    <BundleResource Include="Resources\userProfileIcon%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

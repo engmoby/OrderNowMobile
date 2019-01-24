@@ -28,7 +28,7 @@ namespace OrderNow.Views
             if (Constants.OrderClass != null)
                 if (Constants.OrderClass.Count > 0)
                 {
-                    cartNo.Text = Constants.OrderClass.Count.ToString();
+                    cartNo.Text = cartNo1.Text=Constants.OrderClass.Count.ToString();
 
                 }
 
@@ -116,7 +116,7 @@ namespace OrderNow.Views
             if (Constants.OrderClass != null)
                 if (Constants.OrderClass.Count > 0)
                 {
-                    cartNo.Text = Constants.OrderClass.Count.ToString();
+                    cartNo.Text = cartNo1.Text =Constants.OrderClass.Count.ToString();
 
                 }
 

@@ -1,95 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:OrderNow.Controls" xmlns:var="clr-namespace:Resturant.Class" x:Class="OrderNow.Views.BasketPage" Title="{Binding Title}" BackgroundImage="bg">
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout BackgroundColor="#f9f9f9">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Text="{Binding OrderDetailsText}" TextColor="Black" FontSize="25" FontAttributes="Bold" Margin="20,10" VerticalTextAlignment="Center" />
-                    <Button Grid.Column="1" Clicked="GoToCategory" Text="{Binding OtherItemText}" TextColor="Black" FontSize="15" FontAttributes="Bold" Margin="20,10" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" />
-                </Grid>
-            </StackLayout>
-            <ListView x:Name="ordersLst" 
-                      SelectionMode="None"
-                      HasUnevenRows="true" 
-                      SeparatorVisibility="Default"
-                      SeparatorColor="#f9f9f9">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.ContextActions>
-                                <MenuItem CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" Clicked="Delete_Clicked" />
-                            </ViewCell.ContextActions>
-                            <ViewCell.View>
-                                <Grid StyleId="ordersRoot"  Margin="20,10">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="100" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
-                                  
-                                    <StackLayout Grid.Column="0">
-                                        <Frame HasShadow="true"
-                                               Padding="5"
-                                               BackgroundColor="White"
-                                               CornerRadius="0"
-                                               BorderColor="{StaticResource secondryColorLight}" 
-                                               IsClippedToBounds="true">
-                                            <Grid>
-                                                <ActivityIndicator 
-                                                    IsRunning="true" 
-                                                    Color="Purple" 
-                                                    HorizontalOptions="CenterAndExpand"
-                                                    VerticalOptions="CenterAndExpand"
-                                                />
-                                                <Image
-                                                    Source="{Binding Item.imageURL}"
-                                                    Aspect="Fill"
-                                                    HeightRequest="100"
-                                                    WidthRequest="100" 
-                                                />
+        <Grid>
+            
+            <Image Source="bg" Aspect="AspectFill">
+                <Image.IsVisible>
+                    <OnPlatform 
+                        x:TypeArguments="x:Boolean" 
+                        Android="false"
+                        iOS="true"/>
+                </Image.IsVisible>
+            </Image>
+            
+            <Grid>
+                <StackLayout Margin="0,70,0,0">
+                    <StackLayout.IsVisible>
+                        
+                        <OnPlatform 
+                            x:TypeArguments="x:Boolean" 
+                            Android="false"
+                            iOS="true"/>
+                
+                    </StackLayout.IsVisible>
+                    
+                    <StackLayout BackgroundColor="#f9f9f9">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Text="{Binding OrderDetailsText}" TextColor="Black" FontSize="25" FontAttributes="Bold" Margin="20,10" VerticalTextAlignment="Center" />
+                        <Button Grid.Column="1" Clicked="GoToCategory" Text="{Binding OtherItemText}" TextColor="Black" FontSize="15" FontAttributes="Bold" Margin="20,10" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" />
+                    </Grid>
+                </StackLayout>
+                <ListView x:Name="ordersLst" 
+                          SelectionMode="None"
+                          HasUnevenRows="true" 
+                          SeparatorVisibility="Default"
+                          SeparatorColor="#f9f9f9">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" Clicked="Delete_Clicked" />
+                                </ViewCell.ContextActions>
+                                <ViewCell.View>
+                                    <Grid StyleId="ordersRoot"  Margin="20,10">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="100" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                      
+                                        <StackLayout Grid.Column="0">
+                                            <Frame HasShadow="true"
+                                                   Padding="5"
+                                                   BackgroundColor="White"
+                                                   CornerRadius="0"
+                                                   BorderColor="{StaticResource secondryColorLight}" 
+                                                   IsClippedToBounds="true">
+                                                <Grid>
+                                                    <ActivityIndicator 
+                                                        IsRunning="true" 
+                                                        Color="Purple" 
+                                                        HorizontalOptions="CenterAndExpand"
+                                                        VerticalOptions="CenterAndExpand"
+                                                    />
+                                                    <Image
+                                                        Source="{Binding Item.imageURL}"
+                                                        Aspect="Fill"
+                                                        HeightRequest="100"
+                                                        WidthRequest="100" 
+                                                    />
 
-                                            </Grid>   
-                                        </Frame>
-                                    </StackLayout>
-                                    <StackLayout 
-                                        Grid.Column="1" Spacing="5">
-                                        <Label 
-                                            Text="{Binding Item.TextFull}"
-                                            TextColor="#743b87" 
-                                            FontSize="25"
-                                            LineBreakMode="TailTruncation" />
-                                            <Label 
-                                                Text="{Binding Item.DescriptionFull}"
-                                                TextColor="#646464" FontSize="20" />
-                                            <Label
-                                               Text="{Binding TotalPrice, StringFormat='Total: {0:C}'}"
-                                                FontSize="15" 
-                                                TextColor="{StaticResource secondryColorLight}"
-                                                LineBreakMode="TailTruncation" />
-
-                                    </StackLayout>
-                                    
-                                    <StackLayout Grid.Column="2" Margin="10">
-                                        <controls:AnimateButton Image="up_arrow.png" Clicked="ButtonUp_OnClicked" BackgroundColor="Transparent" WidthRequest="30" HeightRequest="30" />
-                                        <StackLayout>
-                                            <AbsoluteLayout HorizontalOptions="Center">
-                                                <Label TextColor="Black" Text="{Binding Quantity}" FontSize="12" />
-                                            </AbsoluteLayout>
+                                                </Grid>   
+                                            </Frame>
                                         </StackLayout>
-                                        <controls:AnimateButton Image="arrow_down.png" Clicked="ButtonDown_OnClicked" BackgroundColor="Transparent" WidthRequest="30" HeightRequest="30" />
-                                     </StackLayout>
-                                </Grid>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <StackLayout VerticalOptions="EndAndExpand" Padding="20">
+                                        <StackLayout 
+                                            Grid.Column="1" Spacing="5">
+                                            <Label 
+                                                Text="{Binding Item.TextFull}"
+                                                TextColor="#743b87" 
+                                                FontSize="25"
+                                                LineBreakMode="TailTruncation" />
+                                                <Label 
+                                                    Text="{Binding Item.DescriptionFull}"
+                                                    TextColor="#646464" FontSize="20" />
+                                                <Label
+                                                   Text="{Binding TotalPrice, StringFormat='Total: {0:C}'}"
+                                                    FontSize="15" 
+                                                    TextColor="{StaticResource secondryColorLight}"
+                                                    LineBreakMode="TailTruncation" />
+
+                                        </StackLayout>
+                                        
+                                        <StackLayout Grid.Column="2" Margin="10">
+                                            <controls:AnimateButton Image="up_arrow.png" Clicked="ButtonUp_OnClicked" BackgroundColor="Transparent" WidthRequest="30" HeightRequest="30" />
+                                            <StackLayout>
+                                                <AbsoluteLayout HorizontalOptions="Center">
+                                                    <Label TextColor="Black" Text="{Binding Quantity}" FontSize="12" />
+                                                </AbsoluteLayout>
+                                            </StackLayout>
+                                            <controls:AnimateButton Image="arrow_down.png" Clicked="ButtonDown_OnClicked" BackgroundColor="Transparent" WidthRequest="30" HeightRequest="30" />
+                                         </StackLayout>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout VerticalOptions="EndAndExpand" Padding="20">
                 <!--  <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                     <Label Text="SubTotal" FontSize="15" TextColor="Black" HorizontalOptions="StartAndExpand" />
                     <Label Text="{Binding TotalOrder, StringFormat='{0:C}'}" FontSize="Medium" TextColor="Black" />
@@ -144,7 +165,27 @@
                         Image="check" Clicked="SubmitOrder_ClickedAsync" />    
                 </StackLayout>-->
             </StackLayout>
-        </StackLayout>
+            </StackLayout>
+                  <StackLayout 
+                    Margin="10,30,10,10" 
+                   
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="StartAndExpand"> 
+                        <Button Text="back" 
+                            Clicked="Handle_Clicked" 
+                            Grid.Column="2" 
+                            HorizontalOptions="EndAndExpand" >
+                        <Button.IsVisible>
+                            <OnPlatform x:TypeArguments="x:Boolean" iOS="true" Android="false">
+                                
+                            </OnPlatform>
+                        </Button.IsVisible>
+                    </Button>
+                </StackLayout>
+            </Grid>
+                       
+        </Grid>
+       
     </ContentPage.Content>
 </ContentPage>
 

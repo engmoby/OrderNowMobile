@@ -70,8 +70,17 @@ namespace OrderNow.Views
                 });
             }
             //await _restClient.SubmitOrder(request);
-           // Constants.OrderClass = new List<OrderClass>();
-             Navigation.PushAsync(new ConfirmOrder(request));
+            // Constants.OrderClass = new List<OrderClass>();
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    Navigation.PushModalAsync(new ConfirmOrder(request));
+                    break;
+                case Device.Android:
+                    Navigation.PushAsync(new ConfirmOrder(request));
+                    break;
+            }
+            //Navigation.PushAsync(new ConfirmOrder(request));
         }
 
         void Delete_Clicked(object sender, System.EventArgs e)
@@ -261,11 +270,22 @@ namespace OrderNow.Views
         //    }
 
         //}
-
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PopModalAsync();
+        }
         void GoToCategory(object sender, System.EventArgs e)
         {
-            var x = Navigation.NavigationStack;
-            Navigation.PopAsync();
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    Navigation.PopModalAsync();
+                    break;
+                case Device.Android:
+                    Navigation.PopAsync();
+                    break;
+            }
+
             //Application.Current.MainPage = new MainPage();
         }
     }

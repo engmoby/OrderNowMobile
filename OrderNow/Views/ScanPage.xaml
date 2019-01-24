@@ -4,23 +4,35 @@
     x:Class="OrderNow.Views.ScanPage"
     BackgroundColor="Black">
     <ContentPage.Content>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+        <Grid >
+            <Image Source="bg" Aspect="AspectFill">
+                <Image.IsVisible>
+                    <OnPlatform 
+                        x:TypeArguments="x:Boolean" 
+                        Android="false"
+                        iOS="true"/>
+                </Image.IsVisible>
+            </Image>
             
-            <Image Source="scan" Aspect="AspectFill"/>
-            <StackLayout Grid.Row="1"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand">
-                <Button 
-                    Image="camera_alt" 
-                    x:Name="btnScan" 
-                    Clicked="btnScan_Clicked" 
-                    BackgroundColor="Transparent"
-                    TextColor="White" />
-        </StackLayout> 
+            <Grid Margin="0,60,0,0" BackgroundColor="Black">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <Image Source="scan" Aspect="AspectFill"/>
+                <StackLayout Grid.Row="1" 
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand">
+                    <Button 
+                        Image="camera_alt" 
+                        x:Name="btnScan" 
+                        Clicked="btnScan_Clicked" 
+                        BackgroundColor="Transparent"
+                        TextColor="White" />
+            </StackLayout> 
+            </Grid>
+            
         </Grid>
        
     </ContentPage.Content>

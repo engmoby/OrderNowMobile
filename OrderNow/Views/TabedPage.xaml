@@ -5,14 +5,15 @@
     xmlns:view="clr-namespace:OrderNow.Views"
     x:Class="OrderNow.Views.TabedPage"
     BackgroundImage="bg"
-    BarBackgroundColor="Purple"
-    BarTextColor="White"
-   >
+    BarBackgroundColor="#f9f9f9"
+    BarTextColor="#652689"
+    >
+    
     <TabbedPage.Children>
-        <view:CategoryPage Title="Home" BackgroundColor="Purple"/>
-        <view:AccountPage Title="Account"/>
-        <view:ScanPage Title="Scan QR"/>
-        <view:Settings Title="Settings"/>
+        <view:CategoryPage Title="Home"  Icon="menuBarIcon" />
+        <view:AccountPage Title="Account" Icon="userProfileIcon"/>
+        <view:ScanPage Title="Scan QR" Icon="qrIcon"/>
+        <view:Settings Title="Settings" Icon="settingsIcon"/>
     </TabbedPage.Children>
    
 </TabbedPage>

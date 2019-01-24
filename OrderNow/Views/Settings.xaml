@@ -1,38 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="OrderNow.Views.Settings"
-             BackgroundImage="bg">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OrderNow.Views.Settings"
+    BackgroundImage="bg">
     <ContentPage.Content>
-  <StackLayout Padding="30" VerticalOptions="Start">
-            <ListView x:Name="listviewCategory"
+        <Grid>
+            <Image Source="bg" Aspect="AspectFill">
+                <Image.IsVisible>
+                    <OnPlatform 
+                        x:TypeArguments="x:Boolean" 
+                        Android="false"
+                        iOS="true"/>
+                </Image.IsVisible>
+            </Image>
+            <StackLayout Padding="30,100,30,0" VerticalOptions="Start">
+                <ListView x:Name="listviewCategory"
                     ItemTapped="Handle_ItemTappedAsync"
-                    HorizontalOptions="FillAndExpand" HasUnevenRows="True"
-                    SeparatorColor="#f9f9f9">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid HorizontalOptions="FillAndExpand" Padding="10">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions> 
-                                <Label  Grid.Row="1" 
-                                    Text="{Binding LanguageName}"
-                                    HorizontalOptions="StartAndExpand"
-                                    TextColor="Black"
-                                    FontAttributes="Bold"
-                                    FontSize="20"/>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
+                    HorizontalOptions="FillAndExpand" 
+                    HasUnevenRows="True"
+                    SeparatorColor="#f9f9f9"
+                    HeightRequest="200">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid HorizontalOptions="FillAndExpand" Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions> 
+                                    <Label  Grid.Row="1" 
+                                        Text="{Binding LanguageName}"
+                                        HorizontalOptions="StartAndExpand"
+                                        TextColor="Black"
+                                        FontAttributes="Bold"
+                                        FontSize="20"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
 
                 <ListView.Footer>
                     <Label />
                 </ListView.Footer>
             </ListView>
-             
+                 
         </StackLayout>
+        </Grid>
+       
     </ContentPage.Content>
 </ContentPage>

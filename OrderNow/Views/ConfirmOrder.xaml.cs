@@ -36,7 +36,17 @@ namespace OrderNow.Views
             submit();
             Device.StartTimer(TimeSpan.FromMilliseconds(6000), () =>
             {
-                Application.Current.MainPage = new MainPage();
+                switch (Device.RuntimePlatform)
+                {
+                    case Device.iOS:
+                        Application.Current.MainPage = new TabedPage();
+                        break;
+                    case Device.Android:
+                        Application.Current.MainPage = new MainPage();
+                        break;
+                }
+
+
                 return false;
             });
             Constants.OrderClass = new List<OrderClass>();

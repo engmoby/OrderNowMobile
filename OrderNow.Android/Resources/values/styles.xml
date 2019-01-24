@@ -13,6 +13,7 @@
         <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette -->
         <!-- colorPrimary is used for the default action bar background -->
         <item name="colorPrimary">#DD763D</item>
+        <!-- <item name="android:statusBarColor">@drawable/gradient</item>-->
         <!-- colorPrimaryDark is used for the status bar -->
         <item name="colorPrimaryDark">#DD763D</item>
         <!-- colorAccent is used as the default value for colorControlActivated

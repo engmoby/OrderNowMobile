@@ -30,7 +30,7 @@ namespace OrderNow.Views
             if (Constants.OrderClass != null)
                 if (Constants.OrderClass.Count > 0)
                 {
-                    cartNo.Text = Constants.OrderClass.Count.ToString();
+                    cartNo.Text = cartNo1.Text= Constants.OrderClass.Count.ToString();
                 }
 
             this.FlowDirection = (Constants.CurrentLang == "en-us" ? FlowDirection.LeftToRight : FlowDirection.RightToLeft);
@@ -50,7 +50,7 @@ namespace OrderNow.Views
             if (Constants.OrderClass != null)
                 if (Constants.OrderClass.Count == 0)
                 {
-                    cartNo.Text = ""; 
+                    cartNo.Text =  cartNo1.Text = ""; 
 
                 }
             foreach (var element in viewModel.Item.Sizes)
@@ -113,10 +113,24 @@ namespace OrderNow.Views
 
         async void GotoBasket_Clicked(object sender, EventArgs e)
         {
-
-            await Navigation.PushAsync(new BasketPage(new OrderViewModel(Constants.OrderClass)));
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    await Navigation.PushModalAsync(new BasketPage(new OrderViewModel(Constants.OrderClass)));
+                    break;
+                case Device.Android:
+                    await Navigation.PushAsync(new BasketPage(new OrderViewModel(Constants.OrderClass)));
+                    break;
+            }
+           
  
         }
+
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PopModalAsync();
+        }
+
         void AddItemToCart_Clicked(object sender, EventArgs e)
         {
             foreach (var element in viewModel.Item.Sizes)
@@ -140,7 +154,7 @@ namespace OrderNow.Views
                     Quantity = currentCount,
                     TotalPrice = value, 
                 });
-                cartNo.Text = Constants.OrderClass.Count.ToString();
+                cartNo.Text = cartNo1.Text = Constants.OrderClass.Count.ToString();
             }
             else
             {
