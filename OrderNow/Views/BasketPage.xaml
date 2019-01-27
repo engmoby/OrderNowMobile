@@ -13,15 +13,11 @@
             </Image>
             
             <Grid>
-                <StackLayout Margin="0,70,0,0">
-                    <StackLayout.IsVisible>
-                        
-                        <OnPlatform 
-                            x:TypeArguments="x:Boolean" 
-                            Android="false"
-                            iOS="true"/>
-                
-                    </StackLayout.IsVisible>
+                <StackLayout >
+                    <StackLayout.Margin>
+                        <OnPlatform x:TypeArguments="Thickness" iOS="0,70,0,0" Android="0,0,0,0"/>
+                    </StackLayout.Margin>
+                   
                     
                     <StackLayout BackgroundColor="#f9f9f9">
                     <Grid>

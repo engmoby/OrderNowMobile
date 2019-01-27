@@ -19,7 +19,10 @@
         <StackLayout VerticalOptions="FillAndExpand"  BackgroundColor="Transparent">
             <Grid>
               
-                <ScrollView Margin="0,80,0,0" > 
+                <ScrollView  >
+                    <ScrollView.Margin>
+                        <OnPlatform x:TypeArguments="Thickness" Android="0,20,0,0" iOS="0,80,0,0"/>
+                    </ScrollView.Margin>
                     <StackLayout>
                         <Image HeightRequest="150" 
                                HorizontalOptions="FillAndExpand"
