@@ -17,35 +17,66 @@
             <Color x:Key="LightTextColor">#999999</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
+    
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <StackLayout
-            VerticalOptions="FillAndExpand" 
-            HorizontalOptions="Fill">
+       
+        <Image Source="bg" Aspect="AspectFill">
+            <Image.IsVisible>
+                <OnPlatform x:TypeArguments="x:Boolean" iOS="true" Android="false"/>
+            </Image.IsVisible>
+        </Image>
+        
+        <Button 
+            Margin="20,40,20,0"
+            Image="backIcon"
+            HeightRequest="30"
+            WidthRequest="30"
+            VerticalOptions="StartAndExpand"                
+            HorizontalOptions="StartAndExpand"
+            Clicked="BackClicked">
+            <Button.IsVisible>
+            <OnPlatform x:TypeArguments="x:Boolean" iOS="true" Android="false"/>
+            </Button.IsVisible>
+        </Button> 
+       
+        <Grid >
+            <Grid.Margin>
+                <OnPlatform x:TypeArguments="Thickness" iOS="0,80,0,0" Android="0"/>
+            </Grid.Margin>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            
+            
             <StackLayout 
-                Padding="0,0" 
-                Orientation="Horizontal" 
-                HorizontalOptions="Center"
-                VerticalOptions="Center">
-                <Image Source="friends.jpg" VerticalOptions="Center" Aspect="AspectFill" />
+                VerticalOptions="FillAndExpand" 
+                HorizontalOptions="Fill">
+                <StackLayout 
+                    Padding="0,0" 
+                    Orientation="Horizontal" 
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <Image Source="friends.jpg" VerticalOptions="Center" Aspect="AspectFill" />
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
-        <ScrollView Grid.Row="1" VerticalOptions="FillAndExpand" Margin="20,0">
-            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="10">
-                <Label FontSize="32" Text="Order Now" TextColor="#6c2c91" FontAttributes="Bold">
-                </Label>
-                <Label TextColor="#6c2c91" FontSize="15" Text="Order Now is the easy way to get the food you love delivered" />
-            </StackLayout>
-        </ScrollView>
-        <Grid Grid.Row="2"  IsVisible="false" Padding="30" ColumnSpacing="0" VerticalOptions="EndAndExpand">
-            <Button Image="facebook" Grid.Column="0" BackgroundColor="Transparent" HeightRequest="50" WidthRequest="100" />
-            <Button Image="instagram" Grid.Column="1" BackgroundColor="Transparent" HeightRequest="50" WidthRequest="100" />
-            <Button Image="twitter" Grid.Column="2" BackgroundColor="Transparent" HeightRequest="50" WidthRequest="100" />
+            <ScrollView Grid.Row="1" VerticalOptions="FillAndExpand" Margin="20,0">
+                <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="10">
+                    <Label FontSize="32" Text="Order Now" TextColor="#6c2c91" FontAttributes="Bold">
+                    </Label>
+                    <Label TextColor="#6c2c91" FontSize="15" Text="Order Now is the easy way to get the food you love delivered" />
+                </StackLayout>
+            </ScrollView>
+            <Grid Grid.Row="2"  IsVisible="false" Padding="30" ColumnSpacing="0" VerticalOptions="EndAndExpand">
+                <Button Image="facebook" Grid.Column="0" BackgroundColor="Transparent" HeightRequest="50" WidthRequest="100" />
+                <Button Image="instagram" Grid.Column="1" BackgroundColor="Transparent" HeightRequest="50" WidthRequest="100" />
+                <Button Image="twitter" Grid.Column="2" BackgroundColor="Transparent" HeightRequest="50" WidthRequest="100" />
+            </Grid>
         </Grid>
+        
+        
     </Grid>
+   
    
 </ContentPage>

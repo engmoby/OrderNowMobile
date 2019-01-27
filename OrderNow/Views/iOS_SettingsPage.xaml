@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OrderNow.Views.iOS_SettingsPage"
+    >
+    <Grid>
+        
+        <Image Source="bg" Aspect="AspectFill" />
+        
+        
+        <StackLayout Padding="10"
+            Orientation="Vertical" >
+            <StackLayout 
+                HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="CenterAndExpand"
+                Orientation="Horizontal"
+                Spacing="0">
+                
+                <Image x:Name="settings"
+                   Source="settings"
+                   HeightRequest="90"
+                   WidthRequest="90"
+                   
+                />
+                
+                <Image x:Name="settingsSmall"
+                    Source="settingsSmall"
+                    TranslationY="15"
+                />
+                
+            </StackLayout>  
+            
+            <StackLayout 
+                VerticalOptions="StartAndExpand"
+                Spacing="30"
+                Margin="20,0">
+                <Frame
+                    HasShadow="true"
+                    BackgroundColor="Purple"
+                    Padding="0"
+                    Opacity="0.6"
+                    CornerRadius="10">
+                    
+                    <Button 
+                        ClassId="lang"
+                        Text="Lanuguage"
+                        HeightRequest="70"
+                        FontSize="25"
+                        TextColor="White"
+                        Clicked="Handle_Clicked"/>
+                </Frame>
+                
+                <Frame
+                    HasShadow="true"
+                    BackgroundColor="Purple"
+                    Padding="0"
+                    Opacity="0.6"
+                    CornerRadius="10">
+                    
+                    <Button 
+                        ClassId="about"
+                        Text="About Us"
+                        HeightRequest="70"
+                        FontSize="25"
+                        TextColor="White"
+                        Clicked="Handle_Clicked"/>
+                </Frame>
+                
+                <Frame
+                    HasShadow="true"
+                    BackgroundColor="Purple"
+                     Padding="0"
+                    Opacity="0.6"
+                    CornerRadius="10">
+                    
+                    <Button 
+                        ClassId="logOut"
+                        Text="Log Out"
+                        HeightRequest="70"
+                        FontSize="25"
+                        TextColor="White"
+                        Clicked="Handle_Clicked"/>
+                </Frame>
+            </StackLayout>
+            
+        </StackLayout>
+        
+        
+       <!-- <StackLayout
+            Margin="10,70"
+            HorizontalOptions="Start">
+            <StackLayout.IsVisible>
+                <OnPlatform 
+                    x:TypeArguments="x:Boolean"
+                    iOS="true"
+                    Android="false"/>
+            </StackLayout.IsVisible>
+            
+            <Button 
+                Text="About Us"
+                TextColor="Black" 
+                FontAttributes="Bold" 
+                FontSize="18"
+                />
+            
+            <Button 
+                Text="Log out"
+                TextColor="Black" 
+                FontAttributes="Bold" 
+                FontSize="18"/>
+            
+        </StackLayout>-->
+    </Grid>
+</ContentPage>

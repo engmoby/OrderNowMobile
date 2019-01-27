@@ -60,9 +60,17 @@ namespace OrderNow.Views
                     SettingsCross.UserName = Constants.userDetailCredentials.Username;
                     SettingsCross.UserId = Constants.userDetailCredentials.UserId;
                     stackLoading.IsVisible = false;
-                    Application.Current.MainPage = new MainPage();
+
+                    switch (Device.RuntimePlatform)
+                    {
+                        case Device.iOS:
+                            Application.Current.MainPage = new TabedPage();
+                            break;
+                        case Device.Android:
+                            Application.Current.MainPage = new MainPage();
+                            break;
+                    }
                    
-                    //Application.Current.MainPage = new MyPage();
                 }
             }
         }

@@ -39,8 +39,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
+                   
                 </Grid.RowDefinitions>
                 <Label Grid.Column="0"
                     Grid.Row="0"
@@ -71,17 +70,21 @@
                 </StackLayout>
                 
                     
-                <BoxView Grid.ColumnSpan="2" Grid.Row="3" BackgroundColor="#f3f3f3" HeightRequest="2" />
+                <BoxView 
+                    Grid.ColumnSpan="2"
+                    Grid.Row="1" 
+                    BackgroundColor="#f3f3f3" 
+                    HeightRequest="2" />
                 <Label
                     Grid.Column="0" 
-                    Grid.Row="4" 
+                    Grid.Row="2" 
                     Text="Phone: "
                     FontSize="20"
                     TextColor="#6C2C91"
                     FontAttributes="Bold"
                     VerticalTextAlignment="Center" />
                 
-                <StackLayout Grid.Row="4" Grid.Column="1"> 
+                <StackLayout Grid.Row="2" Grid.Column="1"> 
                     <controls:ImageEntry
                         
                         x:Name="TxtPhone"
@@ -100,10 +103,10 @@
                 </StackLayout>
                 
                 
-                <BoxView Grid.ColumnSpan="2" Grid.Row="5" BackgroundColor="#f3f3f3" HeightRequest="2" />
+                <BoxView Grid.ColumnSpan="2" Grid.Row="3" BackgroundColor="#f3f3f3" HeightRequest="2" />
                 <Label
                     Grid.Column="0" 
-                    Grid.Row="6"    
+                    Grid.Row="4"    
                     Text="Password: "
                     FontSize="20"
                      TextColor="#6C2C91"
@@ -112,7 +115,7 @@
                 />
                 <controls:ImageEntry
                     Grid.Column="1" 
-                    Grid.Row="6"
+                    Grid.Row="4"
                     x:Name="TxtPassword"
                     IsPassword="true" 
                     FontSize="20"
@@ -122,7 +125,7 @@
                     LineColor="Transparent"
                     BorderColor="#D0674B"/>
                 
-                <StackLayout Grid.Row="7" VerticalOptions="EndAndExpand" Grid.ColumnSpan="2">
+                <StackLayout Grid.Row="5" VerticalOptions="EndAndExpand" Grid.ColumnSpan="2">
                     <controls:AnimateButton 
                         x:Name="btnRegister" 
                         Clicked="SignUp_ClickedAsync" 
@@ -134,7 +137,7 @@
                         BorderRadius="20"/>
                 </StackLayout>
                 
-                <StackLayout Grid.Row="8" 
+                <StackLayout Grid.Row="6" 
                     Grid.ColumnSpan="2"
                     x:Name="stackLoading"
                     Orientation="Vertical" 

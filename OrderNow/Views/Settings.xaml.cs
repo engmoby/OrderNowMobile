@@ -41,7 +41,16 @@ namespace OrderNow.Views
                 default:
                     break;
             }
-            Application.Current.MainPage = new MainPage();
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    Application.Current.MainPage = new TabedPage();
+                    break;
+                case Device.Android:
+                    Application.Current.MainPage = new MainPage();
+                    break;
+            }
+
 
         }
 
@@ -49,5 +58,10 @@ namespace OrderNow.Views
          {
             public string LanguageName { get; set; }
          }
+
+        void BackClicked(object sender, System.EventArgs e)
+        {
+            Navigation.PopModalAsync();
+        }
     }
 }

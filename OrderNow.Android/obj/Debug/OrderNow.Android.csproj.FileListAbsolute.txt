@@ -162,6 +162,7 @@
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/bin/Debug/OrderNow.Android.pdb
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/bin/Debug/com.GMG.OrderNow.apk
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/bin/Debug/com.GMG.OrderNow-Signed.apk
+/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/OrderNow.Android.csprojAssemblyReference.cache
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/res.flag
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/App.xaml.g.cs
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/Views/Login.xaml.g.cs
@@ -179,6 +180,7 @@
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/Views/HistoryDetailsPage.xaml.g.cs
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/Views/MyPage.xaml.g.cs
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/Views/TabedPage.xaml.g.cs
+/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/Views/iOS_SettingsPage.xaml.g.cs
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/Views/MainPage.xaml.g.cs
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/Views/AboutPage.xaml.g.cs
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/Views/ItemDetailPage.xaml.g.cs
@@ -319,7 +321,6 @@
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/R.cs.flag
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/R.txt
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/uploadflags.txt
-/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj/Debug/OrderNow.Android.csprojAssemblyReference.cache
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/bin/Debug/Mono.Android.pdb
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/bin/Debug/Newtonsoft.Json.pdb
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/bin/Debug/Xamarin.Forms.Core.pdb

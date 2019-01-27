@@ -4,6 +4,7 @@
     x:Class="OrderNow.Views.Settings"
     BackgroundImage="bg">
     <ContentPage.Content>
+         
         <Grid>
             <Image Source="bg" Aspect="AspectFill">
                 <Image.IsVisible>
@@ -16,10 +17,11 @@
             <StackLayout Padding="30,100,30,0" VerticalOptions="Start">
                 <ListView x:Name="listviewCategory"
                     ItemTapped="Handle_ItemTappedAsync"
-                    HorizontalOptions="FillAndExpand" 
+                    HorizontalOptions="Start" 
                     HasUnevenRows="True"
                     SeparatorColor="#f9f9f9"
-                    HeightRequest="200">
+                    HeightRequest="120"
+                          >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -39,13 +41,29 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
 
-                <ListView.Footer>
-                    <Label />
-                </ListView.Footer>
-            </ListView>
-                 
-        </StackLayout>
-        </Grid>
+                    <ListView.Footer>
+                        <Label />
+                    </ListView.Footer>
+                </ListView>
+               
+            </StackLayout>
+           
+               
+            <Button 
+                Margin="20,40,20,0"
+                Image="backIcon"
+                HeightRequest="30"
+                WidthRequest="30"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                Clicked="BackClicked">
+                <Button.IsVisible>
+                <OnPlatform x:TypeArguments="x:Boolean" iOS="true" Android="false"/>
+                </Button.IsVisible>
+            </Button>
+            </Grid>
+           
+       
        
     </ContentPage.Content>
 </ContentPage>

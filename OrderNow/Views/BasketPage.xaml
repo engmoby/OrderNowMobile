@@ -167,14 +167,17 @@
             </StackLayout>
             </StackLayout>
                   <StackLayout 
-                    Margin="10,30,10,10" 
+                    FlowDirection="LeftToRight"
+                    Margin="10,40,10,0" 
                    
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="StartAndExpand"> 
-                        <Button Text="back" 
+                        <Button Image="backIcon" 
                             Clicked="Handle_Clicked" 
                             Grid.Column="2" 
-                            HorizontalOptions="EndAndExpand" >
+                            HorizontalOptions="StartAndExpand"
+                            HeightRequest="30"
+                            WidthRequest="30">
                         <Button.IsVisible>
                             <OnPlatform x:TypeArguments="x:Boolean" iOS="true" Android="false">
                                 

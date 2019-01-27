@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="OrderNow.Views.ScanPage"
-    BackgroundColor="Black">
+             
+   >
     <ContentPage.Content>
-        <Grid >
+        <Grid BackgroundColor="Silver">
             <Image Source="bg" Aspect="AspectFill">
                 <Image.IsVisible>
                     <OnPlatform 
@@ -14,24 +15,49 @@
                 </Image.IsVisible>
             </Image>
             
-            <Grid Margin="0,60,0,0" BackgroundColor="Black">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+            <Grid  HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand">
+               
+               <!-- <StackLayout  Margin="-300,-300,0,0"
+                    HeightRequest="20" 
+                    WidthRequest="20"
+                    VerticalOptions="Center">
+                    <Image Source="lock"/>
+                </StackLayout>
                 
-                <Image Source="scan" Aspect="AspectFill"/>
-                <StackLayout Grid.Row="1" 
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="CenterAndExpand">
-                    <Button 
-                        Image="camera_alt" 
-                        x:Name="btnScan" 
-                        Clicked="btnScan_Clicked" 
-                        BackgroundColor="Transparent"
-                        TextColor="White" />
-            </StackLayout> 
+                <StackLayout  Margin="0,0,-300,-300"
+                    HeightRequest="20" 
+                    WidthRequest="20"
+                    VerticalOptions="Center">
+                   <BoxView Color="Green" HorizontalOptions="End"
+                            VerticalOptions="End"/>
+                </StackLayout>
+                
+                <StackLayout  Margin="-300,0,0,-300"
+                    HeightRequest="20" 
+                    WidthRequest="20"
+                    VerticalOptions="Center">
+                    <Image Source="lock"/>
+                </StackLayout>
+                
+                <StackLayout  Margin="0,-300,-300,0"
+                    HeightRequest="20" 
+                    WidthRequest="20"
+                    VerticalOptions="Center">
+                    <Image Source="lock"/>
+                </StackLayout>-->
+                
+                <Frame x:Name="QrLayout"
+                   
+                    BackgroundColor="#dd763d" 
+                    Padding="15"
+                    CornerRadius="0"
+                    HeightRequest="300" 
+                    WidthRequest="300"
+                    >
+                    </Frame>
             </Grid>
+            
             
         </Grid>
        

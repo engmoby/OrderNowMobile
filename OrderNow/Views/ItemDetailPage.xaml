@@ -144,8 +144,8 @@
                 </ScrollView>
            
                   <Grid 
-                    Margin="10,30,10,10" 
-                   
+                    FlowDirection="LeftToRight"
+                    Margin="10,40,10,0"                  
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="StartAndExpand">
                     <Grid.IsVisible>
@@ -156,21 +156,27 @@
                         </Grid.IsVisible>
                     <Grid.ColumnDefinitions>
                         
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="cartIcon1" Image="cart" Clicked="GotoBasket_Clicked" Grid.Column="1" HorizontalOptions="StartAndExpand"/>
-                    <Label x:Name="cartNo1" 
+                    <Button x:Name="cartIcon1"
+                        Image="cart"
+                        Clicked="GotoBasket_Clicked" 
+                        Grid.Column="1"
+                        HorizontalOptions="StartAndExpand"/>
+                    <Label x:Name="cartNo1"  
                            TextColor="White" 
-                           Grid.Column="0" 
+                           Grid.Column="2" 
                            VerticalOptions="CenterAndExpand"
                            VerticalTextAlignment="Center"
-                           HorizontalOptions="StartAndExpand"/>
-                    <Button Text="back" 
+                           HorizontalOptions="Start"/>
+                    <Button Image="backIcon" 
+                            HeightRequest="30"
+                            WidthRequest="30"
                             Clicked="Handle_Clicked" 
-                            Grid.Column="2" 
-                            HorizontalOptions="EndAndExpand" >
+                            Grid.Column="0" 
+                            HorizontalOptions="StartAndExpand" >
                         <Button.IsVisible>
                             <OnPlatform x:TypeArguments="x:Boolean" iOS="true" Android="false">
                                 

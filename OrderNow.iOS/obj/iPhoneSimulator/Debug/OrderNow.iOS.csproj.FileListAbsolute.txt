@@ -70,6 +70,7 @@
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/HistoryDetailsPage.xaml.g.cs
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/MyPage.xaml.g.cs
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/TabedPage.xaml.g.cs
+/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/iOS_SettingsPage.xaml.g.cs
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/MainPage.xaml.g.cs
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/AboutPage.xaml.g.cs
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/Views/ItemDetailPage.xaml.g.cs
@@ -126,7 +127,6 @@
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/optimized/appIcon.png
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/optimized/appIcon@2x.png
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/optimized/appIcon@3x.png
-/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/optimized/
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/optimized/menuBarIcon.png
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/optimized/menuBarIcon@2x.png
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/optimized/menuBarIcon@3x.png
@@ -139,3 +139,11 @@
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/optimized/userProfileIcon.png
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/optimized/userProfileIcon@2x.png
 /Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/optimized/userProfileIcon@3x.png
+/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/optimized/settings.png
+/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/optimized/settingsSmall.png
+/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/optimized/backIcon.png
+/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/optimized/home.png
+/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/optimized/profiile.png
+/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/optimized/qr-code.png
+/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/optimized/tools.png
+/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/optimized/

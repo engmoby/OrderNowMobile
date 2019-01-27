@@ -26,24 +26,15 @@ namespace OrderNow
                         break;
                 }
 
-                //Application.Current.MainPage = new
-                //    GradientNavigationHeader.Controls.NavigationPageGradientHeader(new MainPage())
-                //{
-                //    LeftColor = Color.FromHex("#713C86"),
-                //    RightColor = Color.FromHex("#F5803A"),
-                  
+
                 //};
             }
             else
             {
                 MainPage = new Login();
             }
-           // MainPage = new Login();
-            //MainPage = new GradientNavigationHeader.Controls.NavigationPageGradientHeader(new Login())
-            //{
-            //    LeftColor = Color.FromHex("#36ED81"),
-            //    RightColor = Color.FromHex("#109F8D")
-            //};
+            //MainPage = Application.Current.MainPage = new iOS_SettingsPage();
+          
         }
 
         protected override void OnStart()

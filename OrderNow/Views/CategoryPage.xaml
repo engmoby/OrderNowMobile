@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OrderNow.Views.CategoryPage" Title="{Binding Title}" 
              xmlns:controls="clr-namespace:OrderNow.Controls"
-             
              BackgroundImage="bg"
              >
     <ContentPage.ToolbarItems>
@@ -13,108 +12,125 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <Grid>
-        <Image VerticalOptions="FillAndExpand" Source="bg" Aspect="AspectFill">
+        <Image Source="bg" Aspect="AspectFill">
             <Image.IsVisible>
-                <OnPlatform 
-                    x:TypeArguments="x:Boolean" 
-                    Android="false"
-                    iOS="true"/>
+                <OnPlatform x:TypeArguments="x:Boolean" Android="false" iOS="true"/>
             </Image.IsVisible>
         </Image>
-        <StackLayout >       
-            <Grid 
-                Margin="10,40,10,10" 
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="StartAndExpand">
-                <Grid.IsVisible>
-                <OnPlatform 
-                    x:TypeArguments="x:Boolean" 
-                    Android="false"
-                    iOS="true"/>
+        <Grid 
+            FlowDirection="LeftToRight"
+            Margin="10,30,10,0"                  
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="StartAndExpand">
+            <Grid.IsVisible>
+                    <OnPlatform 
+                        x:TypeArguments="x:Boolean" 
+                        Android="false"
+                        iOS="true"/>
                 </Grid.IsVisible>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Button x:Name="cartIcon1" Image="cart" Clicked="GotoBasket_Clicked" Grid.Column="1" HorizontalOptions="StartAndExpand"/>
-                <Label x:Name="cartNo1" 
+            <Grid.ColumnDefinitions>
+                
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="cartIcon1"
+                Image="cart"
+                Clicked="GotoBasket_Clicked" 
+                Grid.Column="1"
+                HorizontalOptions="StartAndExpand"/>
+            <Label x:Name="cartNo1"  
                    TextColor="White" 
-                   Grid.Column="0" 
+                   Grid.Column="2" 
                    VerticalOptions="CenterAndExpand"
                    VerticalTextAlignment="Center"
-                   HorizontalOptions="StartAndExpand"/>
-                   
-                </Grid>
-      <StackLayout Margin="0,20,0,0">
-            <ScrollView x:Name="HeaderStack" 
+                   HorizontalOptions="Start"/>
+           
+        </Grid>
+        
+        <StackLayout >       
+            <ScrollView BackgroundColor="Transparent" 
+                x:Name="HeaderStack" 
                 HorizontalOptions="FillAndExpand"
-                Orientation="Horizontal" Padding="20,0,20,10" >
-            
+                Orientation="Horizontal"
+                Padding="20,0,20,10" 
+               >
+                <ScrollView.Margin>
+                    <OnPlatform x:TypeArguments="Thickness" iOS="0,80,0,0" Android="0,20,0,0"/>
+                </ScrollView.Margin>
             </ScrollView>
-            <ListView x:Name="CategoryListView"
-                  ItemsSource="{Binding ListOfCategories}"
-                  IsGroupingEnabled="true" SeparatorVisibility="Default"
-                  ItemSelected="OnItemSelected" HasUnevenRows="true"
-                  SeparatorColor="#f7f7f7">
-            <ListView.GroupHeaderTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout BackgroundColor="#f9f9f9">
-                            <Label
-                                Text="{Binding Heading}" 
-                                TextColor="Black" 
-                                FontSize="25"
-                                FontAttributes="Bold"
-                                Margin="20,10" 
-                                />
-                                                         
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.GroupHeaderTemplate>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid VerticalOptions="FillAndExpand" Margin="20,10">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="100" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <StackLayout Grid.Column="0">
-                                <Frame HasShadow="true" Padding="5" BackgroundColor="White" CornerRadius="0" BorderColor="{StaticResource secondryColorLight}" IsClippedToBounds="true">
-                                    <Grid>
-                                    <ActivityIndicator 
-                                        IsRunning="true" 
-                                        Color="Purple" 
-                                        HorizontalOptions="CenterAndExpand"
-                                        VerticalOptions="CenterAndExpand"/>
-                                    <Image
-                                        Source="{Binding categoryItemObj.imageURL}"
-                                        Aspect="Fill"
-                                        HeightRequest="100"
-                                        WidthRequest="100" />
-
-                                    </Grid>   
-                                </Frame>
-                            </StackLayout>
-                            <StackLayout Grid.Column="1" Spacing="5">
+            
+            <ListView  x:Name="CategoryListView"
+                ItemsSource="{Binding ListOfCategories}"
+                IsGroupingEnabled="true"
+                SeparatorVisibility="Default"
+                ItemSelected="OnItemSelected" 
+                HasUnevenRows="true"
+                SeparatorColor="#f7f7f7">
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout BackgroundColor="#f9f9f9">
                                 <Label
-                                    Text="{Binding Text}"
-                                    TextColor="#743b87"
-                                    FontSize="27" />
-                                <Label 
-                                    Text="{Binding categoryItemObj.Description}"
-                                    TextColor="#646464"
-                                    FontSize="20" />
+                                    Text="{Binding Heading}" 
+                                    TextColor="Black" 
+                                    FontSize="25"
+                                    FontAttributes="Bold"
+                                    Margin="20,10" 
+                                    />
+                                                             
                             </StackLayout>
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-                </StackLayout>
-    </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid VerticalOptions="FillAndExpand" Margin="20,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="0">
+                                    <Frame 
+                                        HasShadow="true" 
+                                        Padding="5"
+                                        BackgroundColor="White" 
+                                        CornerRadius="0" 
+                                        BorderColor="{StaticResource secondryColorLight}" 
+                                        IsClippedToBounds="true">
+                                        <Grid>
+                                            <ActivityIndicator 
+                                                IsRunning="true" 
+                                                Color="Purple" 
+                                                HorizontalOptions="CenterAndExpand"
+                                                VerticalOptions="CenterAndExpand"/>
+                                            <Image
+                                                Source="{Binding categoryItemObj.imageURL}"
+                                                Aspect="Fill"
+                                                HeightRequest="100"
+                                                WidthRequest="100" />
+
+                                        </Grid>   
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout Grid.Column="1" Spacing="5">
+                                    <Label
+                                        Text="{Binding Text}"
+                                        TextColor="#743b87"
+                                        FontSize="27" />
+                                    <Label 
+                                        Text="{Binding categoryItemObj.Description}"
+                                        TextColor="#646464"
+                                        FontSize="20" />
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+           
+        </StackLayout>
     </Grid>
    
 </ContentPage>

@@ -168,6 +168,13 @@
     <BundleResource Include="Resources\userProfileIcon.png" />
     <BundleResource Include="Resources\userProfileIcon%402x.png" />
     <BundleResource Include="Resources\userProfileIcon%403x.png" />
+    <BundleResource Include="Resources\settings.png" />
+    <BundleResource Include="Resources\settingsSmall.png" />
+    <BundleResource Include="Resources\backIcon.png" />
+    <BundleResource Include="Resources\home.png" />
+    <BundleResource Include="Resources\profiile.png" />
+    <BundleResource Include="Resources\qr-code.png" />
+    <BundleResource Include="Resources\tools.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

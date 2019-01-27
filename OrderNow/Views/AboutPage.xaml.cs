@@ -12,5 +12,9 @@ namespace OrderNow.Views
         {
             InitializeComponent();
         }
+        void BackClicked(object sender, System.EventArgs e)
+        {
+            Navigation.PopModalAsync();
+        }
     }
 }

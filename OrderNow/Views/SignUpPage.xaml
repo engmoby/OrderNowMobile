@@ -7,128 +7,141 @@
     NavigationPage.HasNavigationBar="true"
           >
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center" Padding="20">
-            <StackLayout HorizontalOptions="StartAndExpand" Margin="10,-50,0,20">
-                <Button Image="back"
-                    Clicked="onloginClick"
-                    BackgroundColor="Transparent"/>
-            </StackLayout>
-            <StackLayout>
-              
-                <StackLayout
-                    Padding="15">
+        <Grid>
+            <Image Source="bg" Aspect="AspectFill">
+                <Image.IsVisible>
+                    <OnPlatform 
+                        x:TypeArguments="x:Boolean" 
+                        Android="false"
+                        iOS="true"/>
+                </Image.IsVisible>
+            </Image>
+            
+            <StackLayout VerticalOptions="Start" Padding="20">
+                <StackLayout HorizontalOptions="StartAndExpand" Margin="10,20,0,20">
+                    <Button Image="backIcon"
+                        Clicked="onloginClick"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        BackgroundColor="Transparent"/>
+                </StackLayout>
+                <StackLayout>
                   
-                    <controls:ImageEntry 
-                        Keyboard="Email"
-                        x:Name="usernameEntry"
-                        TextChanged="EMail_TextChanged" 
-                        Placeholder="Email"
-                        VerticalOptions="Center"
-                        HorizontalOptions="FillAndExpand" 
-                        FontSize="20"
-                        TextColor="Gray" 
-                        FontAttributes="Bold" 
-                        CornerRadius="20"
-                        LineColor="Transparent"
-                        BorderColor="#D0674B"
-                    />
-                    
-                    <Label
-                        x:Name="lblmailvalidaiton"
-                        IsVisible="false"
-                        TextColor="Red" />
-                </StackLayout>
-               
-                <StackLayout Padding="15">
-                   <controls:ImageEntry
-                       
-                       Placeholder="Password" 
-                       HorizontalOptions="FillAndExpand"
-                       IsPassword="true" 
-                       x:Name="passwordEntry" 
-                       FontSize="20"
-                        TextColor="Gray" 
-                        FontAttributes="Bold" 
-                        CornerRadius="20"
-                        LineColor="Transparent"
-                        BorderColor="#D0674B"/>
-                </StackLayout>
-                
-                <StackLayout Padding="15">
-                    <controls:ImageEntry 
+                    <StackLayout
+                        Padding="15">
+                      
+                        <controls:ImageEntry 
+                            Keyboard="Email"
+                            x:Name="usernameEntry"
+                            TextChanged="EMail_TextChanged" 
+                            Placeholder="Email"
+                            VerticalOptions="Center"
+                            HorizontalOptions="FillAndExpand" 
+                            FontSize="20"
+                            TextColor="Gray" 
+                            FontAttributes="Bold" 
+                            CornerRadius="20"
+                            LineColor="Transparent"
+                            BorderColor="#D0674B"
+                        />
                         
-                        TextChanged="confirm_TextChanged" 
-                        Placeholder="Confirm password"  
-                        HorizontalOptions="FillAndExpand"
-                        IsPassword="true"
-                        x:Name="confirmpasswordEntry" 
-                        FontSize="20"
-                        TextColor="Gray" 
-                        FontAttributes="Bold" 
-                        CornerRadius="20"
-                        LineColor="Transparent"
-                        BorderColor="#D0674B"/>
-                        
-                    <Label 
-                        x:Name="lblconfirmvalidaiton" 
-                        IsVisible="false" 
-                        TextColor="Red" />
-                    
-                </StackLayout>
-                
-                <StackLayout 
-                     Padding="15">
+                        <Label
+                            x:Name="lblmailvalidaiton"
+                            IsVisible="false"
+                            TextColor="Red" />
+                    </StackLayout>
                    
-                    <controls:ImageEntry
+                    <StackLayout Padding="15">
+                       <controls:ImageEntry
+                           
+                           Placeholder="Password" 
+                           HorizontalOptions="FillAndExpand"
+                           IsPassword="true" 
+                           x:Name="passwordEntry" 
+                           FontSize="20"
+                            TextColor="Gray" 
+                            FontAttributes="Bold" 
+                            CornerRadius="20"
+                            LineColor="Transparent"
+                            BorderColor="#D0674B"/>
+                    </StackLayout>
+                    
+                    <StackLayout Padding="15">
+                        <controls:ImageEntry 
+                            
+                            TextChanged="confirm_TextChanged" 
+                            Placeholder="Confirm password"  
+                            HorizontalOptions="FillAndExpand"
+                            IsPassword="true"
+                            x:Name="confirmpasswordEntry" 
+                            FontSize="20"
+                            TextColor="Gray" 
+                            FontAttributes="Bold" 
+                            CornerRadius="20"
+                            LineColor="Transparent"
+                            BorderColor="#D0674B"/>
+                            
+                        <Label 
+                            x:Name="lblconfirmvalidaiton" 
+                            IsVisible="false" 
+                            TextColor="Red" />
+                        
+                    </StackLayout>
+                    
+                    <StackLayout 
+                         Padding="15">
                        
-                        Keyboard="Numeric"
-                        Placeholder="Phone" 
-                        TextChanged="phone_TextChanged" 
-                        HorizontalOptions="FillAndExpand"
-                        x:Name="phoneEntry"
-                        FontSize="20"
-                        TextColor="Gray" 
-                        FontAttributes="Bold" 
-                        CornerRadius="20"
-                        LineColor="Transparent"
-                        BorderColor="#D0674B"/>
+                        <controls:ImageEntry
+                           
+                            Keyboard="Numeric"
+                            Placeholder="Phone" 
+                            TextChanged="phone_TextChanged" 
+                            HorizontalOptions="FillAndExpand"
+                            x:Name="phoneEntry"
+                            FontSize="20"
+                            TextColor="Gray" 
+                            FontAttributes="Bold" 
+                            CornerRadius="20"
+                            LineColor="Transparent"
+                            BorderColor="#D0674B"/>
+                        
+                        <Label
+                            x:Name="lblphonevalidaiton" 
+                            IsVisible="false"
+                            TextColor="Red" />
+                        
+                    </StackLayout>
                     
-                    <Label
-                        x:Name="lblphonevalidaiton" 
-                        IsVisible="false"
-                        TextColor="Red" />
-                    
+                    <StackLayout Padding="15">
+                        <controls:AnimateButton  
+                            x:Name="btnRegister" 
+                            Clicked="SignUp_ClickedAsync"
+                            Text="Sign Up" 
+                            TextColor="White"
+                            FontSize="20"
+                            BackgroundColor="#F08D23"
+                            WidthRequest="300" 
+                            HorizontalOptions="Center" 
+                            CornerRadius="20"/>
+                    </StackLayout>
                 </StackLayout>
-                
-                <StackLayout Padding="15">
-                    <controls:AnimateButton  
-                        x:Name="btnRegister" 
-                        Clicked="SignUp_ClickedAsync"
-                        Text="Sign Up" 
-                        TextColor="White"
-                        FontSize="20"
-                        BackgroundColor="#F08D23"
-                        WidthRequest="300" 
+                <StackLayout x:Name="stackLoading" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="End" IsVisible="{Binding IsLoading}">
+                    <Label VerticalOptions="Center" TextColor="{StaticResource asphaltPrimary}">Please wait...</Label>
+                    <ActivityIndicator x:Name="indecator" VerticalOptions="Center" />
+                </StackLayout>
+               <!-- <StackLayout>
+                    <Button 
+                        AbsoluteLayout.LayoutBounds=".5, 1, AutoSize, AutoSize"
+                        WidthRequest="100" AbsoluteLayout.LayoutFlags="PositionProportional"
                         HorizontalOptions="Center" 
-                        CornerRadius="20"/>
-                </StackLayout>
+                        VerticalOptions="EndAndExpand" 
+                        Margin="0, 0, 0, 10" 
+                       
+                        Text="Log in"
+                        TextColor="White"
+                        BackgroundColor="#6c2c91"/>
+                </StackLayout>-->
             </StackLayout>
-            <StackLayout x:Name="stackLoading" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="End" IsVisible="{Binding IsLoading}">
-                <Label VerticalOptions="Center" TextColor="{StaticResource asphaltPrimary}">Please wait...</Label>
-                <ActivityIndicator x:Name="indecator" VerticalOptions="Center" />
-            </StackLayout>
-           <!-- <StackLayout>
-                <Button 
-                    AbsoluteLayout.LayoutBounds=".5, 1, AutoSize, AutoSize"
-                    WidthRequest="100" AbsoluteLayout.LayoutFlags="PositionProportional"
-                    HorizontalOptions="Center" 
-                    VerticalOptions="EndAndExpand" 
-                    Margin="0, 0, 0, 10" 
-                   
-                    Text="Log in"
-                    TextColor="White"
-                    BackgroundColor="#6c2c91"/>
-            </StackLayout>-->
-        </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

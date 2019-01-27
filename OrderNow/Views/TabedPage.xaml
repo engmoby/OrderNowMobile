@@ -10,10 +10,10 @@
     >
     
     <TabbedPage.Children>
-        <view:CategoryPage Title="Home"  Icon="menuBarIcon" />
-        <view:AccountPage Title="Account" Icon="userProfileIcon"/>
-        <view:ScanPage Title="Scan QR" Icon="qrIcon"/>
-        <view:Settings Title="Settings" Icon="settingsIcon"/>
+        <view:CategoryPage Title="Home"  Icon="home" />
+        <view:AccountPage Title="Account" Icon="profiile"/>
+        <view:ScanPage Title="Scan QR" Icon="qr-code"/>
+        <view:iOS_SettingsPage Title="Settings" Icon="tools"/>
     </TabbedPage.Children>
    
 </TabbedPage>

@@ -8,6 +8,8 @@ using Resturant.Models;
 using Resturant.RestAPIClient;
 using Xamarin.Forms;
 using ZXing.Net.Mobile.Forms;
+using System.Linq.Expressions;
+using Android.Bluetooth;
 
 namespace OrderNow.Views
 {
@@ -19,14 +21,19 @@ namespace OrderNow.Views
         public ScanPage()
         {
             InitializeComponent(); 
+            QrScanner();
+
 
         }
-        private void btnScan_Clicked(object sender, EventArgs e)
+        public  void QrScanner()
         {
             try
             {
                 ZXingScannerPage scan = new ZXingScannerPage();
-                Navigation.PushAsync(scan);
+                scan.HasTorch = true;
+                QrLayout.Content= scan.Content;
+
+                //Application.Current.MainPage = scan;
                 scan.OnScanResult += (result) =>
                 {
                     Device.BeginInvokeOnMainThread(() =>

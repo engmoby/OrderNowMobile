@@ -50,6 +50,10 @@ namespace OrderNow.Views
                 {
                     Application.Current.MainPage = new Login();
                 }
+                //else if (id == 2 ){
+                //    ScanPage scanPage = new ScanPage();
+                //    //scanPage.QrScanner();
+                //}
                 else
                 {
                     try
@@ -66,5 +70,8 @@ namespace OrderNow.Views
                 }
             };
         }
+    
+
+
     }
 }
