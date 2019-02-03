@@ -1,24 +1,28 @@
 ﻿<Properties StartupConfiguration="{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}|Default">
-  <MonoDevelop.Ide.ItemProperties.OrderNow.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.DA7DAF20-4640-465B-9BB6-51D7337DE230" automaticSigning="False" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="OrderNow/Views/BasketPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="OrderNow/Views/CategoryPage.xaml">
     <Files>
-      <File FileName="OrderNow/Views/CategoryPage.xaml.cs" Line="102" Column="1" />
-      <File FileName="OrderNow/ViewModels/ItemDetailViewModel.cs" Line="39" Column="1" />
-      <File FileName="OrderNow/ViewModels/BaseViewModel.cs" Line="29" Column="1" />
-      <File FileName="OrderNow/Views/ItemDetailPage.xaml.cs" Line="53" Column="50" />
-      <File FileName="OrderNow/Models/Item.cs" Line="33" Column="1" />
-      <File FileName="OrderNow/Views/ItemDetailPage.xaml" Line="174" Column="45" />
-      <File FileName="Source Not Available" />
-      <File FileName="OrderNow/Views/BasketPage.xaml" Line="195" Column="46" />
+      <File FileName="OrderNow.Android/MainActivity.cs" Line="22" Column="55" />
+      <File FileName="OrderNow.Android/Resources/values/styles.xml" Line="23" Column="63" />
+      <File FileName="OrderNow.Android/Scrollbardisabledrenderer.cs" Line="23" Column="70" />
+      <File FileName="OrderNow/App.xaml.cs" Line="17" Column="17" />
+      <File FileName="OrderNow.Android/listviewBarDisable.cs" Line="12" Column="1" />
+      <File FileName="OrderNow/Views/BasketPage.xaml.cs" Line="285" Column="1" />
+      <File FileName="OrderNow/Views/CategoryPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="OrderNow/Views/CategoryPage.xaml" Line="136" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/Views/ItemDetailPage.xaml" relfile="OrderNow/Views/ItemDetailPage.xaml" line="89" column="49" />
+      <Breakpoint file="/Users/kareemmohamed/Projects/OrderNowMobile/OrderNow.Android/Scrollbardisabledrenderer.cs" relfile="OrderNow.Android/Scrollbardisabledrenderer.cs" line="11" column="34" />
+      <Breakpoint file="/Users/kareemmohamed/Projects/OrderNowMobile/OrderNow.Android/Scrollbardisabledrenderer.cs" relfile="OrderNow.Android/Scrollbardisabledrenderer.cs" line="13" column="1" />
+      <Breakpoint file="/Users/kareemmohamed/Projects/OrderNowMobile/OrderNow.Android/Scrollbardisabledrenderer.cs" relfile="OrderNow.Android/Scrollbardisabledrenderer.cs" line="12" column="1" />
+      <Breakpoint file="/Users/kareemmohamed/Projects/OrderNowMobile/OrderNow.Android/listviewBarDisable.cs" relfile="OrderNow.Android/listviewBarDisable.cs" line="9" column="1" />
+      <Breakpoint file="/Users/kareemmohamed/Projects/OrderNowMobile/OrderNow.Android/listviewBarDisable.cs" relfile="OrderNow.Android/listviewBarDisable.cs" line="8" column="1" />
+      <Breakpoint file="/Users/kareemmohamed/Projects/OrderNowMobile/OrderNow.Android/listviewBarDisable.cs" relfile="OrderNow.Android/listviewBarDisable.cs" line="10" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.OrderNow.Android AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.my_device" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
+  <MonoDevelop.Ide.ItemProperties.OrderNow.Android PreferredExecutionTarget="Android.my_device" />
   <MultiItemStartupConfigurations />
 </Properties>

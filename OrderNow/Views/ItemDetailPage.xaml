@@ -21,7 +21,7 @@
               
                 <ScrollView  >
                     <ScrollView.Margin>
-                        <OnPlatform x:TypeArguments="Thickness" Android="0,20,0,0" iOS="0,80,0,0"/>
+                        <OnPlatform x:TypeArguments="Thickness" Android="0,0,0,0" iOS="0,80,0,0"/>
                     </ScrollView.Margin>
                     <StackLayout>
                         <Image HeightRequest="150" 
