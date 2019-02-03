@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-     xmlns:controls="clr-namespace:OrderNow.Controls"
-     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-     x:Class="OrderNow.Views.Login"
-     BackgroundColor="White"
-     NavigationPage.HasNavigationBar="true">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:controls="clr-namespace:OrderNow.Controls" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="OrderNow.Views.Login" BackgroundColor="White" NavigationPage.HasNavigationBar="true">
     <ContentPage.Content>
         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" RowSpacing="20">
             <Grid.RowDefinitions>
@@ -15,12 +10,12 @@
             <StackLayout Grid.Row="1" VerticalOptions="FillAndExpand" x:Name="uiMain" Padding="40,20">
                 <StackLayout Padding="10" VerticalOptions="StartAndExpand">
                     <!-- email -->
-                    <controls:ImageEntry Placeholder="Enter your email" Text="abdoclient@g.com" PlaceholderColor="#bfbfbf" x:Name="usernameEntry" HorizontalOptions="FillAndExpand" LineColor="#bfbfbf" IsCurvedCornersEnabled="true" CornerRadius="21" WidthRequest="30" ImageAlignment="Right" Image="user"
-                        ImageWidth="30" ImageHeight="30">
+                    <controls:ImageEntry Placeholder="Enter your email"   PlaceholderColor="#bfbfbf" x:Name="usernameEntry" HorizontalOptions="FillAndExpand" LineColor="#bfbfbf" IsCurvedCornersEnabled="true" CornerRadius="21" WidthRequest="30" ImageAlignment="Right"
+                        Image="user" ImageWidth="30" ImageHeight="30">
                     </controls:ImageEntry>
                     <!-- Password -->
-                    <controls:ImageEntry x:Name="passwordEntry" IsPassword="true" Text="12345678" WidthRequest="30" Placeholder="Enter password" PlaceholderColor="#bfbfbf" LineColor="#bfbfbf" IsCurvedCornersEnabled="true" CornerRadius="21" ImageAlignment="Right" HorizontalOptions="FillAndExpand"
-                        Image="lock" ImageWidth="30" ImageHeight="30">
+                    <controls:ImageEntry x:Name="passwordEntry" IsPassword="true"   WidthRequest="30" Placeholder="Enter password" PlaceholderColor="#bfbfbf" LineColor="#bfbfbf" IsCurvedCornersEnabled="true" CornerRadius="21" ImageAlignment="Right"
+                        HorizontalOptions="FillAndExpand" Image="lock" ImageWidth="30" ImageHeight="30">
                     </controls:ImageEntry>
                     <!-- message -->
                     <Label x:Name="messageLabel" TextColor="Red" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" />
@@ -30,19 +25,10 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <StackLayout Grid.Column="1" IsEnabled="{Binding IsLoading}" x:Name="loginStack">
-                            <controls:AnimateButton 
-                            Clicked="OnLoginButtonClicked" 
-                            Text="تسجيل الدخول" FontSize="18"
-                            TextColor="White"
-                            BackgroundColor="{StaticResource primaryColor}" BorderRadius="20" />
+                            <controls:AnimateButton Clicked="OnLoginButtonClicked" Text="Log In" FontSize="18" TextColor="White" BackgroundColor="{StaticResource primaryColor}" BorderRadius="20" />
                         </StackLayout>
                         <StackLayout Grid.Column="0">
-                            <Button BorderRadius="20" 
-                                Clicked="OnRegisterClicked" 
-                                 Text="إنشاء حساب"
-                                    FontSize="18" 
-                                    TextColor="White" 
-                                    BackgroundColor="{StaticResource secondryColorLight}" />
+                            <Button BorderRadius="20" Clicked="OnRegisterClicked" Text="Register" FontSize="18" TextColor="White" BackgroundColor="{StaticResource secondryColorLight}" />
                         </StackLayout>
                     </Grid>
                     <StackLayout x:Name="stackLoading">

@@ -15,7 +15,14 @@ namespace OrderNow.Views
         public MainPage()
         {
             InitializeComponent();
-
+            if (!Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
+            {
+                if (Constants.CurrentLang == "en-us")
+                    DisplayAlert("Alert", "No Internet Connection!! ", "ok");
+                else
+                    DisplayAlert("تنبيه", "لا يوجد اتصال بالانترنت ", "موافق");
+                return;
+            }
             MasterBehavior = MasterBehavior.Popover;
             if (Constants.TableId == 0)
             {
@@ -69,9 +76,13 @@ namespace OrderNow.Views
             if (newPage != null && Detail != newPage)
             {
                 Detail = newPage;
-
-               // if (Device.RuntimePlatform == Device.Android)
-                    await Task.Delay(100);
+                //if (!Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
+                //{
+                //    await DisplayAlert("Alert", "No Internet Connection!! ", "ok");
+                //    return;
+                //}
+                // if (Device.RuntimePlatform == Device.Android)
+                await Task.Delay(100);
 
                 IsPresented = false;
             }

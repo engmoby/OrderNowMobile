@@ -11,6 +11,7 @@ namespace OrderNow.Views
         public Settings()
         {
             InitializeComponent();
+            Title = (Constants.CurrentLang != "en-us" ? "الاعدادات" : "Settings");
             RefreshData();
         } 
         public void RefreshData()
@@ -26,6 +27,15 @@ namespace OrderNow.Views
         }
         async void Handle_ItemTappedAsync(object sender, ItemTappedEventArgs e)
         {
+            if (!Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
+            {
+                if (Constants.CurrentLang == "en-us")
+                    await DisplayAlert("Alert", "No Internet Connection!! ", "ok");
+                else
+                    await DisplayAlert("تنبيه", "لا يوجد اتصال بالانترنت ", "موافق");
+                return;
+            }
+
             var LanguageItem = e.Item as LanguageItem;
             switch (LanguageItem.LanguageName)
             {

@@ -52,6 +52,11 @@ namespace OrderNow.ViewModels
             {
                 return;
             }
+            if (!Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
+            { 
+                return;
+            }
+
             var getCategoryList = _restControl.GetAllICategoriesByTable(Constants.TableId);
 
             Headers = getCategoryList.Select(a => a.CategoryNameDictionary[Constants.CurrentLang]).ToList();

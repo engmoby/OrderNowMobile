@@ -19,12 +19,21 @@ namespace OrderNow.Views
             SettingsCross.UEmail = null;
             Constants.userDetailCredentials = null;
             Constants.OrderClass = new List<OrderClass>();
-            Constants.TableId = 1;
+            Constants.TableId = 0;
         }
 
 
         async void OnLoginButtonClicked(object sender, EventArgs e)
         {
+            if (!Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
+            {
+                if (Constants.CurrentLang == "en-us")
+                    await DisplayAlert("Alert", "No Internet Connection!! ", "ok");
+                else
+                    await DisplayAlert("تنبيه", "لا يوجد اتصال بالانترنت ", "موافق");
+                return;
+            }
+
             username_Input = usernameEntry.Text;
             password_Input = passwordEntry.Text;
             if (username_Input == null)
@@ -58,7 +67,9 @@ namespace OrderNow.Views
                     }
                     SettingsCross.UEmail = Constants.userDetailCredentials.access_token;
                     SettingsCross.UserName = Constants.userDetailCredentials.Username;
-                    SettingsCross.UserId = Constants.userDetailCredentials.UserId;
+                    SettingsCross.UserId = Constants.userDetailCredentials.UserId; 
+                    SettingsCross.Phone = Constants.userDetailCredentials.Phone;
+                    SettingsCross.Password = Constants.userDetailCredentials.Password;
                     stackLoading.IsVisible = false;
 
                     switch (Device.RuntimePlatform)

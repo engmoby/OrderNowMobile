@@ -46,10 +46,22 @@ namespace OrderNow.Views
         }
         void SubmitOrder_ClickedAsync(object sender, System.EventArgs e)
         {
+            if (!Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
+            {
+                if (Constants.CurrentLang == "en-us")
+                    DisplayAlert("Alert", "No Internet Connection!! ", "ok");
+                else
+                    DisplayAlert("تنبيه", "لا يوجد اتصال بالانترنت ", "موافق");
+                return;
+            }
 
             if (Constants.OrderClass.Count == 0)
             {
-                DisplayAlert("Alert", "No Items in your cart", "ok");
+                if (Constants.CurrentLang == "en-us")
+                    DisplayAlert("Alert", "No Items in your cart", "ok");
+                else
+                    DisplayAlert("تنبيه", "السلة فارغه ", "موافق");
+
                 return;
             }
             var request = new RequestModel();
@@ -95,6 +107,7 @@ namespace OrderNow.Views
                 this.viewModel.TotalOrder = Constants.OrderClass.Sum(x => x.TotalPrice);
 
             });
+            txtOrderCount.Text = Constants.OrderClass.Count.ToString();
         }
 
         void deleteFromBasket(OrderClass item)
@@ -183,8 +196,8 @@ namespace OrderNow.Views
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     Constants.OrderClass = new List<OrderClass>();
-                    this.viewModel = null;
-                    BindingContext = null;
+                    // this.viewModel = null;
+                    //BindingContext = null;
                     ordersLst.ItemsSource = null;
                     if (Constants.OrderClass.Count != 0)
                     {
@@ -210,6 +223,9 @@ namespace OrderNow.Views
                 });
 
             }
+            txtOrderCount.Text = Constants.OrderClass.Count.ToString();
+            this.viewModel.TotalOrder = Constants.OrderClass.Sum(x => x.TotalPrice);
+
 
         }
         //private void Handle_Clicked(object sender, EventArgs e)
@@ -282,7 +298,8 @@ namespace OrderNow.Views
                     Navigation.PopModalAsync();
                     break;
                 case Device.Android:
-                    Navigation.PopAsync();
+                    Application.Current.MainPage = new MainPage();
+                    // Navigation.PopAsync();
                     break;
             }
 

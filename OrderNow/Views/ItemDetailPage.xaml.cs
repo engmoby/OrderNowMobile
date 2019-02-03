@@ -53,6 +53,11 @@ namespace OrderNow.Views
                     cartNo.Text =  cartNo1.Text = ""; 
 
                 }
+                else
+                {
+                    cartNo.Text = Constants.OrderClass.Count.ToString();
+
+                }
             foreach (var element in viewModel.Item.Sizes)
             {
                 element.BtnColor = 3;

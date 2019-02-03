@@ -15,7 +15,8 @@ namespace OrderNow.Views
         ItemsViewModel viewModel;
         bool isLoading;
 
-        public ItemsPage(){
+        public ItemsPage()
+        {
             InitializeComponent();
         }
 
@@ -25,7 +26,7 @@ namespace OrderNow.Views
 
             this.FlowDirection = (Constants.CurrentLang == "en-us" ? FlowDirection.LeftToRight : FlowDirection.RightToLeft);
             if (Constants.OrderClass != null)
-              if (Constants.OrderClass.Count > 0)
+                if (Constants.OrderClass.Count > 0)
                 {
                     cartNo.Text = Constants.OrderClass.Count.ToString();
 
@@ -57,11 +58,15 @@ namespace OrderNow.Views
         {
             base.OnAppearing();
             if (Constants.OrderClass != null)
-            if (Constants.OrderClass.Count > 0)
-            {
-                cartNo.Text = Constants.OrderClass.Count.ToString();
+                if (Constants.OrderClass.Count > 0)
+                {
+                    cartNo.Text = Constants.OrderClass.Count.ToString();
 
-            }
+                }else
+                {
+                    cartNo.Text = Constants.OrderClass.Count.ToString();
+
+                }
 
             if (viewModel.Items.Count == 0)
             {

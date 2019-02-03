@@ -40,6 +40,14 @@ namespace OrderNow.Views
                 ListViewMenu.SelectedItem = null;
                 if (e.SelectedItem == null)
                     return;
+                if (!Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
+                {
+                    if (Constants.CurrentLang == "en-us")
+                        await DisplayAlert("Alert", "No Internet Connection!! ", "ok");
+                    else
+                        await DisplayAlert("تنبيه", "لا يوجد اتصال بالانترنت ", "موافق");
+                    return;
+                }
 
                 MainPage RootPage = Application.Current.MainPage as MainPage;
 

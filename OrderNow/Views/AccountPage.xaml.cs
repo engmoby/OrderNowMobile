@@ -16,8 +16,18 @@ namespace OrderNow.Views
         public AccountPage()
         {
             InitializeComponent();
-
+            Title = (Constants.CurrentLang != "en-us" ? "الحساب" : "Account");
             stackLoading.IsVisible = false;
+
+            if (!Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
+            {
+                if (Constants.CurrentLang == "en-us")
+                    DisplayAlert("Alert", "No Internet Connection!! ", "ok");
+                else
+                    DisplayAlert("تنبيه", "لا يوجد اتصال بالانترنت ", "موافق");
+                return;
+            }
+
             if (SettingsCross.Phone == string.Empty)
             {
                 var getUser = _restClient.GetUserInfo();
@@ -38,6 +48,15 @@ namespace OrderNow.Views
 
         async System.Threading.Tasks.Task SignUp_ClickedAsync(object sender, System.EventArgs e)
         {
+            if (!Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
+            {
+                if (Constants.CurrentLang == "en-us")
+                    await DisplayAlert("Alert", "No Internet Connection!! ", "ok");
+                else
+                    await DisplayAlert("تنبيه", "لا يوجد اتصال بالانترنت ", "موافق");
+                return;
+            }
+
             username_Input = TxtUsername.Text;
             password_Input = TxtPassword.Text;
             phone_Input = TxtPhone.Text;

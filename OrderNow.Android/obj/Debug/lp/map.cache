@@ -1,6 +1,8 @@
 FastAndroidCamera
 FormsViewGroup
 Newtonsoft.Json
+Plugin.Connectivity.Abstractions
+Plugin.Connectivity
 Plugin.LocalNotifications.Abstractions
 Plugin.LocalNotifications
 Plugin.Settings.Abstractions

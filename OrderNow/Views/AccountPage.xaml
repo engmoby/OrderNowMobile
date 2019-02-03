@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OrderNow.Views.AccountPage" 
              xmlns:controls="clr-namespace:OrderNow.Controls"
-             BackgroundImage="bg">
+             BackgroundImage="bg"  >
     <ContentPage.Content>
          <Grid>
             <Image Source="bg" Aspect="AspectFill">
