@@ -14,7 +14,7 @@ namespace OrderNow
         public App()
         {
             InitializeComponent();
-            if (string.IsNullOrEmpty(SettingsCross.UEmail))
+            if (!string.IsNullOrEmpty(SettingsCross.UEmail))
             {
                 switch (Device.RuntimePlatform)
                 {
@@ -25,6 +25,9 @@ namespace OrderNow
                         Application.Current.MainPage = new MainPage();
                         break;
                 }
+
+
+                //};
             }
             else
             {

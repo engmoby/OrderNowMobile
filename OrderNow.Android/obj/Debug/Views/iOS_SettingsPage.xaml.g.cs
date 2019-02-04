@@ -13,8 +13,7 @@
 namespace OrderNow.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/kareemmohamed/Projects/OrderNowMobile/OrderNow/Views/iOS_SettingsPage.xaml" +
-        "")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/Views/iOS_SettingsPage.xaml")]
     public partial class iOS_SettingsPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

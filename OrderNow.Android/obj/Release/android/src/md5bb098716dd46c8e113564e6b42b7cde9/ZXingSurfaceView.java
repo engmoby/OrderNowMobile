@@ -47,14 +47,6 @@ public class ZXingSurfaceView
 	}
 
 
-	public ZXingSurfaceView (android.content.Context p0, android.util.AttributeSet p1, int p2, int p3)
-	{
-		super (p0, p1, p2, p3);
-		if (getClass () == ZXingSurfaceView.class)
-			mono.android.TypeManager.Activate ("ZXing.Mobile.ZXingSurfaceView, ZXingNetMobile", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android:System.Int32, mscorlib:System.Int32, mscorlib", this, new java.lang.Object[] { p0, p1, p2, p3 });
-	}
-
-
 	public boolean onTouchEvent (android.view.MotionEvent p0)
 	{
 		return n_onTouchEvent (p0);

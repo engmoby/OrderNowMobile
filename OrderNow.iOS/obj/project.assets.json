@@ -1091,11 +1091,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/kareemmohamed/Projects/OrderNowMobile/OrderNow.iOS/OrderNow.iOS.csproj",
+      "projectUniqueName": "/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/OrderNow.iOS.csproj",
       "projectName": "OrderNow.iOS",
-      "projectPath": "/Users/kareemmohamed/Projects/OrderNowMobile/OrderNow.iOS/OrderNow.iOS.csproj",
+      "projectPath": "/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/OrderNow.iOS.csproj",
       "packagesPath": "/Users/kareemmohamed/.nuget/packages/",
-      "outputPath": "/Users/kareemmohamed/Projects/OrderNowMobile/OrderNow.iOS/obj",
+      "outputPath": "/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.iOS/obj",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/kareemmohamed/.config/NuGet/NuGet.Config"

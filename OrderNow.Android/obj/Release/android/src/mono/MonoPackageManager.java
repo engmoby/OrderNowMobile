@@ -106,6 +106,7 @@ public class MonoPackageManager {
 class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "OrderNow.Android.dll" comes first in this list. */
+		"OrderNow.Android.dll",
 		"FastAndroidCamera.dll",
 		"FormsViewGroup.dll",
 		"Newtonsoft.Json.dll",
