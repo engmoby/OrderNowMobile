@@ -106,7 +106,16 @@ namespace OrderNow.Views
 
         async void GotoBasket_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new BasketPage(new OrderViewModel(Constants.OrderClass)));
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    await Navigation.PushModalAsync(new BasketPage(new OrderViewModel(Constants.OrderClass)));
+                    break;
+                case Device.Android:
+                    await Navigation.PushAsync(new BasketPage(new OrderViewModel(Constants.OrderClass)));
+                    break;
+            }
+
 
         }
         protected override void OnAppearing()

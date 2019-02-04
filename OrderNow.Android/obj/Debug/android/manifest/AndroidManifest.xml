@@ -9,7 +9,7 @@
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <application android:label="OrderNow" android:icon="@drawable/app_icon" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
-    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/app_icon" android:label="OrderNow" android:theme="@style/MainTheme" android:name="md52e2f1b7bc3ce3ab551face628fa56625.MainActivity">
+    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/app_icon" android:label="OrderNow" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:name="md52e2f1b7bc3ce3ab551face628fa56625.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

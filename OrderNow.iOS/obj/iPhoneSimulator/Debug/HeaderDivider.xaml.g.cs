@@ -13,7 +13,8 @@
 namespace OrderNow.Controls {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow/Controls/HeaderDivider.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/kareemmohamed/Projects/OrderNowMobile/OrderNow/Controls/HeaderDivider.xaml" +
+        "")]
     public partial class HeaderDivider : global::Xamarin.Forms.ContentView {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

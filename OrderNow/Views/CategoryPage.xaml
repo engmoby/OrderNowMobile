@@ -54,6 +54,8 @@
                 HorizontalOptions="FillAndExpand"
                 Orientation="Horizontal"
                 Padding="20,0,20,10" 
+                HorizontalScrollBarVisibility="Never"
+                VerticalScrollBarVisibility="Never"
                >
                 <ScrollView.Margin>
                     <OnPlatform x:TypeArguments="Thickness" iOS="0,80,0,0" Android="0,20,0,0"/>

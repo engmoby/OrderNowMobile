@@ -1044,11 +1044,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/OrderNow.Android.csproj",
+      "projectUniqueName": "/Users/kareemmohamed/Projects/OrderNowMobile/OrderNow.Android/OrderNow.Android.csproj",
       "projectName": "OrderNow.Android",
-      "projectPath": "/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/OrderNow.Android.csproj",
+      "projectPath": "/Users/kareemmohamed/Projects/OrderNowMobile/OrderNow.Android/OrderNow.Android.csproj",
       "packagesPath": "/Users/kareemmohamed/.nuget/packages/",
-      "outputPath": "/Users/kareemmohamed/Desktop/OrderNowMobile/OrderNow.Android/obj",
+      "outputPath": "/Users/kareemmohamed/Projects/OrderNowMobile/OrderNow.Android/obj",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/kareemmohamed/.config/NuGet/NuGet.Config"

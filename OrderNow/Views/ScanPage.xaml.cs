@@ -9,13 +9,12 @@ using Resturant.RestAPIClient;
 using Xamarin.Forms;
 using ZXing.Net.Mobile.Forms;
 using System.Linq.Expressions;
-using Android.Bluetooth;
 
 namespace OrderNow.Views
 {
     public partial class ScanPage : ContentPage
     {
-        List<Category> categories; 
+       // List<Category> categories; 
         RestClientMenu _restControl = new RestClientMenu();
 
         public ScanPage()

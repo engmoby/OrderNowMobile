@@ -80,6 +80,8 @@
     <Compile Include="Services\EmptyClass.cs" />
     <Compile Include="Services\Toast_Android.cs" />
     <Compile Include="ImageEntryRenderer.cs" />
+    <Compile Include="Scrollbardisabledrenderer.cs" />
+    <Compile Include="listviewBarDisable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
