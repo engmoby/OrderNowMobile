@@ -13,13 +13,13 @@
 namespace OrderNow.Controls {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/mac/Projects/OrderNow/OrderNow/Controls/StepperView.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/kareemmohamed/OrderNowMobile/OrderNow/Controls/StepperView.xaml")]
     public partial class StepperView : global::Xamarin.Forms.ContentView {
         
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label StepLabel;
         
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(StepperView));
             StepLabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "StepLabel");

@@ -1,3 +1,0 @@
-MonoTouch: Could not install sigaction override, unexpected sigaction implementation.
-2019-01-20 00:12:44.849950+0200 OrderNow.iOS[1948:66988] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=1948
-2019-01-20 00:12:44.850477+0200 OrderNow.iOS[1948:66988] SecTaskCopyDebugDescription: OrderNow.iOS[1948]/0#-1 LF=0

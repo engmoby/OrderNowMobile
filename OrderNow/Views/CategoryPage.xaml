@@ -25,7 +25,14 @@
             <Label x:Name="cartNo1" TextColor="White" Grid.Column="2" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalOptions="Start" />
         </Grid>
         <StackLayout>
-            <ScrollView BackgroundColor="Transparent" x:Name="HeaderStack" HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="20,0,20,10">
+            <ScrollView 
+                BackgroundColor="Transparent" 
+                x:Name="HeaderStack" 
+                HorizontalOptions="FillAndExpand" 
+                Orientation="Horizontal"
+                Padding="20,10,20,10"
+                HorizontalScrollBarVisibility="Never"
+                VerticalScrollBarVisibility="Never">
                 <ScrollView.Margin>
                     <OnPlatform x:TypeArguments="Thickness" iOS="0,80,0,0" Android="0,10,0,0" />
                 </ScrollView.Margin>

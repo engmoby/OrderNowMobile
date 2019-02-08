@@ -14,7 +14,7 @@ public class ListViewRenderer
 			"n_onAttachedToWindow:()V:GetOnAttachedToWindowHandler\n" +
 			"n_onDetachedFromWindow:()V:GetOnDetachedFromWindowHandler\n" +
 			"n_onLayout:(ZIIII)V:GetOnLayout_ZIIIIHandler\n" +
-			"n_onRefresh:()V:GetOnRefreshHandler:Android.Support.V4.Widget.SwipeRefreshLayout/IOnRefreshListenerInvoker, Xamarin.Android.Support.Core.UI\n" +
+			"n_onRefresh:()V:GetOnRefreshHandler:Android.Support.V4.Widget.SwipeRefreshLayout/IOnRefreshListenerInvoker, Xamarin.Android.Support.SwipeRefreshLayout\n" +
 			"";
 		mono.android.Runtime.register ("Xamarin.Forms.Platform.Android.ListViewRenderer, Xamarin.Forms.Platform.Android", ListViewRenderer.class, __md_methods);
 	}
@@ -28,19 +28,19 @@ public class ListViewRenderer
 	}
 
 
-	public ListViewRenderer (android.content.Context p0, android.util.AttributeSet p1)
-	{
-		super (p0, p1);
-		if (getClass () == ListViewRenderer.class)
-			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.ListViewRenderer, Xamarin.Forms.Platform.Android", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android", this, new java.lang.Object[] { p0, p1 });
-	}
-
-
 	public ListViewRenderer (android.content.Context p0, android.util.AttributeSet p1, int p2)
 	{
 		super (p0, p1, p2);
 		if (getClass () == ListViewRenderer.class)
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.ListViewRenderer, Xamarin.Forms.Platform.Android", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android:System.Int32, mscorlib", this, new java.lang.Object[] { p0, p1, p2 });
+	}
+
+
+	public ListViewRenderer (android.content.Context p0, android.util.AttributeSet p1)
+	{
+		super (p0, p1);
+		if (getClass () == ListViewRenderer.class)
+			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.ListViewRenderer, Xamarin.Forms.Platform.Android", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android", this, new java.lang.Object[] { p0, p1 });
 	}
 
 

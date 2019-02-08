@@ -60,9 +60,8 @@ namespace OrderNow.Views
                         Text = viewModel.ListOfCategories[MyCount].Heading,
                         ClassId = viewModel.ListOfCategories[MyCount].categories[0].CategoryId.ToString(),  // will be the categoryID to switch on it and do the filtering 
                         BackgroundColor = Color.FromHex("#f9f9f9"),
-#pragma warning disable CS0618 // Type or member is obsolete
-                        BorderRadius = 20
-#pragma warning restore CS0618 // Type or member is obsolete
+                        CornerRadius = 20,
+                        HeightRequest = 50
                     };
 
                     button.Clicked += Button_Clicked;

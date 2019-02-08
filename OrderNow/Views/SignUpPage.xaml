@@ -31,7 +31,8 @@
                         <Label x:Name="lblphonevalidaiton" IsVisible="false" TextColor="Red" />
                     </StackLayout>
                     <StackLayout Padding="15">
-                        <controls:AnimateButton x:Name="btnRegister" Clicked="SignUp_ClickedAsync" Text="Sign Up" TextColor="White" FontSize="20" BackgroundColor="#F08D23" WidthRequest="300" HorizontalOptions="Center" CornerRadius="20" />
+                        <controls:AnimateButton x:Name="btnRegister"
+                                                Clicked="SignUp_ClickedAsync" Text="Sign Up" TextColor="White" FontSize="20" BackgroundColor="#F08D23" WidthRequest="300" HorizontalOptions="Center" CornerRadius="20" />
                     </StackLayout>
                 </StackLayout>
                 <StackLayout x:Name="stackLoading" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="End" IsVisible="{Binding IsLoading}">

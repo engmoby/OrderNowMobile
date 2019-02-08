@@ -128,7 +128,7 @@
                 <StackLayout Grid.Row="5" VerticalOptions="EndAndExpand" Grid.ColumnSpan="2">
                     <controls:AnimateButton 
                         x:Name="btnRegister" 
-                        Clicked="SignUp_ClickedAsync" 
+                        Clicked="SignUp_ClickedAsync"
                         Text="Submit" 
                         TextColor="White"
                         BackgroundColor="#D0674B" 

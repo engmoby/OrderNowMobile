@@ -46,7 +46,7 @@ namespace OrderNow.Views
             }
         }
 
-        async System.Threading.Tasks.Task SignUp_ClickedAsync(object sender, System.EventArgs e)
+        async void SignUp_ClickedAsync(object sender, System.EventArgs e)
         {
             if (!Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
             {
