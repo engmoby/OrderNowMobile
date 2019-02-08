@@ -30,7 +30,7 @@
                 x:Name="HeaderStack" 
                 HorizontalOptions="FillAndExpand" 
                 Orientation="Horizontal"
-                Padding="20,10,20,10"
+                Padding="20,10,20,0"
                 HorizontalScrollBarVisibility="Never"
                 VerticalScrollBarVisibility="Never">
                 <ScrollView.Margin>

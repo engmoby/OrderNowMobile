@@ -61,7 +61,7 @@ namespace OrderNow.Views
                         ClassId = viewModel.ListOfCategories[MyCount].categories[0].CategoryId.ToString(),  // will be the categoryID to switch on it and do the filtering 
                         BackgroundColor = Color.FromHex("#f9f9f9"),
                         CornerRadius = 20,
-                        HeightRequest = 50
+                        HeightRequest = 60
                     };
 
                     button.Clicked += Button_Clicked;
