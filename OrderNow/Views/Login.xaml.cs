@@ -21,7 +21,7 @@ namespace OrderNow.Views
             Constants.OrderClass = new List<OrderClass>();
             Constants.TableId = 0;
         }
-
+        //
 
         async void OnLoginButtonClicked(object sender, EventArgs e)
         {
