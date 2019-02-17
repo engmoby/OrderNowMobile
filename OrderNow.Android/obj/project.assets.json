@@ -473,11 +473,10 @@
       ]
     },
     "Xam.Plugins.Notifier/3.0.1": {
-      "sha512": "2xV8ZSXm0Fo+zAxt2tXw3/mlBSqZ0nR46fJW1a8Yr6mGqcDNbhEGlKJoEUTkLd7gYEMIIx5bVUaMUi34yHGF4w==",
+      "sha512": "QH/+zX9w/hMg1AOAj+a62cIJIqd4tSOSBnGGprHIhfJWHG+v+P6VvIqZSTr9z1dZDd2JfhA7Iz2KGBr4MJ2lOQ==",
       "type": "package",
       "path": "xam.plugins.notifier/3.0.1",
       "files": [
-        ".signature.p7s",
         "lib/MonoAndroid10/Plugin.LocalNotifications.Abstractions.dll",
         "lib/MonoAndroid10/Plugin.LocalNotifications.Abstractions.xml",
         "lib/MonoAndroid10/Plugin.LocalNotifications.XML",
@@ -830,7 +829,7 @@
       ]
     },
     "Xamarin.Forms/3.1.0.697729": {
-      "sha512": "oYfHpCY9i9wN4vLllsIhzDZY5iOCUtZ3RHxID1fiXOcf7yL9UA16NUsI8opoNmpv1Ru2lTGG9ZKKT1sYS6DLjA==",
+      "sha512": "YlFOM9u8onIRxJwYJ3l+O0wFKqzzrDjDrgnoBr1rct+eaQKU77vFydxvTP+WxYlYzR14hYvyLNC65L84+6ke6w==",
       "type": "package",
       "path": "xamarin.forms/3.1.0.697729",
       "files": [
@@ -1039,19 +1038,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/kareemmohamed/.nuget/packages/": {}
+    "/Users/mac/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/kareemmohamed/Projects/OrderNowMobile/OrderNow.Android/OrderNow.Android.csproj",
+      "projectUniqueName": "/Users/mac/Downloads/OrderNowMobile-73c3d4a6c23af0b36aacbb4c4ee36458e37603cf/engmoby/OrderNowMobile/OrderNow.Android/OrderNow.Android.csproj",
       "projectName": "OrderNow.Android",
-      "projectPath": "/Users/kareemmohamed/Projects/OrderNowMobile/OrderNow.Android/OrderNow.Android.csproj",
-      "packagesPath": "/Users/kareemmohamed/.nuget/packages/",
-      "outputPath": "/Users/kareemmohamed/Projects/OrderNowMobile/OrderNow.Android/obj",
+      "projectPath": "/Users/mac/Downloads/OrderNowMobile-73c3d4a6c23af0b36aacbb4c4ee36458e37603cf/engmoby/OrderNowMobile/OrderNow.Android/OrderNow.Android.csproj",
+      "packagesPath": "/Users/mac/.nuget/packages/",
+      "outputPath": "/Users/mac/Downloads/OrderNowMobile-73c3d4a6c23af0b36aacbb4c4ee36458e37603cf/engmoby/OrderNowMobile/OrderNow.Android/obj",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/kareemmohamed/.config/NuGet/NuGet.Config"
+        "/Users/mac/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "monoandroid81"
@@ -1068,49 +1067,49 @@
     "frameworks": {
       "monoandroid81": {
         "dependencies": {
-          "Xamarin.Forms": {
+          "Newtonsoft.Json": {
             "target": "Package",
-            "version": "3.1.0.697729"
-          },
-          "Xamarin.Android.Support.Design": {
-            "target": "Package",
-            "version": "27.0.2.1"
-          },
-          "Xamarin.Android.Support.v7.AppCompat": {
-            "target": "Package",
-            "version": "27.0.2.1"
-          },
-          "Xamarin.Android.Support.v4": {
-            "target": "Package",
-            "version": "27.0.2.1"
-          },
-          "Xamarin.Android.Support.v7.CardView": {
-            "target": "Package",
-            "version": "27.0.2.1"
-          },
-          "Xamarin.Android.Support.v7.MediaRouter": {
-            "target": "Package",
-            "version": "27.0.2.1"
-          },
-          "Xam.Plugins.Settings": {
-            "target": "Package",
-            "version": "3.1.1"
-          },
-          "ZXing.Net.Mobile.Forms": {
-            "target": "Package",
-            "version": "2.4.1"
-          },
-          "ZXing.Net.Mobile": {
-            "target": "Package",
-            "version": "2.4.1"
+            "version": "[12.0.1, )"
           },
           "Xam.Plugins.Notifier": {
             "target": "Package",
-            "version": "3.0.1"
+            "version": "[3.0.1, )"
           },
-          "Newtonsoft.Json": {
+          "Xam.Plugins.Settings": {
             "target": "Package",
-            "version": "12.0.1"
+            "version": "[3.1.1, )"
+          },
+          "Xamarin.Android.Support.Design": {
+            "target": "Package",
+            "version": "[27.0.2.1, )"
+          },
+          "Xamarin.Android.Support.v4": {
+            "target": "Package",
+            "version": "[27.0.2.1, )"
+          },
+          "Xamarin.Android.Support.v7.AppCompat": {
+            "target": "Package",
+            "version": "[27.0.2.1, )"
+          },
+          "Xamarin.Android.Support.v7.CardView": {
+            "target": "Package",
+            "version": "[27.0.2.1, )"
+          },
+          "Xamarin.Android.Support.v7.MediaRouter": {
+            "target": "Package",
+            "version": "[27.0.2.1, )"
+          },
+          "Xamarin.Forms": {
+            "target": "Package",
+            "version": "[3.1.0.697729, )"
+          },
+          "ZXing.Net.Mobile": {
+            "target": "Package",
+            "version": "[2.4.1, )"
+          },
+          "ZXing.Net.Mobile.Forms": {
+            "target": "Package",
+            "version": "[2.4.1, )"
           }
         }
       }
